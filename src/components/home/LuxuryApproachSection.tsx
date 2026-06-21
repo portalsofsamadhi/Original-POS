@@ -1,5 +1,5 @@
 import { Heart, Globe, Sparkles } from "lucide-react";
-import "../../../styles/luxury-theme.css";
+import "../../styles/luxury-theme.css";
 
 const cards = [
   {

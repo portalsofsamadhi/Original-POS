@@ -1,5 +1,5 @@
 import { ExternalLink } from "lucide-react";
-import "../../../styles/luxury-theme.css";
+import "../../styles/luxury-theme.css";
 
 const ProductionPortalLink = () => (
   <section className="luxury-section" aria-label="Samadhi Productions link">

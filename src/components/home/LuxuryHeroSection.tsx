@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import "../../../styles/luxury-theme.css";
+import "../../styles/luxury-theme.css";
 
 const LuxuryHeroSection = () => (
   <section className="luxury-hero" aria-label="Portals of Samadhi hero">
