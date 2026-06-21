@@ -1,0 +1,6 @@
+<svg width="120" height="80" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="80" fill="#1B5E20" rx="8"/>
+  <text x="60" y="30" font-family="serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Black</text>
+  <text x="60" y="45" font-family="serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Storytelling</text>
+  <text x="60" y="60" font-family="serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Week</text>
+</svg>

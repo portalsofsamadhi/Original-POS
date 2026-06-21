@@ -1,0 +1,341 @@
+﻿2025-07-04 13:35:01 - Starting push process for POS-Website
+2025-07-04 13:35:02 - Changed to repository directory: C:\Users\porta\OneDrive\Documents\GitHub\POS Website
+2025-07-04 13:35:04 - Git LFS initialized
+2025-07-04 13:38:54 - PAT configured for authentication
+2025-07-04 13:38:55 - Repository remote set to https://github.com/portalsofsamadhi/POS-Website.git
+2025-07-04 13:38:55 - Checking out branch: main
+2025-07-04 13:38:56 - On branch: main
+2025-07-04 13:38:56 - Checking for files larger than 100MB
+2025-07-04 13:39:02 - Found 13 files larger than 100MB
+2025-07-04 13:39:02 - Tracking large file with LFS: .git/lfs/objects/00/af/00af8f436591f349a2557671bc3dbbef8e00cb524b4896a4df06df9c167ec831
+2025-07-04 13:39:03 - Tracking large file with LFS: .git/lfs/objects/8c/c9/8cc9d2df58bacf7b0b5908ed902e60e76b67b661a2c12d7cf03d2cffdd2849e3
+2025-07-04 13:39:04 - Tracking large file with LFS: .git/lfs/objects/bf/69/bf69dc3e7b0422a9f9e9cccdeaf4dcd435a62ac8e04a9ef4df08c1fb1b0b7502
+2025-07-04 13:39:05 - Tracking large file with LFS: .git/lfs/objects/e9/5a/e95a964284ab98fdb1e9dd2d3efd5970e474ea9489f3a0d6e6a3aec1dddbc1e3
+2025-07-04 13:39:05 - Tracking large file with LFS: .git/objects/0e/3ac4e422d6e1f3da8834dde926b36f0fdc0a1a
+2025-07-04 13:39:06 - Tracking large file with LFS: .git/objects/91/d5be8e5d3af36a72fcad45c005ddf0264e83d9
+2025-07-04 13:39:07 - Tracking large file with LFS: .git/objects/af/6349a2a7393c21c3ef2027fe8bb9dc795c0388
+2025-07-04 13:39:08 - Tracking large file with LFS: .git/objects/cc/1c698c7a1f06378ff5198d78366d8eb9deafa4
+2025-07-04 13:39:08 - Tracking large file with LFS: dist/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-04 13:39:09 - Tracking large file with LFS: public/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-04 13:39:10 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702153127.mp4
+2025-07-04 13:39:10 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702205248.mp4
+2025-07-04 13:39:11 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702210946.mp4
+2025-07-04 13:39:12 - Setting HTTP buffer size to 500MB
+2025-07-04 13:39:12 - Starting chunked commits and pushes
+2025-07-04 13:39:12 - Processing folder: .git
+2025-07-04 13:40:04 - Committed files from .git
+2025-07-04 13:40:04 - Pushing .git to main...
+Uploading LFS objects: 100% (110/110), 2.2 GB | 0 B/s, done.
+git : error: RPC failed; HTTP 408 curl 22 The requested URL 
+returned error: 408
+At line:113 char:13
++             git push origin $branch 2>&1 | Out-File -FilePath 
+$logFil ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: RPC fail... 
+   rned error: 408:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
+2025-07-04 13:55:44 - Error: Push failed for .git. Check C:\Users\porta\OneDrive\Documents\GitHub\POS Website\push_log.txt for details.
+2025-07-04 13:55:44 - Processing remaining root files
+2025-07-04 13:55:45 - Committed remaining root files
+2025-07-04 13:55:45 - Pushing root files to main...
+Uploading LFS objects: 100% (110/110), 2.2 GB | 0 B/s, done.
+git : error: RPC failed; HTTP 408 curl 22 The requested URL 
+returned error: 408
+At line:136 char:9
++         git push origin $branch 2>&1 | Out-File -FilePath 
+$logFile -A ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: RPC fail... 
+   rned error: 408:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
+2025-07-04 14:13:35 - Error: Push failed for root files. Check C:\Users\porta\OneDrive\Documents\GitHub\POS Website\push_log.txt for details.
+2025-07-04 14:13:35 - Push process failed. Review C:\Users\porta\OneDrive\Documents\GitHub\POS Website\push_log.txt and check network or credentials.
+2025-07-04 14:19:41 - Starting push process for POS-Website
+2025-07-04 14:19:41 - Changed to repository directory: C:\Users\porta\OneDrive\Documents\GitHub\POS Website
+2025-07-04 14:19:43 - Git LFS initialized
+2025-07-04 14:19:47 - PAT configured for authentication
+2025-07-04 14:19:47 - Repository remote set to https://github.com/portalsofsamadhi/POS-Website.git
+2025-07-04 14:19:47 - Checking out branch: main
+2025-07-04 14:19:50 - On branch: main
+2025-07-04 14:19:50 - Checking for files larger than 100MB
+2025-07-04 14:19:57 - Found 13 files larger than 100MB
+2025-07-04 14:19:57 - Tracking large file with LFS: .git/lfs/objects/00/af/00af8f436591f349a2557671bc3dbbef8e00cb524b4896a4df06df9c167ec831
+2025-07-04 14:19:58 - Tracking large file with LFS: .git/lfs/objects/8c/c9/8cc9d2df58bacf7b0b5908ed902e60e76b67b661a2c12d7cf03d2cffdd2849e3
+2025-07-04 14:19:58 - Tracking large file with LFS: .git/lfs/objects/bf/69/bf69dc3e7b0422a9f9e9cccdeaf4dcd435a62ac8e04a9ef4df08c1fb1b0b7502
+2025-07-04 14:19:59 - Tracking large file with LFS: .git/lfs/objects/e9/5a/e95a964284ab98fdb1e9dd2d3efd5970e474ea9489f3a0d6e6a3aec1dddbc1e3
+2025-07-04 14:20:00 - Tracking large file with LFS: .git/objects/0e/3ac4e422d6e1f3da8834dde926b36f0fdc0a1a
+2025-07-04 14:20:00 - Tracking large file with LFS: .git/objects/91/d5be8e5d3af36a72fcad45c005ddf0264e83d9
+2025-07-04 14:20:01 - Tracking large file with LFS: .git/objects/af/6349a2a7393c21c3ef2027fe8bb9dc795c0388
+2025-07-04 14:20:02 - Tracking large file with LFS: .git/objects/cc/1c698c7a1f06378ff5198d78366d8eb9deafa4
+2025-07-04 14:20:02 - Tracking large file with LFS: dist/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-04 14:20:03 - Tracking large file with LFS: public/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-04 14:20:04 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702153127.mp4
+2025-07-04 14:20:04 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702205248.mp4
+2025-07-04 14:20:05 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702210946.mp4
+2025-07-04 14:20:06 - Setting HTTP buffer size to 500MB
+2025-07-04 14:20:06 - Starting chunked commits and pushes
+2025-07-04 14:20:06 - Processing folder: .swc
+2025-07-04 14:20:06 - No changes to commit in .swc
+2025-07-04 14:20:06 - Processing folder: .vscode
+2025-07-04 14:20:07 - No changes to commit in .vscode
+2025-07-04 14:20:07 - Processing folder: api
+2025-07-04 14:20:07 - No changes to commit in api
+2025-07-04 14:20:07 - Processing folder: dist
+2025-07-04 14:20:07 - No changes to commit in dist
+2025-07-04 14:20:07 - Processing folder: mongodb-integration
+2025-07-04 14:20:08 - No changes to commit in mongodb-integration
+2025-07-04 14:20:08 - Processing folder: node_modules
+2025-07-04 14:20:08 - No changes to commit in node_modules
+2025-07-04 14:20:08 - Processing folder: php-backend
+2025-07-04 14:20:08 - No changes to commit in php-backend
+2025-07-04 14:20:08 - Processing folder: public
+2025-07-04 14:20:09 - No changes to commit in public
+2025-07-04 14:20:09 - Processing folder: scripts
+2025-07-04 14:20:09 - No changes to commit in scripts
+2025-07-04 14:20:09 - Processing folder: server
+2025-07-04 14:20:09 - No changes to commit in server
+2025-07-04 14:20:09 - Processing folder: src
+2025-07-04 14:20:10 - No changes to commit in src
+2025-07-04 14:20:10 - Processing remaining root files
+2025-07-04 14:20:11 - Committed remaining root files
+2025-07-04 14:20:11 - Pushing root files to main...
+Uploading LFS objects: 100% (110/110), 2.2 GB | 0 B/s, done.
+git : error: RPC failed; HTTP 408 curl 22 The requested URL 
+returned error: 408
+At line:137 char:9
++         git push origin $branch 2>&1 | Out-File -FilePath 
+$logFile -A ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: RPC fail... 
+   rned error: 408:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
+2025-07-04 14:40:36 - Error: Push failed for root files. Check C:\Users\porta\OneDrive\Documents\GitHub\POS Website\push_log.txt for details.
+2025-07-04 14:40:37 - Push process failed. Review C:\Users\porta\OneDrive\Documents\GitHub\POS Website\push_log.txt and check network or credentials.
+2025-07-04 14:52:22 - Starting push process for POS-Website
+2025-07-04 14:52:22 - Changed to repository directory: C:\Users\porta\OneDrive\Documents\GitHub\POS Website
+2025-07-04 14:52:26 - Git LFS initialized
+2025-07-04 14:52:29 - PAT configured for authentication
+2025-07-04 14:52:29 - Repository remote set to https://github.com/portalsofsamadhi/POS-Website.git
+2025-07-04 14:52:29 - Checking out branch: main
+2025-07-04 14:52:35 - On branch: main
+2025-07-04 14:52:35 - Checking for files larger than 100MB
+2025-07-04 14:52:52 - Found 13 files larger than 100MB
+2025-07-04 14:52:52 - Tracking large file with LFS: .git/lfs/objects/00/af/00af8f436591f349a2557671bc3dbbef8e00cb524b4896a4df06df9c167ec831
+2025-07-04 14:52:54 - Tracking large file with LFS: .git/lfs/objects/8c/c9/8cc9d2df58bacf7b0b5908ed902e60e76b67b661a2c12d7cf03d2cffdd2849e3
+2025-07-04 14:52:55 - Tracking large file with LFS: .git/lfs/objects/bf/69/bf69dc3e7b0422a9f9e9cccdeaf4dcd435a62ac8e04a9ef4df08c1fb1b0b7502
+2025-07-04 14:52:56 - Tracking large file with LFS: .git/lfs/objects/e9/5a/e95a964284ab98fdb1e9dd2d3efd5970e474ea9489f3a0d6e6a3aec1dddbc1e3
+2025-07-04 14:52:58 - Tracking large file with LFS: .git/objects/0e/3ac4e422d6e1f3da8834dde926b36f0fdc0a1a
+2025-07-04 14:52:59 - Tracking large file with LFS: .git/objects/91/d5be8e5d3af36a72fcad45c005ddf0264e83d9
+2025-07-04 14:53:01 - Tracking large file with LFS: .git/objects/af/6349a2a7393c21c3ef2027fe8bb9dc795c0388
+2025-07-04 14:53:02 - Tracking large file with LFS: .git/objects/cc/1c698c7a1f06378ff5198d78366d8eb9deafa4
+2025-07-04 14:53:04 - Tracking large file with LFS: dist/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-04 14:53:06 - Tracking large file with LFS: public/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-04 14:53:07 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702153127.mp4
+2025-07-04 14:53:09 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702205248.mp4
+2025-07-04 14:53:10 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702210946.mp4
+2025-07-04 14:53:12 - Setting HTTP buffer size to 500MB
+2025-07-04 14:53:13 - Starting chunked commits and pushes
+2025-07-04 14:53:13 - Processing folder: .swc
+2025-07-04 14:53:14 - No changes to commit in .swc
+2025-07-04 14:53:14 - Processing folder: .vscode
+2025-07-04 14:53:15 - No changes to commit in .vscode
+2025-07-04 14:53:15 - Processing folder: api
+2025-07-04 14:53:16 - No changes to commit in api
+2025-07-04 14:53:16 - Processing folder: dist
+2025-07-04 14:53:17 - No changes to commit in dist
+2025-07-04 14:53:17 - Processing folder: mongodb-integration
+2025-07-04 14:53:17 - No changes to commit in mongodb-integration
+2025-07-04 14:53:17 - Processing folder: node_modules
+2025-07-04 14:53:18 - No changes to commit in node_modules
+2025-07-04 14:53:18 - Processing folder: php-backend
+2025-07-04 14:53:19 - No changes to commit in php-backend
+2025-07-04 14:53:19 - Processing folder: public
+2025-07-04 14:53:24 - No changes to commit in public
+2025-07-04 14:53:25 - Processing folder: scripts
+2025-07-04 14:53:28 - No changes to commit in scripts
+2025-07-04 14:53:28 - Processing folder: server
+2025-07-04 14:53:28 - No changes to commit in server
+2025-07-04 14:53:28 - Processing folder: src
+2025-07-04 14:53:29 - No changes to commit in src
+2025-07-04 14:53:29 - Processing remaining root files
+2025-07-04 14:53:36 - Committed remaining root files
+2025-07-04 14:53:36 - Pushing root files to main...
+Uploading LFS objects: 100% (110/110), 2.2 GB | 0 B/s, done.
+git : error: RPC failed; HTTP 408 curl 22 The requested URL 
+returned error: 408
+At line:137 char:9
++         git push origin $branch 2>&1 | Out-File -FilePath 
+$logFile -A ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: RPC fail... 
+   rned error: 408:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
+2025-07-04 15:10:59 - Error: Push failed for root files. Check C:\Users\porta\OneDrive\Documents\GitHub\POS Website\push_log.txt for details.
+2025-07-04 15:10:59 - Push process failed. Review C:\Users\porta\OneDrive\Documents\GitHub\POS Website\push_log.txt and check network or credentials.
+2025-07-04 15:56:12 - Starting push process for POS-Website
+2025-07-04 15:56:12 - Changed to repository directory: C:\Users\porta\OneDrive\Documents\GitHub\POS Website
+2025-07-04 15:56:14 - Git LFS initialized
+2025-07-04 15:58:30 - PAT configured for authentication
+2025-07-04 15:58:30 - Repository remote set to https://github.com/portalsofsamadhi/POS-Website.git
+2025-07-04 15:58:30 - Checking out branch: main
+2025-07-04 15:58:33 - On branch: main
+2025-07-04 15:58:33 - Checking for files larger than 100MB
+2025-07-04 15:58:43 - Found 13 files larger than 100MB
+2025-07-04 15:58:44 - Tracking large file with LFS: .git/lfs/objects/00/af/00af8f436591f349a2557671bc3dbbef8e00cb524b4896a4df06df9c167ec831
+2025-07-04 15:58:45 - Tracking large file with LFS: .git/lfs/objects/8c/c9/8cc9d2df58bacf7b0b5908ed902e60e76b67b661a2c12d7cf03d2cffdd2849e3
+2025-07-04 15:58:46 - Tracking large file with LFS: .git/lfs/objects/bf/69/bf69dc3e7b0422a9f9e9cccdeaf4dcd435a62ac8e04a9ef4df08c1fb1b0b7502
+2025-07-04 15:58:47 - Tracking large file with LFS: .git/lfs/objects/e9/5a/e95a964284ab98fdb1e9dd2d3efd5970e474ea9489f3a0d6e6a3aec1dddbc1e3
+2025-07-04 15:58:48 - Tracking large file with LFS: .git/objects/0e/3ac4e422d6e1f3da8834dde926b36f0fdc0a1a
+2025-07-04 15:58:49 - Tracking large file with LFS: .git/objects/91/d5be8e5d3af36a72fcad45c005ddf0264e83d9
+2025-07-04 15:58:50 - Tracking large file with LFS: .git/objects/af/6349a2a7393c21c3ef2027fe8bb9dc795c0388
+2025-07-04 15:58:50 - Tracking large file with LFS: .git/objects/cc/1c698c7a1f06378ff5198d78366d8eb9deafa4
+2025-07-04 15:58:51 - Tracking large file with LFS: dist/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-04 15:58:52 - Tracking large file with LFS: public/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-04 15:58:53 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702153127.mp4
+2025-07-04 15:58:54 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702205248.mp4
+2025-07-04 15:58:55 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702210946.mp4
+2025-07-04 15:58:56 - Setting HTTP buffer size to 500MB
+2025-07-04 15:58:56 - Starting chunked commits and pushes
+2025-07-04 15:58:56 - Processing folder: .swc
+2025-07-04 15:58:56 - No changes to commit in .swc
+2025-07-04 15:58:56 - Processing folder: .vscode
+2025-07-04 15:58:56 - No changes to commit in .vscode
+2025-07-04 15:58:56 - Processing folder: api
+2025-07-04 15:58:57 - No changes to commit in api
+2025-07-04 15:58:57 - Processing folder: dist
+2025-07-04 15:58:57 - No changes to commit in dist
+2025-07-04 15:58:57 - Processing folder: mongodb-integration
+2025-07-04 15:58:58 - No changes to commit in mongodb-integration
+2025-07-04 15:58:58 - Processing folder: node_modules
+2025-07-04 15:58:59 - No changes to commit in node_modules
+2025-07-04 15:58:59 - Processing folder: php-backend
+2025-07-04 15:58:59 - No changes to commit in php-backend
+2025-07-04 15:58:59 - Processing folder: public
+2025-07-04 15:59:00 - No changes to commit in public
+2025-07-04 15:59:00 - Processing folder: scripts
+2025-07-04 15:59:00 - No changes to commit in scripts
+2025-07-04 15:59:00 - Processing folder: server
+2025-07-04 15:59:01 - No changes to commit in server
+2025-07-04 15:59:01 - Processing folder: src
+2025-07-04 15:59:01 - No changes to commit in src
+2025-07-04 15:59:01 - Processing remaining root files
+2025-07-04 15:59:05 - Committed remaining root files
+2025-07-04 15:59:05 - Pushing root files to main...
+Uploading LFS objects: 100% (110/110), 2.2 GB | 0 B/s, done.
+git : error: RPC failed; HTTP 408 curl 22 The requested URL returned error: 408
+At line:137 char:9
++         git push origin $branch 2>&1 | Out-File -FilePath $logFile -A ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: RPC fail...rned error: 408:String) 
+    [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
+2025-07-04 16:19:00 - Error: Push failed for root files. Check C:\Users\porta\OneDrive\Documents\GitHub\POS Website\push_log.txt for details.
+2025-07-04 16:19:00 - Push process failed. Review C:\Users\porta\OneDrive\Documents\GitHub\POS Website\push_log.txt and check network or credentials.
+2025-07-04 16:26:18 - Starting batched push process for POS-Website
+2025-07-04 16:26:18 - Changed to repository directory: C:\Users\porta\OneDrive\Documents\GitHub\POS Website
+2025-07-04 16:26:20 - Git LFS initialized
+2025-07-04 16:26:44 - PAT configured for authentication
+2025-07-04 16:26:45 - On branch: main
+2025-07-04 16:26:58 - Found 5 files larger than 100MB
+2025-07-04 16:26:59 - Tracking large file with LFS: dist/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-04 16:27:02 - Tracking large file with LFS: public/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-04 16:27:03 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702153127.mp4
+2025-07-04 16:27:04 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702205248.mp4
+2025-07-04 16:27:05 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702210946.mp4
+2025-07-04 16:27:05 - Adding batch: C:\Users\porta\OneDrive\Documents\GitHub\POS Website\dist\images\Cell Phone\VID_20250618_173929448.mp4, C:\Users\porta\OneDrive\Documents\GitHub\POS Website\public\images\Cell Phone\VID_20250618_173929448.mp4
+2025-07-04 16:27:06 - No changes to commit in batch 1-2
+2025-07-04 16:27:06 - Adding batch: C:\Users\porta\OneDrive\Documents\GitHub\POS Website\public\images - Copy\Vids\lv_0_20250702153127.mp4, C:\Users\porta\OneDrive\Documents\GitHub\POS Website\public\images - Copy\Vids\lv_0_20250702205248.mp4
+2025-07-04 16:27:06 - No changes to commit in batch 3-4
+2025-07-04 16:27:06 - Adding batch: C:\Users\porta\OneDrive\Documents\GitHub\POS Website\public\images - Copy\Vids\lv_0_20250702210946.mp4
+2025-07-04 16:27:07 - No changes to commit in batch 5-5
+2025-07-04 16:27:07 - Adding and pushing remaining files
+2025-07-04 16:27:09 - Committed remaining files
+2025-07-04 16:27:09 - Pushing remaining files to main...
+Uploading LFS objects: 100% (110/110), 2.2 GB | 0 B/s, done.
+git : error: RPC failed; HTTP 408 curl 22 The requested URL returned error: 408
+At line:103 char:9
++         git push origin $branch 2>&1 | Out-File -FilePath $logFile -A ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: RPC fail...rned error: 408:String) 
+    [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
+2025-07-04 16:43:46 - Error: Push failed for remaining files. Check C:\Users\porta\OneDrive\Documents\GitHub\POS Website\push_log.txt for details.
+2025-07-04 16:43:46 - Batched push process complete. Check C:\Users\porta\OneDrive\Documents\GitHub\POS Website\push_log.txt for details.
+2025-07-04 16:43:46 - Cleaned up credentials
+2025-07-04 19:19:42 - Starting single-file LFS push process for POS-Website
+2025-07-04 19:19:42 - Changed to repository directory: C:\Users\porta\OneDrive\Documents\GitHub\POS Website
+2025-07-04 19:19:43 - Git LFS initialized
+2025-07-04 19:20:14 - PAT configured for authentication
+2025-07-04 19:20:15 - On branch: main
+2025-07-04 19:20:22 - Found 5 files larger than 100MB
+2025-07-04 19:20:23 - Tracking large file with LFS: dist/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-04 19:20:23 - Tracking large file with LFS: public/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-04 19:20:24 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702153127.mp4
+2025-07-04 19:20:25 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702205248.mp4
+2025-07-04 19:20:25 - Tracking large file with LFS: public/images - Copy/Vids/lv_0_20250702210946.mp4
+2025-07-04 19:20:26 - Adding and committing C:\Users\porta\OneDrive\Documents\GitHub\POS Website\dist\images\Cell Phone\VID_20250618_173929448.mp4
+2025-07-04 19:20:26 - No changes to commit for VID_20250618_173929448.mp4
+2025-07-04 19:20:26 - Adding and committing C:\Users\porta\OneDrive\Documents\GitHub\POS Website\public\images\Cell Phone\VID_20250618_173929448.mp4
+2025-07-04 19:20:26 - No changes to commit for VID_20250618_173929448.mp4
+2025-07-04 19:20:26 - Adding and committing C:\Users\porta\OneDrive\Documents\GitHub\POS Website\public\images - Copy\Vids\lv_0_20250702153127.mp4
+2025-07-04 19:20:26 - No changes to commit for lv_0_20250702153127.mp4
+2025-07-04 19:20:26 - Adding and committing C:\Users\porta\OneDrive\Documents\GitHub\POS Website\public\images - Copy\Vids\lv_0_20250702205248.mp4
+2025-07-04 19:20:27 - No changes to commit for lv_0_20250702205248.mp4
+2025-07-04 19:20:27 - Adding and committing C:\Users\porta\OneDrive\Documents\GitHub\POS Website\public\images - Copy\Vids\lv_0_20250702210946.mp4
+2025-07-04 19:20:27 - No changes to commit for lv_0_20250702210946.mp4
+2025-07-04 19:20:27 - Adding and pushing remaining files
+2025-07-05 08:12:55 - Re-added origin remote: https://github.com/portalsofsamadhi/POS-Website.git
+2025-07-05 08:12:55 - Force-pushing cleaned history to https://github.com/portalsofsamadhi/POS-Website.git
+Uploading LFS objects: 100% (106/106), 324 MB | 0 B/s, done.
+git : To https://github.com/portalsofsamadhi/POS-Website.git
+At line:77 char:1
++ git push origin $branch --force 2>&1 | Out-File -FilePath $logFile -A ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (To https://gith...POS-Website.git:String) 
+    [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ * [new branch]      main -> main
+2025-07-05 08:19:43 - Force-push complete
+2025-07-05 08:19:44 - Tracking large file with LFS: dist/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-05 08:19:44 - No changes to commit for dist/images/Cell Phone/VID_20250618_173929448.mp4
+2025-07-05 08:19:44 - Adding and pushing remaining files
+2025-07-05 08:19:45 - Committed remaining files
+2025-07-05 08:19:45 - Pushing remaining files to main...
+git : To https://github.com/portalsofsamadhi/POS-Website.git
+At line:115 char:9
++         git push origin $branch 2>&1 | Out-File -FilePath $logFile -A ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (To https://gith...POS-Website.git:String) 
+    [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   267e7e4..fed1c12  main -> main
+2025-07-05 08:19:51 - Successfully pushed remaining files
+2025-07-05 08:19:51 - History rewrite and re-push process complete. Check C:\Users\porta\OneDrive\Documents\GitHub\POS Website\push_log.txt for details.
+2025-07-05 08:19:51 - Cleaned up credentials

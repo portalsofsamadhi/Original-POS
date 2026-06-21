@@ -1,0 +1,10 @@
+/* --- MOBILE BOOK NOW MODAL ADJUSTMENTS --- */
+@media (max-width: 640px) {
+  .mobile-booknow-modal {
+    max-width: 90vw !important;
+    min-width: 0 !important;
+    border-radius: 16px !important;
+    padding: 0.5rem 0.5rem !important;
+  }
+}
+/* Add more mobile modal styles below as needed */

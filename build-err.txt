@@ -1,0 +1,12 @@
+Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+✗ Build failed in 3m 41s
+error during build:
+EPERM, Permission denied: \\?\C:\Users\mesqa\OneDrive\Documents\GitHub\POS-Website\dist\Shorts '\\?\C:\Users\mesqa\OneDrive\Documents\GitHub\POS-Website\dist\Shorts'
+    at Object.rmSync (node:fs:1222:18)
+    at emptyDir (file:///C:/Users/mesqa/OneDrive/Documents/GitHub/POS-Website/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:6855:19)
+    at prepareOutDir (file:///C:/Users/mesqa/OneDrive/Documents/GitHub/POS-Website/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:46403:7)
+    at buildEnvironment (file:///C:/Users/mesqa/OneDrive/Documents/GitHub/POS-Website/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:46367:7)
+    at async Object.defaultBuildApp [as buildApp] (file:///C:/Users/mesqa/OneDrive/Documents/GitHub/POS-Website/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:46843:5)
+    at async CAC.<anonymous> (file:///C:/Users/mesqa/OneDrive/Documents/GitHub/POS-Website/node_modules/vite/dist/node/cli.js:863:7)

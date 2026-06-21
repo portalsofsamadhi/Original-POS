@@ -1,0 +1,21 @@
+/* Force immediate loading of preloaded images */
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  background-image: url('/poslogo.webp'), url('/Welcome.webp');
+  background-size: 1px 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Ensure images are decoded as soon as possible */
+img[src="/poslogo.webp"],
+img[src="/Welcome.webp"],
+video[poster="/Welcome.webp"] {
+  image-rendering: auto;
+}

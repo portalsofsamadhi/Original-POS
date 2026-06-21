@@ -1,0 +1,910 @@
+/* Modern Feqad Services Aesthetics */
+/* Sophisticated, healing-focused design with warm earth tones and modern layout */
+
+:root {  /* Medical & Clinical Color Palette */
+  --feqad-primary: #C3998F;
+  --feqad-secondary: #E8B4A3;
+  --feqad-accent: #F4C95D;
+  --feqad-sage: #0A3C4A;
+  --feqad-cream: #111111;
+  --feqad-earth: #0A0A0A;
+  
+  /* Modern Neutrals */
+  --feqad-white: #111111;
+  --feqad-light: #1F1F1F;
+  --feqad-gray-100: #1a1a1a;
+  --feqad-gray-200: rgba(195, 153, 143, 0.2);
+  --feqad-gray-300: rgba(195, 153, 143, 0.3);
+  --feqad-gray-600: rgba(245, 240, 232, 0.6);
+  --feqad-gray-800: #F5F0E8;
+  --feqad-charcoal: #FAFAF8;
+    /* Typography - Ethiopian/Ancient inspired */
+  --feqad-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --feqad-font-heading: 'Playfair Display', Georgia, serif;
+  --feqad-font-accent: 'Playfair Display', Georgia, serif;
+  
+  /* Modern Spacing System */
+  --feqad-space-1: 0.25rem;   /* 4px */
+  --feqad-space-2: 0.5rem;    /* 8px */
+  --feqad-space-3: 0.75rem;   /* 12px */
+  --feqad-space-4: 1rem;      /* 16px */
+  --feqad-space-5: 1.25rem;   /* 20px */
+  --feqad-space-6: 1.5rem;    /* 24px */
+  --feqad-space-8: 2rem;      /* 32px */
+  --feqad-space-10: 2.5rem;   /* 40px */
+  --feqad-space-12: 3rem;     /* 48px */
+  --feqad-space-16: 4rem;     /* 64px */
+  --feqad-space-20: 5rem;     /* 80px */
+    /* Sophisticated Shadows */
+  --feqad-shadow-sm: 0 1px 3px rgba(34, 197, 94, 0.08);
+  --feqad-shadow-md: 0 4px 12px rgba(34, 197, 94, 0.12);
+  --feqad-shadow-lg: 0 8px 25px rgba(34, 197, 94, 0.15);
+  --feqad-shadow-xl: 0 16px 40px rgba(34, 197, 94, 0.18);
+  
+  /* Modern Border Radius */
+  --feqad-radius-sm: 8px;
+  --feqad-radius-md: 12px;
+  --feqad-radius-lg: 16px;
+  --feqad-radius-xl: 24px;
+  --feqad-radius-2xl: 32px;
+}
+
+/* Modern Hero Section */
+.feqad-hero {
+  background: linear-gradient(135deg, var(--feqad-light) 0%, var(--feqad-cream) 100%);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: var(--feqad-space-16) 0;
+}
+
+.feqad-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(205, 133, 63, 0.08) 0%, rgba(218, 165, 32, 0.12) 100%);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 1;
+}
+
+.feqad-hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--feqad-space-16);
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.feqad-hero-text h1 {
+  font-family: var(--feqad-font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--feqad-charcoal);
+  margin-bottom: var(--feqad-space-6);
+}
+
+.feqad-hero-image {
+  border-radius: var(--feqad-radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--feqad-shadow-xl);
+  transform: rotate(2deg);
+  transition: transform 0.3s ease;
+}
+
+.feqad-hero-image:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.feqad-hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Modern Card Design */
+.feqad-card {
+  background: var(--feqad-white);
+  border-radius: var(--feqad-radius-lg);
+  box-shadow: var(--feqad-shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  border: 1px solid var(--feqad-gray-200);
+  position: relative;
+}
+
+.feqad-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--feqad-primary) 0%, var(--feqad-accent) 100%);
+}
+
+.feqad-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--feqad-shadow-xl);
+  border-color: var(--feqad-gray-300);
+}
+
+.feqad-card-header {
+  padding: var(--feqad-space-8) var(--feqad-space-6) var(--feqad-space-6);
+  text-align: center;
+}
+
+.feqad-card-content {
+  padding: 0 var(--feqad-space-6) var(--feqad-space-8);
+}
+
+.feqad-icon-wrapper {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--feqad-primary) 0%, var(--feqad-secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
+}
+
+.feqad-icon-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.feqad-card:hover .feqad-icon-wrapper::after {
+  left: 100%;
+}
+
+.feqad-icon-wrapper svg {
+  color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  z-index: 1;
+}
+
+/* Modern Typography */
+.feqad-keyword-title {
+  font-family: var(--feqad-font-accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--feqad-primary);
+  text-align: center;
+  margin-bottom: var(--feqad-space-3);
+}
+
+.feqad-section-heading {
+  font-family: var(--feqad-font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--feqad-charcoal);
+  text-align: center;
+  margin-bottom: var(--feqad-space-6);
+}
+
+.feqad-card-title {
+  font-family: var(--feqad-font-heading);
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--feqad-charcoal);
+  margin-bottom: var(--feqad-space-4);
+}
+
+.feqad-body-text {
+  font-family: var(--feqad-font-primary);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--feqad-gray-600);
+  margin-bottom: var(--feqad-space-5);
+}
+
+/* Modern Button Design */
+.feqad-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--feqad-space-2);
+  padding: var(--feqad-space-4) var(--feqad-space-8);
+  font-family: var(--feqad-font-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--feqad-radius-md);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.feqad-btn-primary {
+  background: linear-gradient(135deg, var(--feqad-primary) 0%, var(--feqad-earth) 100%);
+  color: var(--feqad-white);
+  box-shadow: var(--feqad-shadow-sm);
+}
+
+.feqad-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--feqad-shadow-lg);
+}
+
+.feqad-btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--feqad-accent) 0%, var(--feqad-sage) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feqad-btn-primary:hover::before {
+  opacity: 1;
+}
+
+.feqad-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Package Cards Special Styling */
+.feqad-package-card {
+  border: 2px solid var(--feqad-gray-200);
+  background: var(--feqad-white);
+  position: relative;
+}
+
+.feqad-package-card::before {
+  height: 6px;
+  background: linear-gradient(90deg, var(--feqad-accent) 0%, var(--feqad-sage) 50%, var(--feqad-primary) 100%);
+}
+
+.feqad-package-badge {
+  display: inline-block;
+  padding: var(--feqad-space-2) var(--feqad-space-4);
+  background: linear-gradient(135deg, var(--feqad-accent) 0%, var(--feqad-sage) 100%);
+  color: var(--feqad-white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--feqad-radius-sm);
+  margin-top: var(--feqad-space-3);
+}
+
+/* Package Cards */
+.feqad-package-card {
+  background: linear-gradient(135deg, var(--feqad-light) 0%, #ffffff 100%);
+  border: 2px solid rgba(34, 197, 94, 0.1);
+  border-radius: 16px;
+  padding: var(--feqad-space-8);
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.08);
+}
+
+.feqad-package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.feqad-package-badge {
+  background: linear-gradient(135deg, var(--feqad-secondary) 0%, var(--feqad-accent) 100%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-top: var(--feqad-space-2);
+}
+
+.feqad-package-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--feqad-primary) 0%, var(--feqad-secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
+}
+
+.feqad-package-icon svg {
+  color: white;
+  width: 2rem;
+  height: 2rem;
+}
+
+.feqad-package-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feqad-package-list li {
+  color: var(--feqad-gray-700);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.25rem 0;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.feqad-package-list li::before {
+  content: '•';
+  color: var(--feqad-secondary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.feqad-package-price {
+  font-family: var(--feqad-font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--feqad-primary);
+}
+
+.feqad-package-savings {
+  font-size: 0.875rem;
+  color: var(--feqad-secondary);
+  font-weight: 500;
+}
+
+/* Step Cards for Process Section */
+.feqad-step-card {
+  background: linear-gradient(135deg, var(--feqad-light) 0%, #ffffff 100%);
+  border: 1px solid rgba(34, 197, 94, 0.1);
+  border-radius: 16px;
+  padding: var(--feqad-space-8);
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.06);
+}
+
+.feqad-step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.12);
+}
+
+.feqad-step-number {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--feqad-primary) 0%, var(--feqad-secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--feqad-space-6);
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
+}
+
+/* Extra Services */
+.feqad-extra-card {
+  background: linear-gradient(135deg, var(--feqad-light) 0%, #ffffff 100%);
+  border: 1px solid rgba(34, 197, 94, 0.1);
+  border-radius: 16px;
+  padding: var(--feqad-space-6);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.06);
+}
+
+.feqad-extra-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.12);
+}
+
+.feqad-extra-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--feqad-primary) 0%, var(--feqad-secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
+}
+
+.feqad-extra-icon svg {
+  color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.feqad-extra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--feqad-space-8);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Text Size Utilities */
+.feqad-text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+/* Margin Top 2 and 6 */
+.feqad-mt-2 {
+  margin-top: var(--feqad-space-2);
+}
+
+.feqad-mt-6 {
+  margin-top: var(--feqad-space-6);
+}
+
+.feqad-mb-6 {
+  margin-bottom: var(--feqad-space-6);
+}
+
+.feqad-mb-2 {
+  margin-bottom: var(--feqad-space-2);
+}
+
+/* Grid Layouts */
+.feqad-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--feqad-space-8);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feqad-packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--feqad-space-8);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Styling */
+.feqad-section {
+  padding: var(--feqad-space-20) 0;
+}
+
+.feqad-section-alt {
+  background: linear-gradient(135deg, var(--feqad-light) 0%, var(--feqad-gray-100) 100%);
+  padding: var(--feqad-space-20) 0;
+}
+
+.feqad-compact-section {
+  padding: var(--feqad-space-12) 0;
+}
+
+/* Container */
+.feqad-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--feqad-space-6);
+}
+
+/* Flex Direction and Space Utilities */
+.feqad-flex-col {
+  flex-direction: column;
+}
+
+.feqad-items-start {
+  align-items: flex-start;
+}
+
+.feqad-space-x-4 > * + * {
+  margin-left: var(--feqad-space-4);
+}
+
+.feqad-flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+/* Max Width and Margin Utilities */
+.feqad-max-w-2xl {
+  max-width: 42rem;
+}
+
+/* Link Styling */
+.feqad-link {
+  color: var(--feqad-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.feqad-link:hover {
+  color: var(--feqad-primary);
+}
+
+.feqad-mb-3 {
+  margin-bottom: var(--feqad-space-3);
+}
+
+/* Credentials Section */
+.feqad-credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--feqad-space-8);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feqad-credential-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.feqad-credential-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(34, 197, 94, 0.15);
+}
+
+.feqad-credential-image {
+  max-height: 10rem;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.1);
+}
+
+/* Margin Bottom 12 */
+.feqad-mb-12 {
+  margin-bottom: var(--feqad-space-12);
+}
+
+/* Max Height Utility */
+.feqad-max-h-40 {
+  max-height: 10rem;
+}
+
+/* Width Auto */
+.feqad-w-auto {
+  width: auto;
+}
+
+/* Rounded Utilities */
+.feqad-rounded-lg {
+  border-radius: 12px;
+}
+
+/* Shadow Utilities */
+.feqad-shadow-md {
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.1);
+}
+
+/* Enhanced Mobile Responsive Design */
+@media (max-width: 768px) {
+  /* Container mobile optimization */
+  .feqad-container {
+    width: 100% !important;
+    padding: 0 1rem !important;
+    max-width: 100% !important;
+  }
+
+  /* Hero section mobile layout */
+  .feqad-hero {
+    min-height: 100vh !important;
+    padding: 2rem 0 !important;
+  }
+
+  .feqad-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+    align-items: center !important;
+    padding: 0 1rem !important;
+  }
+  
+  .feqad-hero-image {
+    transform: none !important;
+    max-width: 300px !important;
+    width: 85% !important;
+    margin: 0 auto !important;
+    order: 1 !important; /* Image first on mobile */
+  }
+
+  .feqad-hero-text {
+    order: 2 !important; /* Text after image on mobile */
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .feqad-hero-text h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .feqad-hero-text p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Grid layouts mobile optimization */
+  .feqad-services-grid,
+  .feqad-packages-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 0 1rem !important;
+    max-width: 100% !important;
+  }
+  
+  /* Section spacing mobile */
+  .feqad-section {
+    padding: 3rem 0 !important;
+  }
+
+  .feqad-compact-section {
+    padding: 2rem 0 !important;
+  }
+
+  /* Card mobile optimization */
+  .feqad-card {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    padding: 1.5rem !important;
+  }
+
+  .feqad-package-card {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    padding: 1.5rem !important;
+  }
+
+  /* Typography mobile scaling */
+  .feqad-section-heading {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .feqad-card-title {
+    font-size: 1.3rem !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+  }
+
+  .feqad-body-text {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+  }
+
+  /* Button mobile optimization */
+  .feqad-btn {
+    width: 100% !important;
+    padding: 0.75rem 1.25rem !important;
+    font-size: 0.9rem !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  /* Extra services grid mobile */
+  .feqad-extra-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 0 1rem !important;
+  }
+
+  /* Credentials section mobile */
+  .feqad-credentials-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 columns on mobile */
+    gap: 1rem !important;
+    padding: 0 1rem !important;
+  }
+
+  .feqad-credential-image {
+    max-height: 8rem !important;
+    width: 100% !important;
+    object-fit: contain !important;
+  }
+
+  /* Testimonials mobile */
+  .testimonial-card {
+    padding: 1.5rem !important;
+    margin: 0 1rem !important;
+    max-width: 100% !important;
+  }
+
+  .testimonial-quote {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Form elements mobile */
+  .feqad-input,
+  .feqad-textarea,
+  .feqad-select {
+    width: 100% !important;
+    padding: 0.75rem !important;
+    font-size: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Navigation dots mobile */
+  .testimonial-dots {
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Video modal mobile */
+  .video-modal {
+    width: 95vw !important;
+    max-width: 95vw !important;
+    max-height: 90vh !important;
+    margin: 2.5vh auto !important;
+  }
+
+  /* Booking dialog mobile */
+  .booking-dialog {
+    width: 95vw !important;
+    max-width: 95vw !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    margin: 2.5vh auto !important;
+  }
+
+  /* Remove animations on mobile for better performance */
+  .feqad-fade-in,
+  .floating-section {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* Touch-friendly interactive elements */
+  .feqad-card:hover,
+  .feqad-package-card:hover,
+  .feqad-btn:hover {
+    transform: none !important; /* Remove hover transforms on mobile */
+  }
+
+  /* Ensure proper spacing between elements */
+  .feqad-mb-6 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .feqad-mb-8 {
+    margin-bottom: 2rem !important;
+  }
+
+  .feqad-mb-12 {
+    margin-bottom: 3rem !important;
+  }
+}
+
+/* Extra small devices optimization */
+@media (max-width: 375px) {
+  .feqad-container {
+    padding: 0 0.75rem !important;
+  }
+
+  .feqad-hero-text h1 {
+    font-size: 1.9rem !important;
+  }
+
+  .feqad-section-heading {
+    font-size: 1.6rem !important;
+  }
+
+  .feqad-credentials-grid {
+    grid-template-columns: 1fr !important; /* Single column on very small screens */
+  }
+
+  .feqad-btn {
+    padding: 0.65rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Animations */
+@keyframes feqadFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feqad-fade-in {
+  animation: feqadFadeIn 0.6s ease-out forwards;
+}
+
+/* Pricing Highlight */
+.feqad-price {
+  font-family: var(--feqad-font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--feqad-primary);
+  margin-bottom: var(--feqad-space-4);
+}
+
+.feqad-savings {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--feqad-sage);
+}
+
+/* Text Center Utility */
+.feqad-text-center {
+  text-align: center;
+}
+
+/* Max Width Utility */
+.feqad-max-w-3xl {
+  max-width: 48rem;
+}
+
+/* Margin Auto Utility */
+.feqad-mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Full Width Utility */
+.feqad-w-full {
+  width: 100%;
+}
+
+/* Flex Utilities */
+.feqad-flex {
+  display: flex;
+}
+
+.feqad-justify-between {
+  justify-content: space-between;
+}
+
+.feqad-items-center {
+  align-items: center;
+}
+
+/* Margin Bottom Utilities */
+.feqad-mb-4 {
+  margin-bottom: var(--feqad-space-4);
+}
+
+.feqad-mb-8 {
+  margin-bottom: var(--feqad-space-8);
+}
+
+.feqad-mb-20 {
+  margin-bottom: var(--feqad-space-20);
+}
+
+/* Margin Top Utilities */
+.feqad-mt-4 {
+  margin-top: var(--feqad-space-4);
+}

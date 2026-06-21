@@ -1,0 +1,31 @@
+# Social Media Crawler Detection and Static File Serving
+# This configuration serves static HTML files to social media crawlers
+# while serving the React app to regular users
+
+# Add this to your server configuration (Nginx example)
+# If using Render/Vercel/Netlify, add this as _redirects or similar
+
+# Detect social media crawlers and serve static HTML
+location / {
+    # Check if request is from a social media crawler
+    if ($http_user_agent ~* "facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Applebot|SkypeUriPreview|Slackbot|TelegramBot|DiscordBot") {
+        # Check if static HTML exists for the path
+        try_files $uri.html $uri/index.html @react;
+    }
+    
+    # For regular users, serve React app
+    try_files $uri $uri/ @react;
+}
+
+location @react {
+    # Serve React app for regular users
+    try_files /index.html =404;
+}
+
+# Alternative approach for platforms like Netlify/Vercel
+# Create _redirects file with:
+# /feqad-services  /feqad-services.html  200  User-Agent: facebookexternalhit/*
+# /mesqal-services  /mesqal-services.html  200  User-Agent: facebookexternalhit/*
+# /lifestyle-shift  /lifestyle-shift.html  200  User-Agent: facebookexternalhit/*
+# /retreat-tours-workshops  /retreat-tours-workshops.html  200  User-Agent: facebookexternalhit/*
+# /blog  /blog.html  200  User-Agent: facebookexternalhit/*

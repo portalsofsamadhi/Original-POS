@@ -1,0 +1,53 @@
+User-agent: *
+Allow: /
+
+# Social Media Crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: DiscordBot
+Allow: /
+
+# Primary public pages
+Allow: /
+Allow: /about
+Allow: /production
+Allow: /experiences
+Allow: /book-now
+Allow: /courses
+Allow: /plan-retreat
+
+# Private, transactional, and redirect paths
+Disallow: /profile
+Disallow: /booking
+Disallow: /booking-payment
+Disallow: /booking-success
+Disallow: /booking-cancel
+Disallow: /feqad-services
+Disallow: /mesqal-services
+Disallow: /retreat-tours-workshops
+Disallow: /booking-services
+Disallow: /lifestyle-shift
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+Sitemap: https://portalsofsamadhi.com/sitemap.xml

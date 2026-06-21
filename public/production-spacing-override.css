@@ -1,0 +1,32 @@
+/* Production-only: Enforce consistent section spacing between all main sections */
+body[data-env="production"] .mbg-section,
+body[data-env="production"] .mbg-bg-white {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 1023px) {
+  body[data-env="production"] .mbg-section,
+  body[data-env="production"] .mbg-bg-white {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* Forced Colors Mode fallback for accessibility (replacement for -ms-high-contrast)
+   This reduces dependency on vendor-prefixed high-contrast rules and ensures
+   UI elements remain visible when the user enables forced colors. */
+@media (forced-colors: active) {
+  :root { color-scheme: light dark; }
+  /* Buttons and interactive elements should use system colors */
+  .mbg-btn, button, input, textarea, select {
+    forced-color-adjust: none;
+    background: Canvas !important;
+    color: CanvasText !important;
+    border-color: CanvasText !important;
+  }
+  /* Links should remain visible */
+  a { color: LinkText !important; }
+}

@@ -1,0 +1,173 @@
+﻿# LFS to Google Drive URL Mapping
+# Format: local_path=google_drive_url
+# Replace with actual Google Drive direct download links
+
+# Profile Images
+public/feqad-wolde.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/mesqal-kebra.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/poslogo.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/Welcome.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/Reviews/Screenshot 2023-08-13 140323.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/Reviews/Screenshot 2023-08-13 140349.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/client-logos/Screenshot 2024-05-26 122411.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/client-logos/bakaberg-logo.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/client-logos/bella-logo.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/client-logos/blm-boston-logo.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/client-logos/client-1-logo.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/client-logos/daraja-logo.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/client-logos/entrepreneurs-playground-logo.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/client-logos/idea-to-pitch-logo.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/client-logos/lion-pub-logo.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/client-logos/rastafari-tv-logo.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/client-logos/site-media-logo.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/client-logos/slfnd-logo.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/1bfe50e8-e03f-46ea-8a56-7f523258bf06.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/3e4e4712-cf51-47e6-b3cc-5dd1e19356de.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Phone/1000128600.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Phone/1000128622.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Phone/1000128624.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/13315_1369e9efd35a8daf5c2382e05edaec5f-1_8_2024 1_27_12 PM.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/42913689_274455656520834_459084971593480948_n.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/911589718929502 2.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/918773518211122.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/A sneak peak into the upcoming ≡ƒî║_ #innerlightreikimassage _.≡ƒî║ _infinitevortexoflight (can be found on facebook and will be featured on our .jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/Classic Dining 2.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/For Course_edited_edited.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/IMG-20200611-WA0028_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/Logo Plane_edited.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/PSX_20190326_183241.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/PSX_20190522_174003.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/PSX_20190522_174003_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/Picsart_22-06-21_21-55-35-921_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/Picsart_24-02-13_20-24-51-563.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/Untitled design.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/Untitled design1.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/client-1-logo.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/dji_fly_20241106_071414_11_1730895266744_photo.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/dji_fly_20241106_071424_12_1730895275009_photo.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/dji_fly_20241106_071758_19_1730895488211_photo_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/download (1).png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/download.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/fnm.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/pexels-ferdinandstudio-1059054.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/pexels-jonathanborba-19666218_edited_edited_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/pexels-olly-3768926_edited_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/pexels-portals-of-samadhi-luxury-travel-retreats-1039102407-20435172.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/pexels-shkrabaanthony-5890692.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/pexels-thirdman-6957896.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/Site Files/signal-2024-10-27-20-24-39-296-2_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/aditya-hegde-bvPo8LGat-4-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/alexis-plasencia-tTHLZtGL4Os-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/ali-abdul-rahman-Xva-TYqwHhA-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/angus-gray-qEaELLSYZW0-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/anirudh-chavali-JpeV5C_3M3Y-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/artiom-vallat-HWkd3r8uqzY-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/ashley-byrd-uUOQlm3Idv0-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/ashwin-n-YhWS5zoxj_E-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/blog/Reiki Wand For Website.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/blog/documerica-kabsnKYaSKs-unsplash (1).jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/blog/nick-andreka-A_TK0-yn3q4-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/blog/remove_watermark_image_20250610_111143.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/blog/szabo-viktor-2K7z8JNOyGU-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/certifications/Bodsphere's Certificate of 60-Hrs Yin Yoga Teacher Training Program.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/certifications/Darrian Williams's NLP Life Coach Certification-1.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/certifications/Reiki 1 2 Master Certificate - Darrian Ishmael Williams-1.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/certifications/Reiki 1 2 Master Certificate - Darrian Ishmael Williams-3.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/certifications/image_4b0e6694-6d8d-4a6f-bda8-9c467ffbad7220220415_012955.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/certifications/image_846d5c2b-f503-41c6-b5dd-f9a2395ea1b420220415_012950.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/daniel-sinoca-UjXGaJHH2jE-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/david-courbit-M8xxVih_V_U-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/deep-GmdmKWWwJFg-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/erastus-mccart-i6UdBLu_wwk-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/filip-baotic-C30y56k2Tk0-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/francesco-ungaro-nlqqldluDBw-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/genevieve-dallaire-7zT-vbOFoSM-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/harry-holder-NbPJ8HM-w8c-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/heather-green-SzDrE3_msOs-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/ian-keefe-NBQhCKtg_9Y-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/image.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/jason-leung-42zmwXreyPE-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/kounotori-xTi_UIcMzs4-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/laura-barry-nEw6iC2SOcM-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/logan-voss-8a1JzyuJfQw-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/marek-piwnicki-ugZ5WUI3FO4-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/marissa-rodriguez-2mKYEVGA4jE-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/mink-mingle-g0Qdolm3K14-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/nichika-sakurai-lfvntJw1M28-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/sara-grandieri-k-4cA-5bVO0-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/silas-baisch-K785Da4A_JA-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/texture.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/tri-ast-mvCQnqvGlcg-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images - Copy/zhangzui-5z8KOeEvlns-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Cell Phone/Picsart_25-06-23_02-22-07-116.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Cell Phone/Picsart_25-06-23_02-26-36-945.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Cell Phone/Picsart_25-06-23_02-29-13-465.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Cell Phone/Picsart_25-06-23_02-30-52-289.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Cell Phone/Picsart_25-06-23_02-43-32-743.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Cell Phone/VID-20250623-WA0000.mp4=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/13315_1369e9efd35a8daf5c2382e05edaec5f-1_8_2024 1_27_12 PM.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/42913689_274455656520834_459084971593480948_n.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/911589718929502 2.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/918773518211122.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/Classic Dining 2.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/For Course_edited_edited.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/IMG-20200611-WA0028_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/Logo Plane_edited.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/PSX_20190522_174003.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/PSX_20190522_174003_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/Picsart_22-06-21_21-55-35-921_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/Picsart_24-02-13_20-24-51-563.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/Untitled design.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/Untitled design1.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/client-1-logo.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/dji_fly_20241106_071414_11_1730895266744_photo.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/dji_fly_20241106_071424_12_1730895275009_photo.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/dji_fly_20241106_071758_19_1730895488211_photo_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/download (1).png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/download.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/fnm.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/pexels-ferdinandstudio-1059054.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/pexels-jonathanborba-19666218_edited_edited_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/pexels-olly-3768926_edited_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/pexels-portals-of-samadhi-luxury-travel-retreats-1039102407-20435172.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/pexels-shkrabaanthony-5890692.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/pexels-thirdman-6957896.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/Site Files/signal-2024-10-27-20-24-39-296-2_edited.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/alexis-plasencia-tTHLZtGL4Os-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/ali-abdul-rahman-Xva-TYqwHhA-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/angus-gray-qEaELLSYZW0-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/anirudh-chavali-JpeV5C_3M3Y-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/artiom-vallat-HWkd3r8uqzY-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/ashley-byrd-uUOQlm3Idv0-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/certifications/Bodsphere's Certificate of 60-Hrs Yin Yoga Teacher Training Program.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/certifications/Darrian Williams's NLP Life Coach Certification-1.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/certifications/Reiki 1 2 Master Certificate - Darrian Ishmael Williams-3.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/certifications/image_4b0e6694-6d8d-4a6f-bda8-9c467ffbad7220220415_012955.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/certifications/image_846d5c2b-f503-41c6-b5dd-f9a2395ea1b420220415_012950.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/daniel-sinoca-UjXGaJHH2jE-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/david-courbit-M8xxVih_V_U-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/deep-GmdmKWWwJFg-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/digital-transformation.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/erastus-mccart-i6UdBLu_wwk-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/filip-baotic-C30y56k2Tk0-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/francesco-ungaro-nlqqldluDBw-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/genevieve-dallaire-7zT-vbOFoSM-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/harry-holder-NbPJ8HM-w8c-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/heather-green-SzDrE3_msOs-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/ian-keefe-NBQhCKtg_9Y-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/image.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/jason-leung-42zmwXreyPE-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/laura-barry-nEw6iC2SOcM-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/logan-voss-8a1JzyuJfQw-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/marek-piwnicki-ugZ5WUI3FO4-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/marissa-rodriguez-2mKYEVGA4jE-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/mindful-leadership.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/mink-mingle-g0Qdolm3K14-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/nichika-sakurai-lfvntJw1M28-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/sara-grandieri-k-4cA-5bVO0-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/silas-baisch-K785Da4A_JA-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/texture.png=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/tri-ast-mvCQnqvGlcg-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/images/zhangzui-5z8KOeEvlns-unsplash.jpg=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+public/videos/13279103_3840_2160_24fps.mp4=https://drive.google.com/uc?id=YOUR_FILE_ID_HERE
+

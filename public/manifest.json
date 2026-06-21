@@ -1,0 +1,21 @@
+{
+  "name": "Samadhi Productions",
+  "short_name": "Samadhi",
+  "description": "Thoughtful Media. Immersive Worlds. Premium Afro-futurist cinematic production from Samadhi Productions, the creative studio of Portals of Samadhi.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "icons": [
+    {
+      "src": "/samadhi-productions-logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "/samadhi-productions-logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}

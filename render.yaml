@@ -1,0 +1,54 @@
+services:
+  # Node API (handles /api/* including send-email)
+  - type: web
+    name: pos-api
+    env: node
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: node server/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: TEAM_EMAIL
+        value: info@portalsofsamadhi.com
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USER
+        value: portalsofsamadhi@gmail.com
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        value: "Portals of Samadhi <info@portalsofsamadhi.com>"
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: ADMIN_BEARER_TOKEN
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+
+  # Static frontend (calls pos-api for form submissions)
+  - type: web
+    name: pos-website
+    env: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: ""
+      - key: VITE_NEWSLETTER_API_URL
+        value: ""
+      - key: VITE_APP_URL
+        value: https://www.portalsofsamadhi.com
+      - key: VITE_GOOGLE_CLIENT_ID
+        sync: false
+      - key: VITE_STRIPE_PUBLIC_KEY
+        sync: false
+      - key: VITE_PAYPAL_CLIENT_ID
+        sync: false
