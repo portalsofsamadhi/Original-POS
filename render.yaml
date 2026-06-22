@@ -15,15 +15,21 @@ services:
       - key: TEAM_EMAIL
         value: info@portalsofsamadhi.com
       - key: SMTP_HOST
-        value: smtp.gmail.com
+        value: smtp.zoho.com
       - key: SMTP_PORT
-        value: "587"
+        value: "465"
       - key: SMTP_USER
-        value: portalsofsamadhi@gmail.com
+        value: info@portalsofsamadhi.com
       - key: SMTP_PASS
         sync: false
       - key: SMTP_FROM
-        value: "Portals of Samadhi <info@portalsofsamadhi.com>"
+        value: "Samadhi Productions <info@portalsofsamadhi.com>"
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_REDIRECT_URI
+        value: https://www.portalsofsamadhi.com/profile
+      - key: MONGODB_URI
+        sync: false
       - key: GOOGLE_CLIENT_ID
         sync: false
       - key: JWT_SECRET
