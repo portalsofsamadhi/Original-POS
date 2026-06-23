@@ -15,7 +15,7 @@ services:
       - key: TEAM_EMAIL
         value: info@portalsofsamadhi.com
       - key: SMTP_HOST
-        value: smtppro.zoho.com
+        value: smtp.zoho.eu
       - key: SMTP_PORT
         value: "465"
       - key: SMTP_USER
