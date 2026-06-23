@@ -1,6 +1,8 @@
 const SAME_ORIGIN_API_HOSTS = [
   "portalsofsamadhi.com",
   "www.portalsofsamadhi.com",
+  "samadhiproductions.com",
+  "www.samadhiproductions.com",
 ];
 
 function isSameOriginApiHost(hostname: string): boolean {

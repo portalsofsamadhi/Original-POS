@@ -14,9 +14,11 @@ const {
   getFromAddress,
   getMailTransporter,
   getSmtpHost,
+  getSmtpPort,
   getSmtpUser,
   getTeamEmail,
   isSmtpConfigured,
+  verifySmtpAuth,
 } = require('./smtpConfig.cjs');
 
 const __filename = fileURLToPath(import.meta.url);
@@ -32,8 +34,11 @@ const PORT = process.env.PORT || 10000;
 const defaultOrigins = [
   'https://www.portalsofsamadhi.com',
   'https://portalsofsamadhi.com',
+  'https://www.samadhiproductions.com',
+  'https://samadhiproductions.com',
   'http://localhost:3002',
-  'http://localhost:5173'
+  'http://localhost:3003',
+  'http://localhost:5173',
 ];
 
 let allowedOrigins = defaultOrigins;
@@ -72,15 +77,26 @@ if (fsSync.existsSync(distDir)) {
 }
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
+app.get('/api/health', async (req, res) => {
+  const smtp = {
+    configured: isSmtpConfigured(),
+    host: getSmtpHost(),
+    port: getSmtpPort(),
+    user: getSmtpUser(),
+  };
+
+  if (req.query.verify === '1' || req.query.verify === 'true') {
+    const auth = await verifySmtpAuth(req.query.force === '1');
+    smtp.authOk = auth.ok;
+    if (!auth.ok && auth.error) {
+      smtp.authError = auth.error;
+    }
+  }
+
   res.json({
     status: 'healthy',
     timestamp: new Date().toISOString(),
-    smtp: {
-      configured: isSmtpConfigured(),
-      host: getSmtpHost(),
-      user: getSmtpUser(),
-    },
+    smtp,
     teamEmail: getTeamEmail(),
   });
 });
