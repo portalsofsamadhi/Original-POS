@@ -7,6 +7,9 @@ dist/
 build/
 .env
 
+# Cinematic shorts live on POS-Website only — do not commit multi-GB mp4s here
+public/Shorts/*.mp4
+
 # Ensure local and any backend env files are ignored
 server/.env
 php-backend/.env
@@ -53,4 +56,4 @@ core
 
 .github/
 
-.env 
+.env
