@@ -66,15 +66,24 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static assets from the frontend build (dist) when present.
-// This ensures files like /Welcome.webp, JS and CSS assets are served
-// directly instead of returning 404. We keep this permissive so it
-// works both in development (when dist may not exist) and in production
-// when the combined web+api service hosts the built frontend.
-const distDir = path.join(__dirname, '..', 'dist');
-if (fsSync.existsSync(distDir)) {
-  app.use(express.static(distDir, { maxAge: '1d' }));
+// Vite build output (npm run build → ./dist). Used later for static + SPA.
+// STATIC_DIR can override (absolute or relative to process.cwd()).
+function resolveDistDir() {
+  if (process.env.STATIC_DIR) {
+    return path.resolve(process.env.STATIC_DIR);
+  }
+  const candidates = [
+    path.join(__dirname, '..', 'dist'),
+    path.join(process.cwd(), 'dist'),
+  ];
+  for (const dir of candidates) {
+    if (fsSync.existsSync(path.join(dir, 'index.html'))) return dir;
+  }
+  return candidates[0];
 }
+const distDir = resolveDistDir();
+const distIndex = path.join(distDir, 'index.html');
+const hasFrontend = fsSync.existsSync(distIndex);
 
 // Health check endpoint
 app.get('/api/health', async (req, res) => {
@@ -359,22 +368,30 @@ app.get('/api/profile', (req, res) => {
   });
 });
 
-// Serve static frontend (if present) and provide SPA routing.
-app.get('/{*splat}', async (req, res, next) => {
-  // If this is an API route, return 404 JSON (API does not have this endpoint)
-  if (req.path.startsWith('/api/')) {
+// Compiled frontend (Vite → dist): assets first, then SPA fallback for client routes.
+// Registered after /api/* so API handlers always win.
+if (hasFrontend) {
+  app.use(
+    express.static(distDir, {
+      maxAge: process.env.NODE_ENV === 'production' ? '7d' : 0,
+      index: false,
+      fallthrough: true,
+    })
+  );
+}
+
+// SPA fallback: non-API GETs serve index.html so React Router can handle the path.
+app.get('/{*splat}', (req, res) => {
+  if (req.path.startsWith('/api')) {
     return res.status(404).json({ error: 'API endpoint not found' });
   }
-
-  const distIndex = path.join(__dirname, '..', 'dist', 'index.html');
-  try {
-    // Check if dist/index.html exists
-    await fs.access(distIndex);
-    return res.sendFile(distIndex);
-  } catch (err) {
-    // If no frontend build is present, fallback to 404 for non-API routes
-    return res.status(404).json({ error: 'Not found' });
+  if (!hasFrontend) {
+    return res.status(404).json({
+      error: 'Not found',
+      detail: 'Frontend build missing. Run npm run build (expects dist/index.html).',
+    });
   }
+  return res.sendFile(distIndex);
 });
 
 // JSON body parse errors (avoid generic 500 for malformed payloads)
@@ -394,6 +411,11 @@ app.use((error, req, res, next) => {
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 POS API Server running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+  if (hasFrontend) {
+    console.log(`Serving static frontend from: ${distDir}`);
+  } else {
+    console.log(`No frontend build at ${distDir} (API-only). Run npm run build to enable.`);
+  }
   // Log presence (not values) of critical runtime secrets to help with prod verification
   console.log('GOOGLE_CLIENT_ID present:', !!process.env.GOOGLE_CLIENT_ID);
   console.log('VITE_GOOGLE_CLIENT_ID present (build-time):', !!process.env.VITE_GOOGLE_CLIENT_ID);
