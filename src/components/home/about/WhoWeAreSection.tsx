@@ -45,11 +45,11 @@ We host small groups and gatherings that feel personal: countryside places our f
           <div className="mbg-text-center">
             <div className="scroll-scale samadhi-about-logo-wrap">
               <img
-                src="/samadhi-transparent-logo.png"
-                alt="Samadhi Productions phoenix emblem"
+                src="/poslogo.webp"
+                alt="Portals of Samadhi original logo"
                 className="samadhi-about-logo"
-                width={4096}
-                height={2848}
+                width={1024}
+                height={1024}
                 decoding="async"
               />
             </div>

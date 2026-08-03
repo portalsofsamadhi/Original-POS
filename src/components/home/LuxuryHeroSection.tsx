@@ -23,11 +23,10 @@ const LuxuryHeroSection = () => (
     <div className="luxury-hero__inner">
       <p className="luxury-hero__eyebrow">Jamaica · Explore - Heal - Thrive</p>
       <h1 className="luxury-hero__title">
-        Walk the Land.
+        Walk the Land of the{" "}
+        <span className="luxury-hero__title-nowrap">Ancient Maroons</span>.
         <br />
-        Feel the Lineage.
-        <br />
-        <em>Return Transformed.</em>
+        <em>Experience the True Jamaica.</em>
       </h1>
       <div className="luxury-hero__desc luxury-hero__desc--stack">
         <p>
@@ -45,16 +44,19 @@ const LuxuryHeroSection = () => (
           Explore Tours
           <ArrowRight size={14} />
         </Link>
-        <Link to="/plan-retreat" className="luxury-btn luxury-btn--outline">
-          Plan an Event
+        <Link to="/airport-runs" className="luxury-btn luxury-btn--gold">
+          Airport Runs
+          <ArrowRight size={14} />
         </Link>
       </div>
-      <p className="luxury-hero__subcta">
-        Looking for a private healing session?{" "}
-        <Link to="/book-now" className="luxury-hero__subcta-link">
-          Book here
+      <div className="luxury-hero__actions luxury-hero__actions--secondary">
+        <Link to="/plan-retreat" className="luxury-btn luxury-btn--outline luxury-btn--sm">
+          Plan a Retreat
         </Link>
-      </p>
+        <Link to="/courses" className="luxury-btn luxury-btn--outline luxury-btn--sm">
+          Realignment Program
+        </Link>
+      </div>
     </div>
   </section>
 );

@@ -1,4 +1,4 @@
-import { Suspense, useState, useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
@@ -7,7 +7,6 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from "./components/home";
 import ProfilePage from "./pages/profile";
 import Layout from "./components/layout/Layout";
-import SplashScreen from "./components/SplashScreen";
 import { PAYMENT_CONFIG } from "./config/payment";
 import './utils/imagePreloader';
 import { Toaster } from "./components/ui/toaster";
@@ -20,6 +19,8 @@ import BookingPaymentPage from "./pages/booking-payment";
 import BookNowPage from "./pages/book-now";
 import AboutPage from "./pages/about";
 import ExperiencesPage from "./pages/experiences";
+import AirportRunsPage from "./pages/airport-runs";
+import CustomRetreatPage from "./pages/custom-retreat";
 import JourneyStoryPage from "./pages/JourneyStoryPage";
 import JourneyPhotoPage from "./pages/JourneyPhotoPage";
 import NotFoundPage from "./pages/404";
@@ -45,35 +46,18 @@ const ExternalRedirect = ({ url, from }: { url: string; from: string }) => {
 
 function App() {
   const location = useLocation();
-  const [showSplash, setShowSplash] = useState(() => {
-    const hasSeenSplash = localStorage.getItem('hasSeenSplash');
-    return !hasSeenSplash;
-  });
-
-  const handleSplashFinished = () => {
-    setShowSplash(false);
-    localStorage.setItem('hasSeenSplash', 'true');
-  };
-  
-  useEffect(() => {
-    if (location.pathname !== "/") {
-      setShowSplash(false);
-    }
-  }, [location.pathname]);
 
   useEffect(() => {
     if (location.hash) {
-      const delay = showSplash && location.pathname === "/" ? 5200 : 100;
-      
       const timer = setTimeout(() => {
         const element = document.getElementById(location.hash.slice(1));
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: "smooth" });
         }
-      }, delay);
+      }, 100);
       return () => clearTimeout(timer);
     }
-  }, [location.pathname, location.hash, showSplash]);
+  }, [location.pathname, location.hash]);
 
   return (
     <HelmetProvider>
@@ -86,7 +70,6 @@ function App() {
       >
         <Suspense fallback={<p>Loading...</p>}>
           <ScrollToTop />
-          {showSplash && <SplashScreen onFinished={handleSplashFinished} duration={5000} />}
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -96,6 +79,9 @@ function App() {
               <Route path="/production" element={<ExternalRedirect url="https://www.samadhiproductions.com/production" from="/production" />} />
               <Route path="/preview/:shortId" element={<ExternalRedirect url="https://www.samadhiproductions.com" from="/preview" />} />
               <Route path="/experiences" element={<ExperiencesPage />} />
+              <Route path="/airport-runs" element={<AirportRunsPage />} />
+              <Route path="/custom-retreat" element={<CustomRetreatPage />} />
+              <Route path="/airport-pickup" element={<LegacyRedirect to="/airport-runs" from="/airport-pickup" />} />
               <Route path="/feqad-services" element={<LegacyRedirect to="/experiences" from="/feqad-services" />} />
               <Route path="/lifestyle-shift" element={<LegacyRedirect to="/experiences" from="/lifestyle-shift" />} />
               <Route path="/mesqal-services" element={<LegacyRedirect to="/experiences" from="/mesqal-services" />} />

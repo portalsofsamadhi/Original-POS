@@ -70,8 +70,16 @@ const ExperiencesSection = ({ pageMode = false }: ExperiencesSectionProps) => (
             <Link to="/experiences" className="luxury-btn luxury-btn--gold">
               Explore Tours
             </Link>
-            <Link to="/plan-retreat" className="luxury-btn luxury-btn--outline">
-              Plan a Retreat or Workshop
+            <Link to="/airport-runs" className="luxury-btn luxury-btn--gold">
+              Airport Runs
+            </Link>
+          </div>
+          <div className="luxury-hero__actions luxury-hero__actions--secondary">
+            <Link to="/plan-retreat" className="luxury-btn luxury-btn--outline luxury-btn--sm">
+              Plan a Retreat
+            </Link>
+            <Link to="/courses" className="luxury-btn luxury-btn--outline luxury-btn--sm">
+              Realignment Program
             </Link>
           </div>
         </motion.div>

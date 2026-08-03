@@ -36,6 +36,16 @@ const PageHeader = ({
   >
     <div className="luxury-page-banner__accent" aria-hidden="true" />
     <div className="luxury-page-banner__inner">
+      {variant === "about" ? (
+        <img
+          src="/poslogo.webp"
+          alt="Portals of Samadhi"
+          className="luxury-page-banner__logo"
+          width={120}
+          height={120}
+          decoding="async"
+        />
+      ) : null}
       <p className="luxury-hero__eyebrow">{eyebrow}</p>
       <h1 className="luxury-page-banner__title">{title}</h1>
       {description ? (

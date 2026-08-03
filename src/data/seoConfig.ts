@@ -45,8 +45,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     title: "Our Story | Portals of Samadhi",
     description:
       "Rooted in Scotts Hall Maroon lineage, energy healing, and land stewardship - Portals of Samadhi hosts authentic family tours and sacred events across Jamaica.",
-    image: "/samadhi-transparent-logo.png",
-    imageAlt: "Portals of Samadhi emblem",
+    image: "/poslogo.webp",
+    imageAlt: "Portals of Samadhi original logo",
     keywords: [
       "portals of samadhi story",
       "scotts hall maroon heritage",
@@ -92,6 +92,40 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       "portals of samadhi",
     ],
     priority: 0.9,
+    changefreq: "weekly",
+  },
+  "/airport-runs": {
+    path: "/airport-runs",
+    title: "Airport Runs Jamaica | Private Pickup & Drop-Off | Portals of Samadhi",
+    description:
+      "Private Jamaica airport runs with host care — one-way pickup or drop-off from $95, round trip $180. Land well with Portals of Samadhi, not a random cab.",
+    image: "/Welcome.webp",
+    imageAlt: "Private airport transfer and host welcome with Portals of Samadhi in Jamaica",
+    keywords: [
+      "jamaica airport pickup",
+      "kingston airport transfer",
+      "private airport run jamaica",
+      "airport drop off jamaica",
+      "meet and greet jamaica airport",
+      "portals of samadhi airport",
+    ],
+    priority: 0.9,
+    changefreq: "weekly",
+  },
+  "/custom-retreat": {
+    path: "/custom-retreat",
+    title: "Book Your Retreat | Simple or Fully Custom | Portals of Samadhi",
+    description:
+      "Book a simple beach retreat or build a fully custom Jamaica tour with Portals of Samadhi — land, lineage, and healing.",
+    image: "/Welcome.webp",
+    imageAlt: "Custom Jamaica retreat with Portals of Samadhi",
+    keywords: [
+      "custom jamaica retreat",
+      "simple beach retreat jamaica",
+      "private jamaica tour",
+      "portals of samadhi retreat",
+    ],
+    priority: 0.85,
     changefreq: "weekly",
   },
   "/book-now": {

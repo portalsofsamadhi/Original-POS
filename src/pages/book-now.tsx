@@ -199,9 +199,16 @@ const BookNowPage = () => {
       <div className="luxury-page min-h-screen pb-8">
         <PageHeader
           variant="book"
-          eyebrow="Portals of Samadhi"
+          eyebrow="Portals of Samadhi · Free to start"
           title={pageTitle}
           description={pageDescription}
+          meta={
+            <>
+              <span>2 short steps</span>
+              <span>Confirm within 1 business day</span>
+              <span>No pressure · clear next step</span>
+            </>
+          }
         />
         <div className="max-w-md mx-auto px-4" style={{ marginTop: "1.5rem" }}>
           <div className="mb-6">
@@ -212,6 +219,11 @@ const BookNowPage = () => {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back
             </button>
+            <p className="text-sm text-samadhi-cream/55 leading-relaxed mb-2">
+              {isInfoSessionFlow
+                ? "Complimentary discovery call. Pick a day and time, share your details, and we confirm by email."
+                : "You’re booking a paid session. Complete schedule and details, then continue to payment."}
+            </p>
           </div>
 
           <div className="flex items-center justify-between mb-8">

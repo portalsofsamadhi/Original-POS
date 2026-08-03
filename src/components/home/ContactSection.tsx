@@ -102,7 +102,7 @@ const ContactSection = () => {
     <section
       id="contact"
       className="samadhi-section samadhi-section--contact"
-      aria-label="Contact Samadhi Productions"
+      aria-label="Contact Portals of Samadhi"
       style={{ scrollMarginTop: "72px" }}
     >
       <div className="samadhi-section__inner">

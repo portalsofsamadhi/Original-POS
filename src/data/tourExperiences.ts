@@ -361,7 +361,6 @@ export const TOUR_EXPERIENCES: TourExperience[] = [
     includedGuests: 2,
     extraPerGuest: 15,
   },
-
 ];
 
 export const ACCOMMODATION_TYPES = [

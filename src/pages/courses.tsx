@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import SEO from "../components/SEO";
 import PageHeader from "../components/layout/PageHeader";
+import ConversionClose from "../components/layout/ConversionClose";
 import { PAGE_SEO } from "../data/seoConfig";
 import PayPalPayment from "../components/payment/PayPalPayment";
 import "../styles/luxury-theme.css";
@@ -390,6 +391,8 @@ const CoursesPage: React.FC = () => {
             </div>
           </section>
         </div>
+
+        <ConversionClose variant="healing" />
       </div>
 
       {showPaymentModal && (

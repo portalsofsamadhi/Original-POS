@@ -20,23 +20,23 @@ const ProductionPortalLink = () => (
           <span className="luxury-path-close__title">Tours</span>
           <span className="luxury-path-close__cta">Explore →</span>
         </Link>
-        <Link to="/plan-retreat" className="luxury-path-close__item">
-          <span className="luxury-path-close__label">Gather with us</span>
-          <span className="luxury-path-close__title">Events</span>
-          <span className="luxury-path-close__cta">Plan yours →</span>
-        </Link>
-        <Link to="/book-now" className="luxury-path-close__item">
-          <span className="luxury-path-close__label">Heal with us</span>
-          <span className="luxury-path-close__title">Sessions</span>
+        <Link to="/airport-runs" className="luxury-path-close__item">
+          <span className="luxury-path-close__label">Land well</span>
+          <span className="luxury-path-close__title">Airport Runs</span>
           <span className="luxury-path-close__cta">Book →</span>
         </Link>
       </div>
-      <p className="luxury-note" style={{ marginTop: "1.25rem", textAlign: "center" }}>
-        Want a longer guided journey from home?{" "}
-        <Link to="/courses" style={{ color: "var(--luxury-gold-light)" }}>
-          The Realignment Program
+      <div className="luxury-hero__actions luxury-hero__actions--secondary" style={{ marginTop: "1.25rem" }}>
+        <Link to="/plan-retreat" className="luxury-btn luxury-btn--outline luxury-btn--sm">
+          Plan a Retreat
         </Link>
-      </p>
+        <Link to="/courses" className="luxury-btn luxury-btn--outline luxury-btn--sm">
+          Realignment Program
+        </Link>
+        <Link to="/book-now" className="luxury-btn luxury-btn--outline luxury-btn--sm">
+          Book a session
+        </Link>
+      </div>
     </div>
 
     <div className="luxury-production-banner" style={{ marginTop: "2.5rem" }}>

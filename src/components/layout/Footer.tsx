@@ -8,6 +8,22 @@ import "../../styles/luxury-theme.css";
 const Footer = () => {
   return (
     <footer className="border-t border-[var(--luxury-gold-muted)] text-[var(--luxury-cream)] py-12 px-4 md:px-8 lg:px-12" style={{ background: 'var(--luxury-black)' }}>
+      <div className="max-w-7xl mx-auto mb-10">
+        <div className="luxury-footer-cta">
+          <h2 className="luxury-footer-cta__title">Ready when you are</h2>
+          <p className="luxury-footer-cta__text">
+            Free discovery sessions. Small groups. Real hosts on Jamaican land.
+          </p>
+          <div className="luxury-hero__actions" style={{ justifyContent: "center", marginBottom: 0 }}>
+            <Link to="/book-now" className="luxury-btn luxury-btn--gold">
+              Book a free session
+            </Link>
+            <Link to="/experiences" className="luxury-btn luxury-btn--outline">
+              Browse tours
+            </Link>
+          </div>
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
         <div className="flex flex-col space-y-4">
           <div className="flex items-center gap-3">
@@ -58,6 +74,7 @@ const Footer = () => {
           </h3>
           <ul className="space-y-2.5 text-sm">
             <li><Link to="/experiences" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Tours</Link></li>
+            <li><Link to="/airport-runs" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Airport Runs</Link></li>
             <li><Link to="/plan-retreat" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Plan an Event</Link></li>
             <li><Link to="/courses" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Courses</Link></li>
             <li><Link to="/book-now" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Book a Session</Link></li>
@@ -86,7 +103,7 @@ const Footer = () => {
             </a>
           </div>
           <a href="/#contact" className="text-sm text-[var(--luxury-gold)] hover:text-[var(--luxury-gold-light)] transition-colors">
-            Send a message →
+            Send a message on the home page →
           </a>
         </div>
       </div>

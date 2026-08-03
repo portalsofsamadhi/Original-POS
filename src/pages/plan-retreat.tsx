@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import SEO from "../components/SEO";
 import PageHeader from "../components/layout/PageHeader";
+import ConversionClose from "../components/layout/ConversionClose";
 import { PAGE_SEO } from "../data/seoConfig";
 import "../styles/luxury-theme.css";
 
@@ -539,7 +540,17 @@ Total estimate: $${total}`;
               Plan an Event <em>That Feels Like Home</em>
             </>
           }
-          description="We host and professionally plan retreats, workshops, multi-session series, and virtual gatherings - with the same grounded care we bring when we walk Jamaica’s land with guests."
+          description="We host and professionally plan retreats, workshops, multi-session series, and virtual gatherings—with the same grounded care we bring when we walk Jamaica’s land with guests."
+          actions={
+            <>
+              <a href="#event-builder" className="luxury-btn luxury-btn--gold">
+                Build your event
+              </a>
+              <Link to="/book-now" className="luxury-btn luxury-btn--outline">
+                Book a discovery call
+              </Link>
+            </>
+          }
           meta={
             <>
               <span>
@@ -555,7 +566,7 @@ Total estimate: $${total}`;
           }
         />
 
-        <div className="luxury-page-body">
+        <div className="luxury-page-body" id="event-builder">
           <div className="luxury-intro-block" style={{ marginTop: "2.5rem" }}>
             <p>
               Looking for more than a tour day? We also host and plan full events. That means
@@ -943,6 +954,8 @@ Total estimate: $${total}`;
             </aside>
           </div>
         </div>
+
+        <ConversionClose variant="events" />
       </div>
     </>
   );

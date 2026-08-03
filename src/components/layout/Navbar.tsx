@@ -53,6 +53,7 @@ const Navbar = () => {
     { name: 'Experiences', href: '/experiences' },
     { name: 'Gatherings', href: '/plan-retreat' },
     { name: 'Healing', href: '/book-now' },
+    { name: 'Airport Runs', href: '/airport-runs' },
     { name: 'About', href: '/about' },
   ];
 
@@ -128,11 +129,11 @@ const Navbar = () => {
               Samadhi Productions
             </a>
             <Link
-              to="/experiences"
+              to="/book-now"
               className="luxury-btn luxury-btn--gold"
               style={{ padding: '0.5rem 1rem', fontSize: '0.7rem' }}
             >
-              Explore Experiences
+              Book free session
             </Link>
             {renderProfileButton()}
             {user && (
@@ -182,11 +183,18 @@ const Navbar = () => {
             Samadhi Productions →
           </a>
           <Link
-            to="/experiences"
+            to="/book-now"
             className="block mt-3 px-4 py-3 text-center luxury-btn luxury-btn--gold"
             onClick={closeMobile}
           >
-            Explore Experiences
+            Book free session
+          </Link>
+          <Link
+            to="/experiences"
+            className="block mt-2 px-4 py-3 text-center luxury-btn luxury-btn--outline"
+            onClick={closeMobile}
+          >
+            Explore tours
           </Link>
           {user && (
             <button
