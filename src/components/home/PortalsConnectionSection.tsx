@@ -44,7 +44,7 @@ const PortalsConnectionSection = () => (
           Afro-futurism and soul-stirring storytelling.
         </p>
         <p className="samadhi-connection__lead samadhi-connection__lead--last">
-          It all began with Portals of Samadhi — our original sanctuary for healing arts,
+          It all began with Portals of Samadhi - our original sanctuary for healing arts,
           meditative experiences, cultural immersion, and transformative journeys in Jamaica.
         </p>
 

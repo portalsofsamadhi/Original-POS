@@ -3,7 +3,6 @@ import { PAGE_SEO } from "../data/seoConfig";
 import LuxuryHeroSection from "./home/LuxuryHeroSection";
 import LuxuryApproachSection from "./home/LuxuryApproachSection";
 import ExperiencesSection from "./home/ExperiencesSection";
-import ProductionPortalLink from "./home/ProductionPortalLink";
 import "../styles/luxury-theme.css";
 
 const Home = () => {
@@ -25,7 +24,6 @@ const Home = () => {
         <LuxuryHeroSection />
         <LuxuryApproachSection />
         <ExperiencesSection />
-        <ProductionPortalLink />
       </div>
     </>
   );

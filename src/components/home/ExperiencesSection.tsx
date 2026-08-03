@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Palmtree } from "lucide-react";
 import "../../styles/samadhi-sections.css";
+import "../../styles/luxury-theme.css";
 
 interface ExperiencesSectionProps {
   pageMode?: boolean;
@@ -18,9 +18,9 @@ const fadeUp = {
 
 const ExperiencesSection = ({ pageMode = false }: ExperiencesSectionProps) => (
   <section
-    id="experiences"
-    className={`samadhi-section samadhi-section--subtle${pageMode ? " samadhi-section--experiences-page" : ""}`}
-    aria-label="Retreat Tours from Portals of Samadhi"
+    id="on-the-land"
+    className={`samadhi-section samadhi-section--subtle luxury-section--experiences${pageMode ? " samadhi-section--experiences-page" : ""}`}
+    aria-label="Life on the land"
   >
     <div className="samadhi-section__inner">
       <motion.div
@@ -31,39 +31,66 @@ const ExperiencesSection = ({ pageMode = false }: ExperiencesSectionProps) => (
         variants={fadeUp}
         custom={0}
       >
-        <p className="samadhi-section__eyebrow">Portals of Samadhi</p>
+        <p className="samadhi-section__eyebrow">
+          {pageMode ? "Portals of Samadhi" : "On the Land"}
+        </p>
         <h2 className="samadhi-section__title" style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}>
           {pageMode ? (
-            <>Retreat <span className="samadhi-section__title-accent">Tours</span></>
+            <>
+              Tours &amp; <span className="samadhi-section__title-accent">True Roots</span>
+            </>
           ) : (
-            <>Jamaica <span className="samadhi-section__title-accent">Retreat Tours</span></>
+            <>
+              Explore. <span className="samadhi-section__title-accent">Forget the tour.</span>
+            </>
           )}
         </h2>
-        <p className="samadhi-section__desc">
+        <p className="samadhi-section__desc" style={{ maxWidth: "40rem" }}>
           {pageMode
-            ? "Authentic Jamaican retreat experiences, culture, healing, and community shaped with the same intention we bring to cinematic content."
-            : "Beyond the screen: immersive retreat tours in Jamaica blending culture, indigenous wisdom, and transformative experiences."}
+            ? "Choose from real activities on Jamaican land: nature, culture, healing, bush medicine, and more. We'll shape the days around you."
+            : "Leave the polished package behind. Make yourself at home in the countryside as we take you across hills and valleys into Jamaica's agricultural heartland: farms, forests, and quiet sanctuaries tended by our families and friends. This is where our tours live, and where many of our retreats and workshops begin too."}
         </p>
       </motion.div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-30px" }}
-        variants={fadeUp}
-        custom={1}
-        className="flex justify-center"
-      >
-        <Link to="/experiences" className="samadhi-exp-card samadhi-exp-card--clean" style={{ maxWidth: "420px", width: "100%" }}>
-          <Palmtree size={22} className="samadhi-exp-card__icon" strokeWidth={1.5} />
-          <span className="samadhi-exp-card__label">Immersive Travel</span>
-          <h3 className="samadhi-exp-card__title">Retreat Tours</h3>
-          <p className="samadhi-exp-card__text">
-            Jamaica retreat experiences blending culture, indigenous wisdom, healing arts, and community.
+      {!pageMode && (
+        <motion.div
+          className="luxury-land-proof"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-30px" }}
+          variants={fadeUp}
+          custom={1}
+        >
+          <p className="luxury-land-proof__quote">
+            You won&apos;t feel like a passenger on someone else&apos;s itinerary. You&apos;ll feel
+            welcomed as a guest into a living landscape, with hosts who cook, drive, and walk the
+            hills beside you.
           </p>
-          <span className="samadhi-exp-card__arrow">Explore →</span>
-        </Link>
-      </motion.div>
+          <div className="luxury-hero__actions" style={{ marginTop: "1.75rem" }}>
+            <Link to="/experiences" className="luxury-btn luxury-btn--gold">
+              Explore Tours
+            </Link>
+            <Link to="/plan-retreat" className="luxury-btn luxury-btn--outline">
+              Plan a Retreat or Workshop
+            </Link>
+          </div>
+        </motion.div>
+      )}
+
+      {pageMode && (
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-30px" }}
+          variants={fadeUp}
+          custom={1}
+          className="flex justify-center mt-10"
+        >
+          <Link to="/experiences" className="luxury-btn luxury-btn--gold">
+            Explore Tours
+          </Link>
+        </motion.div>
+      )}
     </div>
   </section>
 );

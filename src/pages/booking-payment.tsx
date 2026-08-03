@@ -46,8 +46,17 @@ const BookingPaymentPage: React.FC = () => {
     // First check if data is passed via navigation state (from Plan Retreat page)
     if (location.state) {
       const stateData = location.state as BookingDetails;
-      if (stateData.serviceId && stateData.serviceName && stateData.name) {
-        setBookingDetails(stateData);
+      if (stateData.serviceId && stateData.serviceName) {
+        setBookingDetails({
+          ...stateData,
+          name: stateData.name || 'Guest',
+          email: stateData.email || '',
+          phone: stateData.phone || '',
+          practitionerName: stateData.practitionerName || 'Portals of Samadhi',
+          date: stateData.date || 'To be confirmed',
+          time: stateData.time || 'To be confirmed',
+          serviceDuration: stateData.serviceDuration || '',
+        });
         return;
       }
     }
@@ -58,17 +67,17 @@ const BookingPaymentPage: React.FC = () => {
       serviceName: searchParams.get('serviceName') || '',
       servicePrice: parseFloat(searchParams.get('servicePrice') || '0'),
       serviceDuration: searchParams.get('serviceDuration') || '',
-      practitionerName: searchParams.get('practitionerName') || '',
-      date: searchParams.get('date') || '',
-      time: searchParams.get('time') || '',
-      name: searchParams.get('name') || '',
+      practitionerName: searchParams.get('practitionerName') || 'Portals of Samadhi',
+      date: searchParams.get('date') || 'To be confirmed',
+      time: searchParams.get('time') || 'To be confirmed',
+      name: searchParams.get('name') || 'Guest',
       email: searchParams.get('email') || '',
       phone: searchParams.get('phone') || '',
       notes: searchParams.get('notes') || undefined
     };
 
-    // Validate that we have the required booking information
-    if (!details.serviceId || !details.serviceName || !details.name) {
+    // One-click packages only need service identity + price; contact can be refined here
+    if (!details.serviceId || !details.serviceName) {
       navigate('/'); // Redirect to home if missing required data
       return;
     }
@@ -340,8 +349,10 @@ const BookingPaymentPage: React.FC = () => {
                   <>
                     <Separator />
                     <div>
-                      <span className="font-medium">Notes:</span>
-                      <p className="mt-1 text-gray-600 text-sm">{bookingDetails.notes}</p>
+                      <span className="font-medium">What&apos;s included / details:</span>
+                      <p className="mt-1 text-gray-600 text-sm whitespace-pre-line">
+                        {bookingDetails.notes}
+                      </p>
                     </div>
                   </>
                 )}

@@ -21,13 +21,14 @@ const Footer = () => {
                 Portals of Samadhi
               </h3>
               <p className="luxury-nav-tagline mt-0.5">
-                Healing · Retreats · Wellness
+                Explore · Heal · Thrive
               </p>
             </div>
           </div>
           <p className="text-[var(--luxury-cream-muted)] text-sm leading-relaxed max-w-sm">
-            A sanctuary for healing arts, retreat tours, virtual assistance, and transformative
-            wellness experiences rooted in indigenous wisdom and spiritual intention.
+            Come walk Jamaica’s out-of-the-way farms and forests, plan a retreat or workshop
+            with us, or book healing, including The Realignment Program. You won’t feel like a
+            tourist. You’ll feel like a guest.
           </p>
           <div className="flex space-x-3 mt-1">
             <Button variant="ghost" size="icon" asChild className="rounded-full hover:bg-[var(--luxury-charcoal)] text-[var(--luxury-gold-light)]">
@@ -56,8 +57,8 @@ const Footer = () => {
             Experiences
           </h3>
           <ul className="space-y-2.5 text-sm">
-            <li><Link to="/experiences" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Healing &amp; Wellness</Link></li>
-            <li><Link to="/plan-retreat" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Plan a Retreat</Link></li>
+            <li><Link to="/experiences" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Tours</Link></li>
+            <li><Link to="/plan-retreat" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Plan an Event</Link></li>
             <li><Link to="/courses" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Courses</Link></li>
             <li><Link to="/book-now" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Book a Session</Link></li>
             <li><Link to="/about" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">About Us</Link></li>
@@ -70,7 +71,7 @@ const Footer = () => {
           </h3>
           <div className="flex items-start space-x-3 text-sm">
             <MapPin className="h-4 w-4 text-[var(--luxury-gold)] mt-0.5 shrink-0" />
-            <span className="text-[var(--luxury-cream-muted)]">Oakland, CA · Airy Castle, Jamaica</span>
+            <span className="text-[var(--luxury-cream-muted)]">Kingston, Jamaica</span>
           </div>
           <div className="flex items-center space-x-3 text-sm">
             <Phone className="h-4 w-4 text-[var(--luxury-gold)] shrink-0" />

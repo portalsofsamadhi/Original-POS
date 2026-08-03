@@ -12,8 +12,10 @@ import { getFormSubmissionErrorMessage } from "../utils/formErrorMessage";
 import { TEAM_EMAIL } from "../config/email";
 import { toast } from "../components/ui/use-toast";
 import SEO from "../components/SEO";
+import PageHeader from "../components/layout/PageHeader";
 import { PAGE_SEO } from "../data/seoConfig";
 import { ArrowLeft, Check } from "lucide-react";
+import "../styles/luxury-theme.css";
 
 const TIME_SLOTS = [
   "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM",
@@ -29,7 +31,7 @@ const BookNowPage = () => {
   const serviceName = searchParams.get("serviceName") || "Info Session";
   const serviceDuration = searchParams.get("serviceDuration") || "30 minutes";
   const servicePrice = parseInt(searchParams.get("servicePrice") || "0", 10);
-  const practitionerName = searchParams.get("practitionerName") || "Samadhi Productions";
+  const practitionerName = searchParams.get("practitionerName") || "Portals of Samadhi";
 
   const isInfoSessionFlow = !searchParams.has("serviceName");
   const isPaidService = searchParams.has("serviceName") && servicePrice > 0;
@@ -179,23 +181,29 @@ const BookNowPage = () => {
     }
   };
 
-  const pageTitle = isInfoSessionFlow ? "Work Together" : `Book ${serviceName}`;
+  const pageTitle = isInfoSessionFlow ? "Begin Your Journey" : `Book ${serviceName}`;
   const pageDescription = isInfoSessionFlow
-    ? "Schedule a complimentary info session to share your vision and explore how we might collaborate on cinematic content."
+    ? "Schedule a complimentary session to share your vision for a family tour, sacred event, healing work, or venue inquiry in Jamaica."
     : `Reserve your ${serviceName} session with ${practitionerName}.`;
 
   return (
     <>
       <SEO
-        title={`${pageTitle} | Samadhi Productions`}
+        title={`${pageTitle} | Portals of Samadhi`}
         description={pageDescription}
         image={PAGE_SEO["/book-now"].image}
         url="/book-now"
         imageAlt={PAGE_SEO["/book-now"].imageAlt}
       />
 
-      <div className="min-h-screen bg-samadhi-black text-samadhi-cream pt-20 pb-8">
-        <div className="max-w-md mx-auto px-4">
+      <div className="luxury-page min-h-screen pb-8">
+        <PageHeader
+          variant="book"
+          eyebrow="Portals of Samadhi"
+          title={pageTitle}
+          description={pageDescription}
+        />
+        <div className="max-w-md mx-auto px-4" style={{ marginTop: "1.5rem" }}>
           <div className="mb-6">
             <button
               onClick={handleBack}
@@ -204,8 +212,6 @@ const BookNowPage = () => {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back
             </button>
-            <h1 className="text-2xl font-bold text-samadhi-cream mb-2">{pageTitle}</h1>
-            <p className="text-samadhi-cream/65">{pageDescription}</p>
           </div>
 
           <div className="flex items-center justify-between mb-8">
@@ -255,22 +261,22 @@ const BookNowPage = () => {
                   {isInfoSessionFlow ? (
                     <div className="p-4 rounded-lg border border-[#C3998F]/25 bg-[#0A0A0A] mb-5">
                       <h2 className="text-lg font-semibold text-samadhi-cream mb-2">
-                        Info Session
+                        Discovery Session
                       </h2>
                       <p className="text-samadhi-cream/70 text-sm leading-relaxed">
-                        A relaxed conversation about your project, creative goals, and how
-                        Samadhi Productions can bring your vision to life. No obligation,
-                        just clarity.
+                        A relaxed conversation about your family tour, sacred gathering,
+                        healing session, or venue needs in Jamaica. No obligation - just
+                        clarity and a path that fits your intention.
                       </p>
                       <ul className="text-samadhi-cream/55 text-sm space-y-1 mt-3">
                         <li>Complimentary 30-minute session</li>
-                        <li>Short-form, series, music video, or campaign projects</li>
-                        <li>Written scope within 48 hours if there is a fit</li>
+                        <li>Tours, events, venues, or energy healing</li>
+                        <li>Thoughtful next steps within 48 hours if there is a fit</li>
                       </ul>
                       <p className="text-samadhi-cream/50 text-sm mt-3">
                         New here?{" "}
-                        <Link to="/production" className="text-[#E8B4A3] hover:underline">
-                          Review production packages
+                        <Link to="/experiences" className="text-[#E8B4A3] hover:underline">
+                          Explore family tours
                         </Link>{" "}
                         before you book.
                       </p>

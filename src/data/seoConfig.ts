@@ -3,10 +3,10 @@ export const SITE_NAME = "Portals of Samadhi";
 export const BRAND_NAME = "Samadhi Productions";
 
 /** Primary on-site tagline, keep in sync with hero & browser titles */
-export const BRAND_TAGLINE = "Thoughtful Media. Immersive Worlds.";
-export const BRAND_EYEBROW = "Premium Cinematic Content";
+export const BRAND_TAGLINE = "Explore · Heal · Thrive";
+export const BRAND_EYEBROW = "Jamaica Tours · Sacred Retreats · Bush Medicine";
 export const HOME_DESCRIPTION =
-  "High-end short-form series, music videos, and immersive digital experiences rooted in Afro-futurist beauty and spiritual depth.";
+  "Travel experiences money can't buy. Let our family take you through exclusive countryside farms and favorite hangouts in Jamaica. Airport pick ups, farm stays, custom retreats, gatherings, and healing from Kingston.";
 
 export interface PageSeoEntry {
   path: string;
@@ -23,17 +23,18 @@ export interface PageSeoEntry {
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   "/": {
     path: "/",
-    title: `Samadhi Productions | ${BRAND_TAGLINE}`,
-    description: `${HOME_DESCRIPTION} Samadhi Productions is the Afro-futurist cinematic studio of Portals of Samadhi.`,
-    image: "/samadhi-productions-logo.webp",
-    imageAlt: "Samadhi Productions phoenix logo, Afro-futuristic cinematic production studio",
+    title: `Portals of Samadhi | Family-Hosted Jamaica Tours & Sacred Retreats`,
+    description: HOME_DESCRIPTION,
+    image: "/Welcome.webp",
+    imageAlt: "Aerial view of Jamaican mountainside for Portals of Samadhi family tours",
     keywords: [
-      "samadhi productions",
-      "AI cinematic studio",
-      "afro-futurist video production",
-      "short form cinematic content",
-      "mid form episodic production",
-      "music visual production",
+      "jamaica tours",
+      "jamaica family experiences",
+      "sacred retreats jamaica",
+      "bush medicine jamaica",
+      "authentic jamaica cultural immersion",
+      "airport pickup jamaica",
+      "family farm retreats jamaica",
       "portals of samadhi",
     ],
     priority: 1,
@@ -41,16 +42,16 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
   "/about": {
     path: "/about",
-    title: "Our Story | Samadhi Productions & Portals of Samadhi",
+    title: "Our Story | Portals of Samadhi",
     description:
-      "From sanctuary and retreat work to Samadhi Productions, an Afro-futurist cinematic studio shaped by healing roots, spiritual intention, and thoughtful media craft.",
+      "Rooted in Scotts Hall Maroon lineage, energy healing, and land stewardship - Portals of Samadhi hosts authentic family tours and sacred events across Jamaica.",
     image: "/samadhi-transparent-logo.png",
-    imageAlt: "Samadhi Productions phoenix emblem",
+    imageAlt: "Portals of Samadhi emblem",
     keywords: [
-      "samadhi productions about",
       "portals of samadhi story",
-      "afro-futurist creative studio",
-      "jamaica healing retreat founders",
+      "scotts hall maroon heritage",
+      "jamaica healing tours founders",
+      "authentic jamaica cultural hosts",
     ],
     priority: 0.9,
     changefreq: "monthly",
@@ -75,51 +76,60 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
   "/experiences": {
     path: "/experiences",
-    title: "Retreat Tours | Jamaica Cultural & Healing Adventures | Portals of Samadhi",
+    title: "Jamaica Tours & Sacred Experiences | Portals of Samadhi",
     description:
-      "Authentic Jamaican retreat tours combining indigenous wisdom, healing arts, and natural adventures. Premium service packages and custom retreat planning.",
-    image: "/images/Cell Phone/Picsart_25-06-23_02-22-07-116.webp",
-    imageAlt: "Jamaica retreat tour, cultural healing adventure with Portals of Samadhi",
+      "Book Jamaica experiences money can't buy: airport pickup, family farm Welcome Home stays, simple beach retreats, custom tours, and traditional bush medicine with Portals of Samadhi.",
+    image: "/images - Copy/Phone/IMG-20250629-WA0045.webp",
+    imageAlt: "Jamaica family tours and sacred retreats with Portals of Samadhi",
     keywords: [
-      "jamaica retreat tours",
-      "healing retreat jamaica",
-      "cultural immersion jamaica",
-      "wellness travel jamaica",
-      "portals of samadhi retreats",
+      "jamaica tours",
+      "jamaica family experiences",
+      "airport pickup jamaica",
+      "sacred retreats jamaica",
+      "bush medicine jamaica",
+      "custom jamaica retreat",
+      "family farm glamping jamaica",
+      "portals of samadhi",
     ],
-    priority: 0.85,
+    priority: 0.9,
     changefreq: "weekly",
   },
   "/book-now": {
     path: "/book-now",
-    title: "Work Together | Book an Info Session | Samadhi Productions",
+    title: "Book a Session | Portals of Samadhi",
     description:
-      "Schedule a complimentary info session to share your vision and explore cinematic collaboration, healing services, or strategic support with Samadhi Productions.",
-    image: "/samadhi-productions-logo.webp",
-    imageAlt: "Book an info session with Samadhi Productions",
-    keywords: ["book cinematic consultation", "schedule info session", "samadhi productions booking"],
+      "Schedule a session or consultation for healing work, family tours, or sacred event planning with Portals of Samadhi.",
+    image: "/poslogo.webp",
+    imageAlt: "Book a session with Portals of Samadhi",
+    keywords: ["book jamaica tour consultation", "energy healing session", "portals of samadhi booking"],
     priority: 0.8,
     changefreq: "monthly",
   },
   "/courses": {
     path: "/courses",
-    title: "Ralign | 6-Week Global Transformation Program | Portals of Samadhi",
+    title: "The Realignment Program | 6-Week Transformation | Portals of Samadhi",
     description:
       "A 6-week virtual transformation program combining traditional wisdom, botanical support, and modern behavior science. Available worldwide.",
     image: "/images - Copy/Site Files/For Course_edited_edited.webp",
-    imageAlt: "Ralign 6-week global transformation program by Portals of Samadhi",
-    keywords: ["ralign transformation program", "virtual wellness course", "behavior change program"],
+    imageAlt: "The Realignment Program - 6-week transformation by Portals of Samadhi",
+    keywords: ["realignment program", "virtual wellness course", "behavior change program"],
     priority: 0.7,
     changefreq: "monthly",
   },
   "/plan-retreat": {
     path: "/plan-retreat",
-    title: "Plan Your Custom Retreat | Portals of Samadhi",
+    title: "Plan an Event | Retreats, Workshops, Series & Virtual | Portals of Samadhi",
     description:
-      "Design a custom healing and wellness retreat in Jamaica with professional guidance, customizable features, and culturally rooted experiences.",
-    image: "/images/Cell Phone/Picsart_25-07-12_20-46-17-231.png",
-    imageAlt: "Plan a custom healing retreat in Jamaica with Portals of Samadhi",
-    keywords: ["custom jamaica retreat", "plan wellness retreat", "private healing retreat"],
+      "We host and professionally plan meaningful events - including retreats, workshops, series, and virtual gatherings - with intentional, premium care rooted in Jamaican land and lineage.",
+    image: "/images - Copy/Site Files/pexels-portals-of-samadhi-luxury-travel-retreats-1039102407-20435172.jpg",
+    imageAlt: "Event planning for retreats, workshops, and virtual gatherings with Portals of Samadhi",
+    keywords: [
+      "event planning jamaica",
+      "retreat planning",
+      "workshop facilitation",
+      "virtual gathering host",
+      "sacred ceremony planning",
+    ],
     priority: 0.7,
     changefreq: "monthly",
   },
@@ -170,20 +180,22 @@ export const SITEMAP_PATHS = Object.values(PAGE_SEO).filter((p) => !p.noindex);
 
 export const ORGANIZATION_SCHEMA = {
   "@type": "Organization",
-  name: BRAND_NAME,
-  alternateName: SITE_NAME,
+  name: SITE_NAME,
+  alternateName: BRAND_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/samadhi-productions-logo.webp`,
+  logo: `${SITE_URL}/poslogo.webp`,
   description:
-    "Afro-futurist cinematic production studio and experiential wellness brand. Samadhi Productions creates thoughtful short and mid-form media; Portals of Samadhi offers healing, retreats, and strategic support.",
+    "Portals of Samadhi hosts authentic family tours, cultural immersion, energy healing, and sacred event planning in Jamaica, rooted in Scotts Hall Maroon heritage and land stewardship. Samadhi Productions is the sister cinematic studio.",
   foundingLocation: {
     "@type": "Place",
-    name: "Portland, Oregon, United States",
+    name: "Airy Castle, Jamaica",
   },
-  areaServed: "Worldwide",
+  areaServed: ["Jamaica", "Worldwide"],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
+    telephone: "+1-510-291-9399",
+    email: "info@portalsofsamadhi.com",
     availableLanguage: ["English"],
     areaServed: "Worldwide",
   },

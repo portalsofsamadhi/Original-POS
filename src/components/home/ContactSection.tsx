@@ -138,14 +138,14 @@ const ContactSection = () => {
           >
             <p className="samadhi-contact__lead">
               {isRetreatPage
-                ? "Portals of Samadhi hosts intimate retreat tours across Jamaica: healing sessions, cultural immersion, farm visits, and family-style hospitality led from the land itself."
-                : "Samadhi Productions brings meditative intention and cinematic precision to short and mid-form content. Thoughtful media, beautifully made."}
+                ? "Portals of Samadhi hosts intimate family tours across Jamaica: healing sessions, cultural immersion, farm visits, curated venues, and hospitality led from the land itself."
+                : "Tell us about your family tour, sacred event, or healing session. We design intimate Jamaica experiences rooted in lineage, land, and care - never mass tourism."}
             </p>
 
             <ul className="samadhi-contact__details">
               <li>
                 <MapPin size={18} aria-hidden="true" />
-                <span>Portland, Oregon</span>
+                <span>Oakland, CA · Airy Castle, Jamaica</span>
               </li>
               <li>
                 <Phone size={18} aria-hidden="true" />

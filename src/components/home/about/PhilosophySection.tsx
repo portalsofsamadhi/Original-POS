@@ -32,11 +32,11 @@ const PhilosophySection: React.FC<PhilosophySectionProps> = ({ paddingTop: _padd
 
           <div className="max-w-4xl mx-auto scroll-blur-reveal">
             <p className="mbg-text-lg">
-              We exist to lift the spirit. Through Samadhi Productions, we craft cinematic
-              content that awakens wonder, reflection, and joy. Portals of Samadhi is the
-              sanctuary: a place for healing, retreat, and creative collaboration rooted in
-              the same intention. When beauty meets purpose, people feel more alive, on
-              screen and in life.
+              We exist to reconnect people with land, lineage, and their own quiet center.
+              Portals of Samadhi opens intimate doors into Jamaica - family tours, sacred
+              gatherings, and healing held with Maroon memory and island hospitality. Our
+              sister studio, Samadhi Productions, carries that same intention into film. When
+              beauty meets purpose, people feel more alive - on the land and in life.
             </p>
           </div>
         </div>

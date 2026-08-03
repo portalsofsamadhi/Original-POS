@@ -138,5 +138,11 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.35.0",
     "vite": "^6.2.3"
+  },
+  "allowScripts": {
+    "@swc/core@1.3.96": true,
+    "@swc/core@1.13.3": true,
+    "esbuild@0.25.9": true,
+    "sharp@0.34.3": true
   }
 }

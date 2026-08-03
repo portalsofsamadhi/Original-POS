@@ -57,11 +57,11 @@ export const PAGE_SEO = [
   },
   {
     path: "/courses",
-    title: "Ralign | 6-Week Global Transformation Program | Portals of Samadhi",
+    title: "The Realignment Program | 6-Week Transformation | Portals of Samadhi",
     description:
       "A 6-week virtual transformation program combining traditional wisdom, botanical support, and modern behavior science. Available worldwide.",
     image: `${SITE_URL}/images%20-%20Copy/Site%20Files/For%20Course_edited_edited.webp`,
-    imageAlt: "Ralign 6-week global transformation program by Portals of Samadhi",
+    imageAlt: "The Realignment Program — 6-week transformation by Portals of Samadhi",
     priority: 0.7,
     changefreq: "monthly",
   },

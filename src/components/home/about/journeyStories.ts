@@ -18,9 +18,9 @@ Lalibela felt like paradise. Rock-hewn churches, mountain air, exquisite injera.
 Amsterdam, Jamaica, Florida, and Oakland each added a layer: family, temple wisdom, retreats, and a healing center under one roof. By 2023 we were ready for the next evolution.`,
   },
   jamaica: {
-    title: "Present: Sanctuary, Studio & Soil",
-    content: `From Jamaica's hills and coastline, two worlds breathe as one. Samadhi Productions shapes Afro-futurist short-form series, music videos, advertisements, and cinematic campaigns from this living ground. Portals of Samadhi remains the sanctuary: retreat tours, healing, land stewardship, and community rooted in Maroon wisdom and island culture.
+    title: "Present: Sanctuary, Soil & Sacred Gatherings",
+    content: `From Jamaica's hills and coastline, the work has come home. Portals of Samadhi hosts authentic family tours, cultural immersion, energy healing, and sacred event planning - rooted in Scotts Hall Maroon wisdom, bush medicine, and stewardship of the land. Guests are received as family, not as inventory on a tour bus.
 
-This is not a pause in the journey. It is the flowering. Collaborators and guests step into a living classroom, creative sets beside waterfalls, sacred sites, ital kitchens, and stories crafted to lift the spirit. Beauty meets intention here, on screen and in life.`,
+Samadhi Productions remains the sister studio: cinematic stories shaped from this same living ground. Collaborators and travelers step into farms and waterfalls, boutique venues and ital kitchens, ceremonies and quiet mountain light. This is not a pause in the journey. It is the flowering - beauty meeting intention on the land and in life.`,
   },
 };

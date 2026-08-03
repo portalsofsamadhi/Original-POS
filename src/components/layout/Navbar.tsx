@@ -51,8 +51,8 @@ const Navbar = () => {
 
   const primaryLinks: NavLink[] = [
     { name: 'Experiences', href: '/experiences' },
-    { name: 'Retreat Tours', href: '/plan-retreat' },
-    { name: 'Courses', href: '/courses' },
+    { name: 'Gatherings', href: '/plan-retreat' },
+    { name: 'Healing', href: '/book-now' },
     { name: 'About', href: '/about' },
   ];
 
@@ -97,7 +97,7 @@ const Navbar = () => {
                   Portals of Samadhi
                 </span>
                 <span className="hidden sm:block luxury-nav-tagline">
-                  Healing · Retreats · Wellness
+                  Explore · Heal · Thrive
                 </span>
               </span>
             </Link>
@@ -128,11 +128,11 @@ const Navbar = () => {
               Samadhi Productions
             </a>
             <Link
-              to="/book-now"
+              to="/experiences"
               className="luxury-btn luxury-btn--gold"
               style={{ padding: '0.5rem 1rem', fontSize: '0.7rem' }}
             >
-              Book a Session
+              Explore Experiences
             </Link>
             {renderProfileButton()}
             {user && (
@@ -182,11 +182,11 @@ const Navbar = () => {
             Samadhi Productions →
           </a>
           <Link
-            to="/book-now"
+            to="/experiences"
             className="block mt-3 px-4 py-3 text-center luxury-btn luxury-btn--gold"
             onClick={closeMobile}
           >
-            Book a Session
+            Explore Experiences
           </Link>
           {user && (
             <button

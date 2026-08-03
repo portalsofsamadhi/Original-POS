@@ -17,9 +17,9 @@ const WhoWeAreSection: React.FC<WhoWeAreSectionProps> = ({
 }) => {
   const navigate = useNavigate();
 
-  const storyText = `Portals of Samadhi is a sanctuary for healing arts, meditative experiences, cultural immersion, and transformative journeys in Jamaica and beyond. We hold space for energy work, sound healing, retreat tours, and virtual assistance rooted in indigenous wisdom and spiritual intention.
+  const storyText = `Portals of Samadhi is a living doorway into Jamaica - tours through farms and forests, event planning for retreats, workshops, series, and virtual gatherings, and healing held with the intimacy of home. Our work is rooted in Scotts Hall Maroon lineage, bush medicine, and a lifelong bond with the land - not a packaged itinerary.
 
-Our sister studio, Samadhi Productions, extends this vision into cinematic storytelling — pairing creative imagination with refined audio-visual craft to bring bold concepts to life.`;
+We host small groups and gatherings that feel personal: countryside places our families still tend, boutique venues when an event needs them, sound and energy work, and meals that taste like belonging. Our sister studio, Samadhi Productions, carries the same intention into film.`;
 
   return (
     <section className={`mbg-section mbg-bg-white ${className}`} style={{ paddingTop, marginTop }}>
@@ -36,7 +36,7 @@ Our sister studio, Samadhi Productions, extends this vision into cinematic story
               className="mbg-heading-md"
               style={{ color: "var(--mbg-primary-green)", fontStyle: "italic" }}
             >
-              Thoughtful Media. Immersive Worlds.
+              Explore. Heal. Thrive.
             </h3>
           </div>
         )}
@@ -75,7 +75,7 @@ Our sister studio, Samadhi Productions, extends this vision into cinematic story
                 }}
                 onClick={() => navigate("/experiences")}
               >
-                <span>Explore Experiences</span>
+                <span>Explore Tours</span>
                 <svg
                   width="16"
                   height="8"
