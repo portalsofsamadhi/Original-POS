@@ -143,16 +143,16 @@ export const PRODUCTION_CONFIG = {
     trackUserEngagement: true,
   },
 
-  // Environment-specific URLs
+  // Environment-specific URLs (single Node service: site + /api on same host)
   urls: {
-    frontend: process.env.NODE_ENV === 'production' 
-      ? 'https://portalsofsamadhi.com' 
-      : 'http://localhost:5173',
+    frontend: process.env.NODE_ENV === 'production'
+      ? 'https://www.portalsofsamadhi.com'
+      : 'http://localhost:3002',
     backend: process.env.NODE_ENV === 'production'
-      ? 'https://api.portalsofsamadhi.com'
+      ? 'https://www.portalsofsamadhi.com'
       : 'http://localhost:10000',
     webhooks: process.env.NODE_ENV === 'production'
-      ? 'https://api.portalsofsamadhi.com/webhooks'
+      ? 'https://www.portalsofsamadhi.com/api'
       : 'http://localhost:10000/webhooks'
   },
 
@@ -174,12 +174,9 @@ export const validateProductionConfig = () => {
   
   // Required environment variables
   const requiredEnvVars = [
-    'PAYPAL_CLIENT_ID',
-    'PAYPAL_CLIENT_SECRET',
     'SMTP_HOST',
     'SMTP_USER',
     'SMTP_PASS',
-    'VITE_API_URL'
   ];
   
   requiredEnvVars.forEach(varName => {

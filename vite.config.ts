@@ -67,7 +67,8 @@ export default defineConfig({
       'localhost',
       '127.0.0.1',
       'www.portalsofsamadhi.com',
-      'portalsofsamadhi.com'
+      'portalsofsamadhi.com',
+      '.onrender.com',
     ]
   }
 });

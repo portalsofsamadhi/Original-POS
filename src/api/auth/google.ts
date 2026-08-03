@@ -19,7 +19,7 @@ const oauth2Client = new google.auth.OAuth2(
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // --- CORS for local dev and prod ---
   res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', process.env.NODE_ENV === 'production' ? 'https://www.portalsofsamadhi.com' : 'http://localhost:5173');
+  res.setHeader('Access-Control-Allow-Origin', process.env.NODE_ENV === 'production' ? 'https://www.portalsofsamadhi.com' : 'http://localhost:3002');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   if (req.method === 'OPTIONS') return res.status(200).end();
@@ -55,7 +55,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           path: '/',
           maxAge: 60 * 60 * 24 * 7,
         }));
-        const frontendUrl = process.env.FRONTEND_URL || (process.env.NODE_ENV === 'production' ? 'https://www.portalsofsamadhi.com' : 'http://localhost:5173');
+        const frontendUrl = process.env.FRONTEND_URL || (process.env.NODE_ENV === 'production' ? 'https://www.portalsofsamadhi.com' : 'http://localhost:3002');
         console.log('Redirecting to:', frontendUrl + '/profile');
         return res.redirect(frontendUrl + '/profile');
       } catch (err) {
@@ -118,7 +118,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         maxAge: 60 * 60 * 24 * 7, // 7 days
       }));
       // --- Redirect to frontend profile page after login ---
-      const frontendUrl = process.env.FRONTEND_URL || (process.env.NODE_ENV === 'production' ? 'https://www.portalsofsamadhi.com' : 'http://localhost:5173');
+      const frontendUrl = process.env.FRONTEND_URL || (process.env.NODE_ENV === 'production' ? 'https://www.portalsofsamadhi.com' : 'http://localhost:3002');
       return res.redirect(frontendUrl + '/profile');
     } catch (err) {
       console.error('Google OAuth error:', err);

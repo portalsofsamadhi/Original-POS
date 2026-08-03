@@ -1,17 +1,24 @@
+# Repo: portalsofsamadhi/Original-POS (branch main)
+# Live site: https://www.portalsofsamadhi.com
+# Single Node service: Express API + Vite dist (SPA)
 services:
-  # Node API (handles /api/* including send-email)
   - type: web
-    name: pos-api
+    name: original-pos
     env: node
     plan: starter
-    buildCommand: npm ci && npm run build
+    # Install build tooling even when NODE_ENV=production (Render default)
+    buildCommand: npm install --include=dev && npm run build
     startCommand: node server/index.js
     healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 10000
+      - key: NODE_OPTIONS
+        value: --max-old-space-size=4096
+      - key: PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
+        value: "true"
+      - key: PUPPETEER_SKIP_DOWNLOAD
+        value: "true"
       - key: TEAM_EMAIL
         value: info@portalsofsamadhi.com
       - key: SMTP_HOST
@@ -23,36 +30,30 @@ services:
       - key: SMTP_PASS
         sync: false
       - key: SMTP_FROM
-        value: "Samadhi Productions <info@portalsofsamadhi.com>"
-      - key: GOOGLE_CLIENT_SECRET
-        sync: false
+        value: "Portals of Samadhi <info@portalsofsamadhi.com>"
+      - key: VITE_APP_URL
+        value: https://www.portalsofsamadhi.com
+      - key: VITE_API_URL
+        value: ""
+      - key: VITE_NEWSLETTER_API_URL
+        value: ""
       - key: GOOGLE_REDIRECT_URI
         value: https://www.portalsofsamadhi.com/profile
-      - key: MONGODB_URI
+      - key: FRONTEND_URL
+        value: https://www.portalsofsamadhi.com
+      - key: GOOGLE_CLIENT_SECRET
         sync: false
       - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: VITE_GOOGLE_CLIENT_ID
+        sync: false
+      - key: MONGODB_URI
         sync: false
       - key: JWT_SECRET
         sync: false
       - key: ADMIN_BEARER_TOKEN
         sync: false
       - key: STRIPE_SECRET_KEY
-        sync: false
-
-  # Static frontend (calls pos-api for form submissions)
-  - type: web
-    name: pos-website
-    env: static
-    buildCommand: npm ci && npm run build
-    staticPublishPath: ./dist
-    envVars:
-      - key: VITE_API_URL
-        value: ""
-      - key: VITE_NEWSLETTER_API_URL
-        value: ""
-      - key: VITE_APP_URL
-        value: https://www.portalsofsamadhi.com
-      - key: VITE_GOOGLE_CLIENT_ID
         sync: false
       - key: VITE_STRIPE_PUBLIC_KEY
         sync: false
