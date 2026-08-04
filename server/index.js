@@ -17,6 +17,7 @@ const {
   getSmtpPort,
   getSmtpUser,
   getTeamEmail,
+  resolveInboundTo,
   isSmtpConfigured,
   verifySmtpAuth,
 } = require('./smtpConfig.cjs');
@@ -113,7 +114,7 @@ app.get('/api/health', async (req, res) => {
 // Send email (contact form, info session requests, booking notifications)
 app.post('/api/send-email', async (req, res) => {
   try {
-    const { to, subject, html } = req.body || {};
+    const { to, subject, html, replyTo } = req.body || {};
     if (!to || !subject || !html) {
       return res.status(400).json({ success: false, error: 'Missing required fields: to, subject, html' });
     }
@@ -123,16 +124,23 @@ app.post('/api/send-email', async (req, res) => {
       return res.status(503).json({ success: false, error: 'Email service not configured (SMTP credentials missing)' });
     }
 
+    // Avoid same-mailbox SMTP → Sent-only: deliver via plus-address or NOTIFY_EMAIL
+    const deliverTo = resolveInboundTo(to);
+    // Prefer visitor email for Reply-To so you can answer the person who wrote in
+    const reply =
+      (typeof replyTo === 'string' && replyTo.includes('@') && replyTo) ||
+      getTeamEmail();
+
     const info = await transporter.sendMail({
       from: getFromAddress(),
-      to,
+      to: deliverTo,
       subject,
       html,
-      replyTo: getTeamEmail(),
+      replyTo: reply,
     });
 
-    console.log(`Email sent to ${to}: ${info.messageId}`);
-    return res.json({ success: true, messageId: info.messageId });
+    console.log(`Email sent to ${deliverTo} (requested ${to}): ${info.messageId}`);
+    return res.json({ success: true, messageId: info.messageId, deliveredTo: deliverTo });
   } catch (error) {
     console.error('Send email error:', error);
     if (error.code === 'EAUTH' || error.responseCode === 535) {

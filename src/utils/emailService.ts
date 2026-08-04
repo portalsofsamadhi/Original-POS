@@ -10,6 +10,8 @@ interface EmailPayload {
   to: string;
   subject: string;
   html: string;
+  /** Visitor email — used so team can Reply directly to them */
+  replyTo?: string;
   priority?: 'high' | 'normal' | 'low';
   templateName?: string;
 }

@@ -17,6 +17,39 @@ function getTeamEmail() {
   return sanitizeEnvString(process.env.TEAM_EMAIL) || 'info@portalsofsamadhi.com';
 }
 
+/**
+ * Where form notifications should be delivered.
+ * Prefer NOTIFY_EMAIL if set (can differ from SMTP_USER so mail lands in Inbox).
+ */
+function getNotifyEmail() {
+  return (
+    sanitizeEnvString(process.env.NOTIFY_EMAIL) ||
+    getTeamEmail()
+  );
+}
+
+/**
+ * Zoho/Gmail put same-mailbox SMTP sends in Sent, not Inbox.
+ * If TO equals the SMTP login, use plus-addressing (info+forms@…) so delivery
+ * is treated as inbound to the same mailbox Inbox when the host supports it.
+ * Override with NOTIFY_EMAIL to a different address for the cleanest fix.
+ */
+function resolveInboundTo(requestedTo) {
+  const explicitNotify = sanitizeEnvString(process.env.NOTIFY_EMAIL);
+  if (explicitNotify) return explicitNotify;
+
+  const dest = (sanitizeEnvString(requestedTo) || getTeamEmail()).trim();
+  const smtpUser = getSmtpUser().toLowerCase();
+  if (dest.toLowerCase() !== smtpUser) return dest;
+
+  const at = dest.indexOf('@');
+  if (at <= 0) return dest;
+  const local = dest.slice(0, at);
+  const domain = dest.slice(at + 1);
+  if (!local || !domain || local.includes('+')) return dest;
+  return `${local}+forms@${domain}`;
+}
+
 function getFromAddress() {
   return sanitizeEnvString(process.env.SMTP_FROM) || `Portals of Samadhi <${getTeamEmail()}>`;
 }
@@ -122,6 +155,8 @@ async function verifySmtpAuth(force = false) {
 module.exports = {
   sanitizeEnvString,
   getTeamEmail,
+  getNotifyEmail,
+  resolveInboundTo,
   getFromAddress,
   getSmtpUser,
   getSmtpPass,

@@ -21,6 +21,9 @@ services:
         value: "true"
       - key: TEAM_EMAIL
         value: info@portalsofsamadhi.com
+      # Optional: different inbox for form notifications (avoids Sent-only when TO == SMTP_USER)
+      # - key: NOTIFY_EMAIL
+      #   value: you@another-inbox.com
       - key: SMTP_HOST
         value: smtp.zoho.eu
       - key: SMTP_PORT

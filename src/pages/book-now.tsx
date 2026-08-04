@@ -92,6 +92,7 @@ const BookNowPage = () => {
 
       const result = await sendEmail({
         to: TEAM_EMAIL,
+        replyTo: formData.email,
         subject,
         html,
       });

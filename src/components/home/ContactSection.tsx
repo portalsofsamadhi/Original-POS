@@ -61,6 +61,7 @@ const ContactSection = () => {
 
       const result = await sendEmail({
         to: TEAM_EMAIL,
+        replyTo: form.email,
         subject: `Website Contact: ${intent} from ${form.name}`,
         html: `
           <h2>New Contact Form Submission</h2>
