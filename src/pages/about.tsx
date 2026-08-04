@@ -48,7 +48,7 @@ const AboutPage = () => {
         />
 
         <WhoWeAreSection pageMode paddingTop="0.5rem" marginTop="0" className="about-subsection" />
-        <JourneySection paddingTop="0rem" marginTop="2rem" className="about-subsection" />
+        <JourneySection paddingTop="1rem" marginTop="1rem" className="about-subsection" />
         <PhilosophySection className="about-subsection" />
         <ConversionHowItWorks />
         <ConversionClose variant="about" />

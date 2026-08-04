@@ -25,8 +25,9 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     path: "/",
     title: `Portals of Samadhi | Family-Hosted Jamaica Tours & Sacred Retreats`,
     description: HOME_DESCRIPTION,
-    image: "/Welcome.webp",
-    imageAlt: "Aerial view of Jamaican mountainside for Portals of Samadhi family tours",
+    image:
+      "/images - Copy/Site Files/dji_fly_20241106_071758_19_1730895488211_photo_edited.webp",
+    imageAlt: "Aerial view of Jamaican land — Portals of Samadhi homepage hero",
     keywords: [
       "jamaica tours",
       "jamaica family experiences",

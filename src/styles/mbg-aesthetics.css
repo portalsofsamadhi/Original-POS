@@ -150,7 +150,21 @@
 
 /* Ensure consistent spacing between major page sections */
 .mbg-section + .mbg-section {
-  margin-top: var(--mbg-spacing-xl);
+  margin-top: var(--mbg-spacing-md);
+}
+
+@media (max-width: 767px) {
+  .mbg-section + .mbg-section {
+    margin-top: 0.75rem;
+  }
+
+  .luxury-page .about-subsection.mbg-section + .about-subsection.mbg-section {
+    margin-top: 0.5rem;
+  }
+
+  .luxury-page .about-subsection + .luxury-how {
+    margin-top: 0.25rem;
+  }
 }
 
 /* Special spacing for service and hero sections */

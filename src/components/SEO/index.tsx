@@ -133,7 +133,13 @@ const SEO: FC<SEOProps> = ({
 
   const canonicalUrl = canonical || resolveCanonicalUrl(url);
   const pagePath = resolvePath(url);
-  const imageUrl = image.startsWith('http') ? image : `${SITE_URL}${image}`;
+  // Encode path segments so OG URLs with spaces (e.g. hero under "images - Copy") resolve cleanly
+  const imageUrl = image.startsWith('http')
+    ? image
+    : `${SITE_URL}${image
+        .split('/')
+        .map((seg) => (seg ? encodeURIComponent(seg) : ''))
+        .join('/')}`;
   const finalImageAlt = imageAlt || `${title} | ${BRAND_NAME}`;
   const robotsContent = `${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`;
 

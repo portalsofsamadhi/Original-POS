@@ -70,11 +70,11 @@ const Footer = () => {
 
         <div className="flex flex-col space-y-4">
           <h3 className="text-sm font-semibold tracking-[0.15em] uppercase text-[var(--luxury-gold)]">
-            Experiences
+            Tours
           </h3>
           <ul className="space-y-2.5 text-sm">
-            <li><Link to="/experiences" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Tours</Link></li>
             <li><Link to="/airport-runs" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Airport Runs</Link></li>
+            <li><Link to="/experiences" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Tours</Link></li>
             <li><Link to="/plan-retreat" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Plan an Event</Link></li>
             <li><Link to="/courses" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Courses</Link></li>
             <li><Link to="/book-now" className="text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)] transition-colors">Book a Session</Link></li>

@@ -133,9 +133,41 @@
 
 /* Preserve desktop layout, mobile-only journey timeline stack */
 @media (max-width: 767px) {
+  .about-subsection.mbg-section {
+    margin-top: 0 !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+
   .about-subsection .mbg-container {
     padding-left: 1rem;
     padding-right: 1rem;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .about-subsection .mbg-heading-xl,
+  .about-subsection .mbg-heading-lg {
+    font-size: clamp(1.65rem, 7vw, 2.25rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.75rem !important;
+    word-wrap: break-word;
+  }
+
+  .about-subsection .mbg-text-lg {
+    font-size: 0.98rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .philosophy-section {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .journey-timeline {
+    overflow-x: hidden;
   }
 
   .journey-timeline-line {
@@ -143,12 +175,13 @@
   }
 
   .journey-timeline-item {
+    display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
     justify-content: flex-start !important;
-    gap: 1.25rem !important;
+    gap: 0.85rem !important;
     margin-top: 0 !important;
-    padding: 1.25rem 0;
+    padding: 1rem 0 1.15rem !important;
     border-bottom: 1px solid rgba(195, 153, 143, 0.14);
   }
 
@@ -156,6 +189,7 @@
     border-bottom: none;
   }
 
+  /* Always stack as: story text first, then image */
   .journey-timeline-item > div,
   .journey-timeline-item .w-5\/12 {
     width: 100% !important;
@@ -165,12 +199,33 @@
     text-align: left !important;
     position: relative !important;
     flex: 1 1 auto !important;
+    transform: none !important;
+  }
+
+  .journey-timeline-item .pr-4.text-right,
+  .journey-timeline-item .pl-4.relative {
+    order: 1;
+  }
+
+  .journey-timeline-item .pl-4.flex,
+  .journey-timeline-item .pr-4.flex {
+    order: 2;
   }
 
   .journey-timeline-item .journey-experience-text,
   .journey-timeline-item .journey-experience-text h3,
   .journey-timeline-item .journey-experience-text p {
     text-align: left !important;
+  }
+
+  .journey-timeline-item h3 {
+    font-size: 1.05rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .journey-timeline-item p.text-sm {
+    font-size: 0.9rem !important;
+    line-height: 1.55 !important;
   }
 
   .journey-timeline-dot {
@@ -181,25 +236,32 @@
   .journey-timeline-item img.desktop-journey-image {
     width: 100% !important;
     max-width: 100% !important;
-    max-height: 240px !important;
+    max-height: 220px !important;
     height: auto !important;
     object-fit: cover !important;
     display: block !important;
     margin-inline: auto;
+    border-radius: 0.85rem !important;
   }
 
   .journey-timeline-item button[type="button"] {
     width: 100%;
     display: block;
+    min-height: 44px;
   }
 
   .journey-timeline__items {
     display: flex;
     flex-direction: column;
     gap: 0 !important;
+    space-y: 0 !important;
   }
 
   .journey-timeline__items > .journey-timeline-item {
+    margin-top: 0 !important;
+  }
+
+  .journey-timeline__items.space-y-8 > :not([hidden]) ~ :not([hidden]) {
     margin-top: 0 !important;
   }
 

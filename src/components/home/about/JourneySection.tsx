@@ -14,7 +14,7 @@ import "../../../styles/mbg-aesthetics.css";
 import { fullStories } from "./journeyStories";
 import { useIsMobile } from "../../../hooks/useIsMobile";
 import { buildJourneyPhotoUrl } from "../../../utils/mobileRoutes";
-import { JourneyStoryOpener } from "./JourneyMobileHelpers";
+import { JourneyPhotoOpener, JourneyStoryOpener } from "./JourneyMobileHelpers";
 
 interface JourneySectionProps {
   paddingTop?: string;
@@ -22,7 +22,7 @@ interface JourneySectionProps {
   className?: string;
 }
 
-const JourneySection: React.FC<JourneySectionProps> = ({ paddingTop = "2rem", marginTop = "5rem", className = "" }) => {
+const JourneySection: React.FC<JourneySectionProps> = ({ paddingTop = "1.5rem", marginTop = "1rem", className = "" }) => {
   const [openStory, setOpenStory] = useState<string | null>(null);
   const isMobile = useIsMobile();
   const navigate = useNavigate();
@@ -323,6 +323,14 @@ const JourneySection: React.FC<JourneySectionProps> = ({ paddingTop = "2rem", ma
             {/* 2019 - Gondar and Lalibela */}
             <div className="mbg-flex mbg-items-center justify-between relative scroll-slide-right journey-timeline-item" style={{ marginTop: '1rem' }}>
               <div className="w-5/12 pr-4 flex items-center justify-center">
+                {isMobile ? (
+                  <JourneyPhotoOpener
+                    src="/images - Copy/Phone/2nd mobile.webp"
+                    alt="Cultural immersion in Ethiopia, 2019"
+                    imageClassName="mobile-journey-image"
+                    style={{ width: "100%" }}
+                  />
+                ) : (
                 <Dialog>
                   <DialogTrigger asChild>
                     <div style={{ position: 'relative' }}>
@@ -330,20 +338,6 @@ const JourneySection: React.FC<JourneySectionProps> = ({ paddingTop = "2rem", ma
                         className="desktop-journey-image"
                         src="/images - Copy/Phone/2nd.webp"
                         alt="Cultural immersion in Ethiopia, 2019"
-                        style={{
-                          maxWidth: '100%',
-                          maxHeight: '180px',
-                          borderRadius: '1rem',
-                          boxShadow: '0 4px 16px rgba(195, 153, 143, 0.14)',
-                          cursor: 'pointer',
-                          objectFit: 'contain',
-                          background: '#f8fafc'
-                        }}
-                      />
-                      <img
-                        className="mobile-journey-image"
-                        src="/images - Copy/Phone/2nd mobile.webp"
-                        alt="Cultural immersion in Ethiopia, 2019, mobile view"
                         style={{
                           maxWidth: '100%',
                           maxHeight: '180px',
@@ -389,8 +383,8 @@ const JourneySection: React.FC<JourneySectionProps> = ({ paddingTop = "2rem", ma
                     </DialogClose>
                     <div style={{ position: 'relative', width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <img
-                        src={isMobile ? "/images - Copy/Phone/2nd mobile.webp" : "/images - Copy/Phone/2nd.webp"}
-                        alt={isMobile ? "Cultural immersion in Ethiopia, 2019, enlarged mobile view" : "Cultural immersion in Ethiopia, 2019, enlarged view"}
+                        src="/images - Copy/Phone/2nd.webp"
+                        alt="Cultural immersion in Ethiopia, 2019, enlarged view"
                         style={{
                           maxWidth: '100vw',
                           maxHeight: '100vh',
@@ -399,12 +393,13 @@ const JourneySection: React.FC<JourneySectionProps> = ({ paddingTop = "2rem", ma
                           borderRadius: 0,
                           display: 'block',
                           position: 'static',
-                          filter: !isMobile ? 'contrast(1.15) brightness(1.08) saturate(1.25) drop-shadow(0 0 18px #C3998F)' : undefined
+                          filter: 'contrast(1.15) brightness(1.08) saturate(1.25) drop-shadow(0 0 18px #C3998F)'
                         }}
                       />
                     </div>
                   </DialogContent>
                 </Dialog>
+                )}
               </div>
               <div className="w-5/12 pl-4 relative">
                 {isMobile ? (
@@ -581,6 +576,14 @@ const JourneySection: React.FC<JourneySectionProps> = ({ paddingTop = "2rem", ma
                 />
               </div>
               <div className="w-5/12 pl-4 flex items-center justify-center">
+                {isMobile ? (
+                  <JourneyPhotoOpener
+                    src="/images - Copy/Phone/3rd mobile.webp"
+                    alt="Return to the Bay Area, 2021, new chapter of the journey"
+                    imageClassName="mobile-journey-image"
+                    style={{ width: "100%" }}
+                  />
+                ) : (
                 <Dialog>
                   <DialogTrigger asChild>
                     <div style={{ position: 'relative' }}>
@@ -598,20 +601,6 @@ const JourneySection: React.FC<JourneySectionProps> = ({ paddingTop = "2rem", ma
                           background: '#f8fafc'
                         }}
                       />
-                      <img
-                        className="mobile-journey-image"
-                        src="/images - Copy/Phone/3rd mobile.webp"
-                        alt="Return to the Bay Area, 2021, mobile view"
-                        style={{
-                          maxWidth: '100%',
-                          maxHeight: '180px',
-                          borderRadius: '1rem',
-                          boxShadow: '0 4px 16px rgba(195, 153, 143, 0.14)',
-                          cursor: 'pointer',
-                          objectFit: 'contain',
-                          background: '#f8fafc'
-                        }}
-                      />
                     </div>
                   </DialogTrigger>
                   <DialogContent
@@ -647,8 +636,8 @@ const JourneySection: React.FC<JourneySectionProps> = ({ paddingTop = "2rem", ma
                     </DialogClose>
                     <div style={{ position: 'relative', width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <img
-                        src={isMobile ? "/images - Copy/Phone/3rd mobile.webp" : "/images - Copy/Phone/3rd.webp"}
-                        alt={isMobile ? "Return to the Bay Area, 2021, enlarged mobile view" : "Return to the Bay Area, 2021, enlarged view"}
+                        src="/images - Copy/Phone/3rd.webp"
+                        alt="Return to the Bay Area, 2021, enlarged view"
                         style={{
                           maxWidth: '100vw',
                           maxHeight: '100vh',
@@ -657,18 +646,27 @@ const JourneySection: React.FC<JourneySectionProps> = ({ paddingTop = "2rem", ma
                           borderRadius: 0,
                           display: 'block',
                           position: 'static',
-                          filter: !isMobile ? 'contrast(1.15) brightness(1.08) saturate(1.25) drop-shadow(0 0 18px #C3998F)' : undefined
+                          filter: 'contrast(1.15) brightness(1.08) saturate(1.25) drop-shadow(0 0 18px #C3998F)'
                         }}
                       />
                     </div>
                   </DialogContent>
                 </Dialog>
+                )}
               </div>
             </div>
 
             {/* Jamaica */}
             <div className="mbg-flex mbg-items-center justify-between relative scroll-slide-right journey-timeline-item" style={{ marginTop: '-0.5rem' }}>
               <div className="w-5/12 pr-4 flex items-center justify-center">
+                {isMobile ? (
+                  <JourneyPhotoOpener
+                    src="/images - Copy/Phone/4th mobile.webp"
+                    alt="Present-day Jamaica, evolution of Portals of Samadhi"
+                    imageClassName="mobile-journey-image"
+                    style={{ width: "100%" }}
+                  />
+                ) : (
                 <Dialog>
                   <DialogTrigger asChild>
                     <div style={{ position: 'relative' }}>
@@ -686,20 +684,6 @@ const JourneySection: React.FC<JourneySectionProps> = ({ paddingTop = "2rem", ma
                           background: '#f8fafc'
                         }}
                       />
-                      <img
-                        className="mobile-journey-image"
-                        src="/images - Copy/Phone/4th mobile.webp"
-                        alt="Present-day Jamaica, evolution of Portals of Samadhi, mobile view"
-                        style={{
-                          maxWidth: '100%',
-                          maxHeight: '180px',
-                          borderRadius: '1rem',
-                          boxShadow: '0 4px 16px rgba(195, 153, 143, 0.14)',
-                          cursor: 'pointer',
-                          objectFit: 'contain',
-                          background: '#f8fafc'
-                        }}
-                      />
                     </div>
                   </DialogTrigger>
                   <DialogContent
@@ -735,8 +719,8 @@ const JourneySection: React.FC<JourneySectionProps> = ({ paddingTop = "2rem", ma
                     </DialogClose>
                     <div style={{ position: 'relative', width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <img
-                        src={isMobile ? "/images - Copy/Phone/4th mobile.webp" : "/images - Copy/Phone/4th.webp"}
-                        alt={isMobile ? "Present-day Jamaica, enlarged mobile view" : "Present-day Jamaica, enlarged view"}
+                        src="/images - Copy/Phone/4th.webp"
+                        alt="Present-day Jamaica, enlarged view"
                         style={{
                           maxWidth: '100vw',
                           maxHeight: '100vh',
@@ -745,12 +729,13 @@ const JourneySection: React.FC<JourneySectionProps> = ({ paddingTop = "2rem", ma
                           borderRadius: 0,
                           display: 'block',
                           position: 'static',
-                          filter: !isMobile ? 'contrast(1.15) brightness(1.08) saturate(1.25) drop-shadow(0 0 18px #C3998F)' : undefined
+                          filter: 'contrast(1.15) brightness(1.08) saturate(1.25) drop-shadow(0 0 18px #C3998F)'
                         }}
                       />
                     </div>
                   </DialogContent>
                 </Dialog>
+                )}
               </div>
               <div className="w-5/12 pl-4 relative">
                 {isMobile ? (

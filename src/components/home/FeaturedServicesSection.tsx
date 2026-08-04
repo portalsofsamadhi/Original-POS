@@ -12,10 +12,10 @@ const FeaturedServicesSection = () => (
     aria-label="Tours and Airport Runs"
     id="featured-services"
   >
-    <div className="luxury-section__header">
+    <div className="luxury-section__header luxury-featured-services__header">
       <p className="luxury-hero__eyebrow">Start here</p>
       <h2 className="luxury-section__title">
-        Explore the Land. <em>Land Well.</em>
+        Tours &amp; <em>Airport Runs</em>
       </h2>
       <p className="luxury-section__lead">
         Two primary doors: countryside tours with our family hosts, and private Airport Runs so

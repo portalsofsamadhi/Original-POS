@@ -726,16 +726,38 @@
 }
 
 @media (max-width: 640px) {
+  .luxury-hero {
+    min-height: auto;
+  }
+
+  .luxury-hero--cinematic {
+    min-height: auto;
+  }
+
   .luxury-hero__inner {
-    padding: 5.5rem 1.15rem 3.5rem;
+    padding: 4.75rem 1.15rem 1.75rem;
   }
 
   .luxury-hero__desc {
     font-size: 0.98rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .luxury-hero__eyebrow {
+    margin-bottom: 1rem;
   }
 
   .luxury-section {
-    padding: 3.75rem 1.15rem;
+    padding: 2.5rem 1.15rem;
+  }
+
+  .luxury-section__header {
+    margin-bottom: 1.5rem;
+  }
+
+  .luxury-featured-services {
+    padding-top: 1.25rem;
+    padding-bottom: 1.75rem;
   }
 
   .luxury-btn {
@@ -2042,10 +2064,14 @@
   margin-top: 0.35rem;
 }
 
-/* Homepage: dual featured services (Airport Runs + Plan a Retreat) */
+/* Homepage: dual featured services (Tours + Airport Runs) */
 .luxury-featured-services {
-  padding-top: 3.5rem;
+  padding-top: 2.25rem;
   padding-bottom: 2.5rem;
+}
+
+.luxury-featured-services__header {
+  margin-bottom: 2rem;
 }
 
 .luxury-featured-services__grid {
@@ -2152,8 +2178,19 @@
 
 /* Conversion: how-it-works strip */
 .luxury-how {
-  padding-top: 3rem;
+  padding-top: 2.25rem;
   padding-bottom: 2.5rem;
+}
+
+@media (max-width: 767px) {
+  .luxury-how {
+    padding-top: 1.5rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .luxury-how .luxury-section__header {
+    margin-bottom: 1.25rem;
+  }
 }
 
 .luxury-how__grid {

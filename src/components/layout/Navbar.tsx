@@ -50,10 +50,10 @@ const Navbar = () => {
   };
 
   const primaryLinks: NavLink[] = [
-    { name: 'Experiences', href: '/experiences' },
+    { name: 'Airport Runs', href: '/airport-runs' },
+    { name: 'Tours', href: '/experiences' },
     { name: 'Gatherings', href: '/plan-retreat' },
     { name: 'Healing', href: '/book-now' },
-    { name: 'Airport Runs', href: '/airport-runs' },
     { name: 'About', href: '/about' },
   ];
 
