@@ -6,7 +6,7 @@ export const BRAND_NAME = "Samadhi Productions";
 export const BRAND_TAGLINE = "Explore · Heal · Thrive";
 export const BRAND_EYEBROW = "Jamaica Tours · Sacred Retreats · Bush Medicine";
 export const HOME_DESCRIPTION =
-  "Travel experiences money can't buy. Let our family take you through exclusive countryside farms and favorite hangouts in Jamaica. Airport pick ups, farm stays, custom retreats, gatherings, and healing from Kingston.";
+  "Jamaica Airport Runs, countryside Tours, custom Retreats & gatherings, Healing sessions, and The Realignment Program — family-hosted experiences from Kingston. Land well, walk the land, gather your people.";
 
 export interface PageSeoEntry {
   path: string;
@@ -23,7 +23,7 @@ export interface PageSeoEntry {
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   "/": {
     path: "/",
-    title: `Portals of Samadhi | Family-Hosted Jamaica Tours & Sacred Retreats`,
+    title: `Portals of Samadhi | Airport Runs, Tours, Retreats & Healing in Jamaica`,
     description: HOME_DESCRIPTION,
     image:
       "/images - Copy/Site Files/dji_fly_20241106_071758_19_1730895488211_photo_edited.webp",
