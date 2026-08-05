@@ -6,15 +6,19 @@ services:
     name: original-pos
     env: node
     plan: starter
-    # Install build tooling even when NODE_ENV=production (Render default)
+    # BUILD only — do not put this in Start Command
     buildCommand: npm install --include=dev && npm run build
+    # START only — must open a port (Express listens on process.env.PORT)
     startCommand: node server/index.js
     healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
+      # Used by scripts/build-prod.mjs during Build; safe at runtime too
       - key: NODE_OPTIONS
         value: --max-old-space-size=4096
+      - key: BUILD_HEAP_MB
+        value: "4096"
       - key: PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
         value: "true"
       - key: PUPPETEER_SKIP_DOWNLOAD
