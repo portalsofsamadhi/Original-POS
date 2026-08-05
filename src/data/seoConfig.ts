@@ -203,8 +203,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   },
   "/profile": {
     path: "/profile",
-    title: "Member Profile | Portals of Samadhi",
-    description: "View and manage your member profile.",
+    title: "Profile | Portals of Samadhi",
+    description: "Your Portals of Samadhi profile — a quiet place for your details.",
     image: "/poslogo.webp",
     imageAlt: "Member profile",
     noindex: true,

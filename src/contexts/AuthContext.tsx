@@ -10,7 +10,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (member) {
       try {
         const parsed = JSON.parse(member);
-        if (parsed && parsed.email) setUser({ email: parsed.email });
+        if (parsed && parsed.email) setUser({ email: parsed.email, name: parsed.name });
       } catch {
         // Ignore JSON parse errors
       }
