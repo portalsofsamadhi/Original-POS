@@ -135,18 +135,15 @@ const ProfilePage: React.FC = () => {
     setMessage("Signed out.");
   };
 
-  const seo = PAGE_SEO["/profile"] || {
-    title: "Profile | Portals of Samadhi",
-    description: "Sign in to your Portals of Samadhi profile.",
-  };
+  const seo = PAGE_SEO["/profile"];
 
   return (
     <>
       <SEO
-        title={seo.title}
-        description={seo.description}
-        image={seo.image || "/poslogo.webp"}
-        imageAlt={seo.imageAlt || "Profile"}
+        title={seo?.title ?? "Profile | Portals of Samadhi"}
+        description={seo?.description ?? "Sign in to your Portals of Samadhi profile."}
+        image={seo?.image ?? "/poslogo.webp"}
+        imageAlt={seo?.imageAlt ?? "Profile"}
         url="/profile"
         noindex
       />
