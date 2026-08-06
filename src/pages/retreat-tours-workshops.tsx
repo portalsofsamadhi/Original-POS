@@ -21,7 +21,7 @@ const AIRPORT_PICKUP = {
   price: 95,
   duration: "One-way transfer",
   notes: [
-    "Airport Pickup — Jamaica",
+    "Airport Pickup  -  Jamaica",
     "One-way private transfer from airport to your stay",
     "Meet-and-greet style welcome when possible",
     "Confirm flight details after booking",
@@ -34,7 +34,7 @@ const BUSH_MEDICINE = {
   price: 120,
   duration: "Half-day immersion",
   notes: [
-    "Bush Medicine — traditional Jamaican herbal wisdom",
+    "Bush Medicine  -  traditional Jamaican herbal wisdom",
     "Mucus-removing lifestyle framework",
     "Plant introduction & tea preparation basics",
     "Outlook on health rooted in traditional medicine",
@@ -103,7 +103,7 @@ const ExperiencesPage: React.FC = () => {
       return;
     }
     const notes = [
-      "Welcome Home — by request only",
+      "Welcome Home  -  by request only",
       "Interest: family farms visit, glamping & retreat at family estate",
       welcomeContact.message ? `Message: ${welcomeContact.message}` : "",
     ]
@@ -142,7 +142,7 @@ const ExperiencesPage: React.FC = () => {
               Experiences Money <em>Can&apos;t Buy</em>
             </>
           }
-          description="Jamaica tours and sacred family experiences rooted in land and lineage — airport pickup, farm stays, simple beach retreats, fully custom journeys, and traditional bush medicine. Small groups. Real hosts. Never mass tourism."
+          description="Jamaica tours and sacred family experiences rooted in land and lineage  -  airport pickup, farm stays, simple beach retreats, fully custom journeys, and traditional bush medicine. Small groups. Real hosts. Never mass tourism."
           actions={
             <>
               <a href="#packages" className="luxury-btn luxury-btn--gold">
@@ -177,7 +177,7 @@ const ExperiencesPage: React.FC = () => {
                 Choose How You <em>Arrive</em>
               </h2>
               <p className="luxury-section__lead">
-                Five clear paths — from a simple airport transfer to a fully custom sacred
+                Five clear paths  -  from a simple airport transfer to a fully custom sacred
                 retreat. Every option is personal, high-touch, and designed so you feel like a
                 guest of the land, not a passenger on an itinerary.
               </p>
@@ -194,11 +194,11 @@ const ExperiencesPage: React.FC = () => {
                   Airport Runs
                 </h3>
                 <p className="luxury-exp-card__desc">
-                  Land well. Private pickup, drop-off, or round trip — host-driven, not a random
-                  cab. Full options and clear prices on our Airport Runs page.
+                  Land well. Private pickup, drop-off, or round trip, host-driven, not a random
+                  cab. Kingston (KIN) and Montego Bay (MBJ) packages with round-trip discounts.
                 </p>
                 <p className="luxury-exp-card__meta">
-                  From ${AIRPORT_PICKUP.price} one-way · Round trip available
+                  From $95 one-way at KIN · Location-based packages
                 </p>
                 <div className="luxury-exp-card__actions">
                   <Link to="/airport-runs" className="luxury-btn luxury-btn--gold">
@@ -224,7 +224,7 @@ const ExperiencesPage: React.FC = () => {
                 </h3>
                 <p className="luxury-exp-card__desc">
                   Visit our collection of family farms. Glamp and retreat at our humble family
-                  estate — hospitality rooted in lineage, not a resort brochure.
+                  estate  -  hospitality rooted in lineage, not a resort brochure.
                 </p>
                 <p className="luxury-exp-card__meta">Family farms · Glamping · Estate retreat</p>
                 <form onSubmit={handleWelcomeRequest} className="luxury-field-grid" style={{ marginTop: "0.25rem" }}>
@@ -313,7 +313,7 @@ const ExperiencesPage: React.FC = () => {
                 </h3>
                 <p className="luxury-exp-card__desc">
                   Learn how to transform your outlook on health with traditional medicine based
-                  on a mucus-removing lifestyle — plants, practice, and a clearer way of living
+                  on a mucus-removing lifestyle  -  plants, practice, and a clearer way of living
                   in the body.
                 </p>
                 <p className="luxury-exp-card__meta">
@@ -341,7 +341,7 @@ const ExperiencesPage: React.FC = () => {
                   Custom Retreat
                 </h3>
                 <p className="luxury-exp-card__desc">
-                  Two clear ways to retreat with us. Start simple — beach and stay — or build a
+                  Two clear ways to retreat with us. Start simple  -  beach and stay  -  or build a
                   fully custom tour from real activities on the land.
                 </p>
                 <p className="luxury-exp-card__meta">
@@ -367,7 +367,7 @@ const ExperiencesPage: React.FC = () => {
               </h2>
               <p className="luxury-panel__subtitle" style={{ marginBottom: "1.25rem" }}>
                 Cinematic shorts, campaigns, and project coordination live under Samadhi
-                Productions — a separate door, same house.
+                Productions  -  a separate door, same house.
               </p>
               <a
                 href="https://www.samadhiproductions.com"

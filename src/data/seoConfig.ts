@@ -6,7 +6,7 @@ export const BRAND_NAME = "Samadhi Productions";
 export const BRAND_TAGLINE = "Explore · Heal · Thrive";
 export const BRAND_EYEBROW = "Jamaica Tours · Sacred Retreats · Bush Medicine";
 export const HOME_DESCRIPTION =
-  "Tours through the countryside, Airport Runs that land you gently, sacred gatherings, retreats, and healing — held by family hosts rooted in Jamaica and Maroon lineage.";
+  "Tours through the countryside, Airport Runs that land you gently, sacred gatherings, retreats, and healing, held by family hosts rooted in Yallahs Bay, St. Thomas, Jamaica and Maroon lineage.";
 
 export interface PageSeoEntry {
   path: string;
@@ -27,7 +27,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     description: HOME_DESCRIPTION,
     image:
       "/images - Copy/Site Files/dji_fly_20241106_071758_19_1730895488211_photo_edited.webp",
-    imageAlt: "Aerial view of Jamaican land — Portals of Samadhi homepage hero",
+    imageAlt: "Aerial view of Jamaican land  -  Portals of Samadhi homepage hero",
     keywords: [
       "jamaica tours",
       "jamaica family experiences",
@@ -99,7 +99,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     path: "/airport-runs",
     title: "Airport Runs Jamaica | Private Pickup & Drop-Off | Portals of Samadhi",
     description:
-      "Private Jamaica airport runs with host care — one-way pickup or drop-off from $95, round trip $180. Land well with Portals of Samadhi, not a random cab.",
+      "Private Jamaica airport runs by location: Kingston KIN from $95 one-way, Montego Bay MBJ from $175, with round-trip discounts. Land well with Portals of Samadhi.",
     image: "/Welcome.webp",
     imageAlt: "Private airport transfer and host welcome with Portals of Samadhi in Jamaica",
     keywords: [
@@ -117,7 +117,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     path: "/custom-retreat",
     title: "Book Your Retreat | Simple or Fully Custom | Portals of Samadhi",
     description:
-      "Book a simple beach retreat or build a fully custom Jamaica tour with Portals of Samadhi — land, lineage, and healing.",
+      "Book a simple beach retreat or build a fully custom Jamaica tour with Portals of Samadhi  -  land, lineage, and healing.",
     image: "/Welcome.webp",
     imageAlt: "Custom Jamaica retreat with Portals of Samadhi",
     keywords: [
@@ -204,7 +204,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   "/profile": {
     path: "/profile",
     title: "Profile | Portals of Samadhi",
-    description: "Your Portals of Samadhi profile — a quiet place for your details.",
+    description: "Your Portals of Samadhi profile  -  a quiet place for your details.",
     image: "/poslogo.webp",
     imageAlt: "Member profile",
     noindex: true,

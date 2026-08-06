@@ -12,8 +12,8 @@ export const PRODUCTION_PRICING: ProductionTier[] = [
     id: "short-form",
     label: "Signature Launch: Short-Form Cinematic",
     summary:
-      "A fully directed, high-end short-form cinematic piece (60–120 seconds) tailored to your project.",
-    examples: "Founding partner rate for the first 5–8 aligned collaborators",
+      "A fully directed, high-end short-form cinematic piece (60-120 seconds) tailored to your project.",
+    examples: "Founding partner rate for the first 5-8 aligned collaborators",
     startingAt: 2800,
   },
   {
@@ -21,7 +21,7 @@ export const PRODUCTION_PRICING: ProductionTier[] = [
     label: "Mid-Form Content",
     summary:
       "Episodic narrative chapters with world-building, story arcs, and premium post-production.",
-    examples: "15–25 min episodes in the New Wave Series style",
+    examples: "15-25 min episodes in the New Wave Series style",
     startingAt: 15000,
   },
 ];

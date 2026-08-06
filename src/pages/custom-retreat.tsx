@@ -190,7 +190,7 @@ const CustomRetreatPage: React.FC = () => {
               Book Your <em>Retreat</em>
             </>
           }
-          description="Two clear ways to retreat with us. Start simple — beach and stay — or build a fully custom tour from real activities on the land."
+          description="Two clear ways to retreat with us. Start simple  -  beach and stay  -  or build a fully custom tour from real activities on the land."
           actions={
             <>
               <a href="#retreat-options" className="luxury-btn luxury-btn--gold">

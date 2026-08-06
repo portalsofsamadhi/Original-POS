@@ -1,4 +1,4 @@
-/** Simple Custom Retreat — beach + stay, one-click book. */
+/** Simple Custom Retreat  -  beach + stay, one-click book. */
 
 export const SIMPLE_RETREAT = {
   id: "simple-retreat",
@@ -13,7 +13,7 @@ export const SIMPLE_RETREAT = {
     "Light orientation to the land and surrounding area",
   ],
   notes: [
-    "Simple Custom Retreat — beach visit + comfortable accommodation",
+    "Simple Custom Retreat  -  beach visit + comfortable accommodation",
     "Includes: guided beach visit",
     "Includes: comfortable accommodation (1 night)",
     "Includes: local host support & light orientation",

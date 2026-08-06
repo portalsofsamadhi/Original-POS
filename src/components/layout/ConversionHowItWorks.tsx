@@ -4,7 +4,7 @@ const STEPS = [
   {
     n: "01",
     title: "Choose your path",
-    text: "Tours on the land, an event for your people, a private healing session, or The Realignment Program.",
+    text: "Tours on the land, a sacred gathering for your people, a private healing session, or The Realignment Program.",
   },
   {
     n: "02",
@@ -13,12 +13,12 @@ const STEPS = [
   },
   {
     n: "03",
-    title: "We hold the container",
-    text: "Hosts, land, flow, and care. You show up. We make the days work.",
+    title: "We walk it with you",
+    text: "From first reply to the last day on the land, real hosts stay close so you never feel left to figure it out alone.",
   },
 ];
 
-/** Conversion-oriented process strip — same luxury language as the rest of the site. */
+/** Conversion-oriented process strip, same luxury language as the rest of the site. */
 const ConversionHowItWorks = () => (
   <section className="luxury-section luxury-how" aria-label="How it works">
     <div className="luxury-section__header">

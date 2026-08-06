@@ -31,12 +31,14 @@ const LuxuryHeroSection = () => (
       <div className="luxury-hero__desc luxury-hero__desc--stack">
         <p>
           If you were looking for your sign to try something different, this is it. Curated
-          experiences that expand the mind and take you places you never thought to look for
-          (or find) are our specialty.
+          experiences that expand the mind and take you places you never thought to look for (or
+          find): that&apos;s our specialty.
         </p>
         <p>
-          Make your way through forests, farms, or quiet reflection as we hold a sacred moment
-          for you and your beloveds, near or far.
+          <em>
+            Make your way through forests and farms, sacred moments, and quiet reflections whether
+            you&apos;re near or far.
+          </em>
         </p>
       </div>
       <div className="luxury-hero__actions">

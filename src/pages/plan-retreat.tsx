@@ -71,6 +71,8 @@ const PRICING_TIERS: Record<
     tagline: string;
     price: number;
     perDay: boolean;
+    /** When set, price is a starting package fee; additional guests add this amount each. */
+    perGuestAfter?: number;
     priceNote: string;
     description: string;
     includes: string[];
@@ -79,16 +81,18 @@ const PRICING_TIERS: Record<
 > = {
   essential: {
     name: "Essential Planning",
-    tagline: "Clear structure & professional hosting",
-    price: 250,
+    tagline: "Detailed coordination and personalized handling of vendors",
+    price: 450,
     perDay: false,
-    priceNote: "base per guest",
+    priceNote: "limited-time starting package rate",
+    perGuestAfter: 95,
     description:
-      "Ideal for workshops, virtual gatherings, and focused events that need expert facilitation without full lodging production.",
+      "Ideal for workshops, virtual gatherings, and focused events that need expert facilitation without full lodging production. Introductory package rates start at $450 and scale with group size.",
     includes: [
       "Event design & run-of-show",
       "Professional hosting / facilitation",
       "Agenda, timing, and guest flow",
+      "Detailed coordination and personalized handling of vendors",
       "Pre-event planning call",
     ],
     bestFor: "Workshops · Virtual · Single-day focus",
@@ -96,9 +100,9 @@ const PRICING_TIERS: Record<
   immersive: {
     name: "Immersive Retreat",
     tagline: "Multi-day hosting with hospitality",
-    price: 375,
+    price: 425,
     perDay: true,
-    priceNote: "per guest / day",
+    priceNote: "limited-time rate · per guest / day",
     description:
       "For multi-day retreats and in-person series: we shape lodging guidance, meals, land-based programming, and daily rhythm.",
     includes: [
@@ -113,9 +117,9 @@ const PRICING_TIERS: Record<
   premier: {
     name: "Premier Production",
     tagline: "Private venues & full white-glove care",
-    price: 525,
+    price: 575,
     perDay: true,
-    priceNote: "per guest / day",
+    priceNote: "limited-time rate · per guest / day",
     description:
       "Signature events with private estates or boutique villas, chef-led hospitality, concierge coordination, and complete production support.",
     includes: [
@@ -365,7 +369,7 @@ const SERVICE_PILLARS = [
     icon: Leaf,
     title: "Retreats",
     text: "Multi-day immersive events on Jamaican land - rest, culture, meals, and healing held with host care from arrival to departure.",
-    example: "3–7 days · small groups · lodging & itinerary",
+    example: "3-7 days · small groups · lodging & itinerary",
   },
   {
     icon: Sparkles,
@@ -431,12 +435,15 @@ const PlanRetreatPage: React.FC = () => {
 
   const baseTotal = useMemo(() => {
     const t = PRICING_TIERS[tier];
-    if (intent === "virtual") {
-      return t.price * details.participants;
+    const guests = Math.max(1, details.participants);
+    if (t.perDay) {
+      return t.price * days * guests;
     }
-    return t.perDay
-      ? t.price * days * details.participants
-      : t.price * details.participants;
+    // Starting package rate (limited-time), then scales with additional guests
+    if (typeof t.perGuestAfter === "number") {
+      return t.price + Math.max(0, guests - 1) * t.perGuestAfter;
+    }
+    return t.price * guests;
   }, [tier, days, details.participants, intent]);
 
   const featuresTotal = useMemo(() => {
@@ -537,10 +544,10 @@ Total estimate: $${total}`;
           eyebrow="Event Planning · Portals of Samadhi"
           title={
             <>
-              Plan an Event <em>That Feels Like Home</em>
+              Plan an Event That <em>Transcends Your Expectations</em>
             </>
           }
-          description="We host and professionally plan retreats, workshops, multi-session series, and virtual gatherings—with the same grounded care we bring when we walk Jamaica’s land with guests."
+          description="We host and professionally plan retreats, workshops, multi-session series, and virtual gatherings, with the same grounded care we bring when we walk Jamaica's land with guests."
           actions={
             <>
               <a href="#event-builder" className="luxury-btn luxury-btn--gold">
@@ -569,15 +576,16 @@ Total estimate: $${total}`;
         <div className="luxury-page-body" id="event-builder">
           <div className="luxury-intro-block" style={{ marginTop: "2.5rem" }}>
             <p>
-              Looking for more than a tour day? We also host and plan full events. That means
-              retreats on the land, focused workshops, ongoing series for communities and teams,
-              and virtual gatherings held with real presence - not a generic vendor checklist.
+              Looking for more than a day tour? Planning that puts your vision at the center. We
+              build a portal to the world you want to create: retreats on the land, focused
+              workshops, ongoing series for communities and teams, and virtual gatherings held with
+              real presence, not a generic vendor checklist.
             </p>
             <p>
               You bring the intention. We shape the container: flow, hospitality, venue or
               platform, and the quiet details that help people leave nourished instead of rushed.
-              Same roots as our tours - family land, Maroon lineage, bush wisdom - extended into
-              professional event planning.
+              Same roots as our tours: family land near Yallahs Bay, St. Thomas, Maroon lineage,
+              bush wisdom, extended into professional event planning.
             </p>
           </div>
 
@@ -653,8 +661,9 @@ Total estimate: $${total}`;
                 Choose Your <em>Planning Package</em>
               </h2>
               <p className="luxury-section__lead">
-                Packages scale from focused facilitation to full multi-day production. Pick the
-                level that matches how much hosting, hospitality, and venue support you need.
+                Packages scale from focused facilitation to full multi-day production. Rates below
+                are introductory / limited-time package rates (subject to change). Essential starts
+                at a package floor, then scales with your group. Not a simple per-person ticket.
               </p>
             </div>
             <div className="luxury-package-grid">
@@ -673,7 +682,7 @@ Total estimate: $${total}`;
                     <span className="luxury-package-card__name">{t.name}</span>
                     <span className="luxury-package-card__tagline">{t.tagline}</span>
                     <span className="luxury-package-card__price">
-                      ${t.price}
+                      From ${t.price}
                       <span className="luxury-package-card__price-note"> {t.priceNote}</span>
                     </span>
                     <span className="luxury-package-card__desc">{t.description}</span>
@@ -773,6 +782,10 @@ Total estimate: $${total}`;
                 <h2 className="luxury-panel__title">Compose the Experience</h2>
                 <p className="luxury-panel__subtitle">
                   {CATEGORY_META[activeCategory]?.description}
+                </p>
+                <p className="luxury-note" style={{ marginBottom: "1rem" }}>
+                  Prices shown are base estimates and are subject to change until bookings are
+                  made. Final prices will be quoted in your proposed itinerary.
                 </p>
 
                 <div className="luxury-tabs" role="tablist">
@@ -909,8 +922,9 @@ Total estimate: $${total}`;
               </div>
 
               <p className="luxury-note">
-                Final proposals confirm venues, talent, and production scope. This tool is your
-                starting sketch - we refine every event by hand.
+                Base prices only. Subject to change until booking is confirmed. Final prices will
+                be quoted in your proposed itinerary. This tool is a starting sketch; we refine
+                every event by hand.
               </p>
 
               <button

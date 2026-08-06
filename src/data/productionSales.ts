@@ -91,7 +91,7 @@ export const BUYER_PROFILES: BuyerProfile[] = [
       "You have a single, EP, or visual world to share, and the piece needs to honor what the music already carries.",
     whyFit:
       "We treat release visuals as art objects: composition, palette, rhythm, and atmosphere shaped to feel inevitable beside the sound, all built through AI-native craft.",
-    typicalAsk: "a music visual, release piece, or campaign hero (60–90 sec)",
+    typicalAsk: "a music visual, release piece, or campaign hero (60-90 sec)",
   },
   {
     title: "Series & IP builders",
@@ -99,7 +99,7 @@ export const BUYER_PROFILES: BuyerProfile[] = [
       "You are shaping characters, mythology, or an episodic world and need to know it holds on screen.",
     whyFit:
       "New Wave is our proof of chapter-length storytelling: tone sustained across time, worlds that deepen instead of reset, without a traditional shoot schedule.",
-    typicalAsk: "a pilot short, then Episode 1 (15–25 min) once the look is settled",
+    typicalAsk: "a pilot short, then Episode 1 (15-25 min) once the look is settled",
   },
   {
     title: "Culture & experience brands",
@@ -131,9 +131,9 @@ export const PRODUCTION_OFFERS: ProductionOffer[] = PRODUCTION_PRICING.map((tier
       label: tier.label,
       startingAt: tier.startingAt,
       buyerFit:
-        "For founding partners who need one finished cinematic piece (60–120 seconds) to launch, promote, or prove their vision.",
+        "For founding partners who need one finished cinematic piece (60-120 seconds) to launch, promote, or prove their vision.",
       bestWhen:
-        "You are one of the first 5–8 aligned collaborators ready to invest in a signature short-form piece tailored to your project.",
+        "You are one of the first 5-8 aligned collaborators ready to invest in a signature short-form piece tailored to your project.",
       includes: [
         "Concept collaboration and creative direction",
         "Immersive audio soundscape with rights to music used in video",
@@ -148,7 +148,7 @@ export const PRODUCTION_OFFERS: ProductionOffer[] = PRODUCTION_PRICING.map((tier
         "Extended character work or custom performance assets",
         "Extra formats, cut-downs, or rush delivery",
       ],
-      typicalTimeline: "4–8 weeks from signed scope, depending on complexity",
+      typicalTimeline: "4-8 weeks from signed scope, depending on complexity",
     };
   }
 
@@ -163,7 +163,7 @@ export const PRODUCTION_OFFERS: ProductionOffer[] = PRODUCTION_PRICING.map((tier
     includes: [
       "Episode story architecture and beat structure",
       "Creative direction and world-consistent look across the chapter",
-      "Full AI craft pipeline scaled to a 15–25 minute deliverable",
+      "Full AI craft pipeline scaled to a 15-25 minute deliverable",
       "Post-production: edit, sound, grade, and delivery-ready master",
       "Milestone workflow: outline → generation → fine cut",
       "One consolidated revision round on the fine cut",
@@ -174,7 +174,7 @@ export const PRODUCTION_OFFERS: ProductionOffer[] = PRODUCTION_PRICING.map((tier
       "Rush schedule or parallel deliverable formats",
       "Full script development and multiple writing passes",
     ],
-    typicalTimeline: "8–14 weeks from signed scope for a first chapter",
+    typicalTimeline: "8-14 weeks from signed scope for a first chapter",
   };
 });
 

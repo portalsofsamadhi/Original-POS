@@ -28,7 +28,7 @@ const COPY: Record<
   events: {
     eyebrow: "Gatherings",
     title: "Plan an event that actually holds",
-    text: "Retreats, workshops, series, and virtual gatherings—professionally hosted with the same care as our land work.",
+    text: "Retreats, workshops, series, and virtual gatherings, professionally hosted with the same care as our land work.",
     primary: { to: "/book-now", label: "Book a discovery call" },
     secondary: { to: "/experiences", label: "Or explore tours" },
   },
@@ -42,14 +42,14 @@ const COPY: Record<
   about: {
     eyebrow: "Walk with us",
     title: "You’ve read the story. Come for the land.",
-    text: "Tours, events, and healing—all rooted in Maroon lineage and living host work across Jamaica.",
+    text: "Tours, events, and healing, all rooted in Maroon lineage and living host work from Yallahs Bay, St. Thomas, Jamaica.",
     primary: { to: "/experiences", label: "Explore tours" },
     secondary: { to: "/book-now", label: "Book a free session" },
   },
   airport: {
     eyebrow: "Airport Runs",
     title: "Book your landing",
-    text: "Private pickup, drop-off, or round trip — from $95 one-way. Flight details confirmed after you book.",
+    text: "Private pickup, drop-off, or round trip from $95 one-way at KIN. Flight details confirmed after you book.",
     primary: { to: "#airport-packages", label: "Choose a run" },
     secondary: { to: "/experiences", label: "Add a tour or stay" },
   },

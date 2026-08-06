@@ -33,7 +33,7 @@ const AboutPage = () => {
               Our <em>Story</em>
             </>
           }
-          description="From Scotts Hall Maroon lineage to living host work across Jamaica—tours, sacred events, healing, and cultural immersion rooted in land and lineage."
+          description="From Scotts Hall Maroon lineage to living host work from Yallahs Bay, St. Thomas, Jamaica: tours, sacred events, healing, and cultural immersion rooted in land and lineage."
           actions={
             <>
               <Link to="/experiences" className="luxury-btn luxury-btn--gold">

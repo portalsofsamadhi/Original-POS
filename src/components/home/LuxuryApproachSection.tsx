@@ -16,7 +16,7 @@ const offerings = [
     icon: Plane,
     eyebrow: "Land well",
     title: "Airport Runs",
-    text: "Private pickup and drop-off from the airport — same hosts who walk the land with you, not a random cab. One-way from $95; round trip available.",
+    text: "Private pickup and drop-off from the airport, same hosts who walk the land with you, not a random cab. Kingston (KIN) from $95 one-way; Montego Bay (MBJ) priced for the longer run. Round-trips save money.",
     href: "/airport-runs",
     cta: "Book an airport run",
     featured: true,

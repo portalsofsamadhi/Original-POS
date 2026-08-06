@@ -205,7 +205,7 @@ const ProfilePage: React.FC = () => {
                   </button>
                 </div>
 
-                {/* Google — standard option */}
+                {/* Google  -  standard option */}
                 <div className="mb-5">
                   <p className="text-center text-xs uppercase tracking-widest mb-3" style={{ color: "var(--luxury-gold)" }}>
                     Continue with Google

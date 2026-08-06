@@ -63,8 +63,8 @@ const ExperiencesSection = ({ pageMode = false }: ExperiencesSectionProps) => (
         >
           <p className="luxury-land-proof__quote">
             You won&apos;t feel like a passenger on someone else&apos;s itinerary. You&apos;ll feel
-            welcomed as a guest into a living landscape, with hosts who cook, drive, and walk the
-            hills beside you.
+            right at home in the landscapes and natural abundance, with hosts who cook, drive, and
+            walk the hills beside you.
           </p>
           <div className="luxury-hero__actions" style={{ marginTop: "1.75rem" }}>
             <Link to="/experiences" className="luxury-btn luxury-btn--gold">

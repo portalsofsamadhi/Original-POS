@@ -32,7 +32,7 @@ const courseModules = [
     botanicalSupport: "Clarity Blend Tea",
     spiritualPractice: "Mindful Observation Meditation",
     outcomes: [
-      "Identify 3–5 core limiting patterns",
+      "Identify 3-5 core limiting patterns",
       "Understand pattern triggers and cycles",
       "Create a personal pattern awareness map",
     ],

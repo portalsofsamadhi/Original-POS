@@ -6,7 +6,6 @@ import LuxuryApproachSection from "./home/LuxuryApproachSection";
 import ExperiencesSection from "./home/ExperiencesSection";
 import ConversionHowItWorks from "./layout/ConversionHowItWorks";
 import ProductionPortalLink from "./home/ProductionPortalLink";
-import ContactSection from "./home/ContactSection";
 import "../styles/luxury-theme.css";
 
 const Home = () => {
@@ -31,7 +30,6 @@ const Home = () => {
         <ExperiencesSection />
         <ConversionHowItWorks />
         <ProductionPortalLink />
-        <ContactSection />
       </div>
     </>
   );

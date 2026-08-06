@@ -12,12 +12,12 @@ const Footer = () => {
         <div className="luxury-footer-cta">
           <h2 className="luxury-footer-cta__title">Ready when you are</h2>
           <p className="luxury-footer-cta__text">
-            Free discovery sessions. Small groups. Real hosts on Jamaican land.
+            Still not sure but really interested?
           </p>
           <div className="luxury-hero__actions" style={{ justifyContent: "center", marginBottom: 0 }}>
-            <Link to="/book-now" className="luxury-btn luxury-btn--gold">
-              Book a free session
-            </Link>
+            <a href="tel:+15102919399" className="luxury-btn luxury-btn--gold">
+              Give us a call
+            </a>
             <Link to="/experiences" className="luxury-btn luxury-btn--outline">
               Browse tours
             </Link>
@@ -88,7 +88,7 @@ const Footer = () => {
           </h3>
           <div className="flex items-start space-x-3 text-sm">
             <MapPin className="h-4 w-4 text-[var(--luxury-gold)] mt-0.5 shrink-0" />
-            <span className="text-[var(--luxury-cream-muted)]">Kingston, Jamaica</span>
+            <span className="text-[var(--luxury-cream-muted)]">Yallahs Bay, St. Thomas, Jamaica</span>
           </div>
           <div className="flex items-center space-x-3 text-sm">
             <Phone className="h-4 w-4 text-[var(--luxury-gold)] shrink-0" />

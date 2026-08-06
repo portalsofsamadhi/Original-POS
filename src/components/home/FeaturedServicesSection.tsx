@@ -19,7 +19,7 @@ const FeaturedServicesSection = () => (
       </h2>
       <p className="luxury-section__lead">
         Two primary doors: countryside tours with our family hosts, and private Airport Runs so
-        you arrive with care — not a random cab.
+        you arrive with care, not a random cab.
       </p>
     </div>
 
@@ -32,7 +32,7 @@ const FeaturedServicesSection = () => (
         <h3 className="luxury-featured-card__title">Explore Tours</h3>
         <p className="luxury-featured-card__text">
           Hills, valleys, working farms, and forests our families still tend. Build your days from
-          real experiences — not a fixed tourist loop.
+          real experiences, not a fixed tourist loop.
         </p>
         <ul className="luxury-featured-card__list">
           <li>Nature, culture &amp; healing options</li>
@@ -52,7 +52,7 @@ const FeaturedServicesSection = () => (
         <p className="luxury-featured-card__eyebrow">Private transfer · From $95</p>
         <h3 className="luxury-featured-card__title">Airport Runs</h3>
         <p className="luxury-featured-card__text">
-          Private pickup, drop-off, or round trip. Meet-and-greet when possible — same family hosts
+          Private pickup, drop-off, or round trip. Meet-and-greet when possible. Same family hosts
           who walk the land with you, not a random cab queue.
         </p>
         <ul className="luxury-featured-card__list">
