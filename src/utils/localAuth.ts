@@ -74,12 +74,12 @@ export function getPasswordStrength(password: string): number {
   return passwordScore(password);
 }
 
-function toB64(buf: ArrayBuffer): string {
-  const bytes = new Uint8Array(buf);
+function toB64(data: ArrayBuffer | Uint8Array): string {
+  const bytes = data instanceof Uint8Array ? data : new Uint8Array(data);
   let s = "";
-  bytes.forEach((b) => {
-    s += String.fromCharCode(b);
-  });
+  for (let i = 0; i < bytes.length; i++) {
+    s += String.fromCharCode(bytes[i]);
+  }
   return btoa(s);
 }
 
@@ -110,7 +110,9 @@ async function hashPasswordPbkdf2(password: string, salt?: Uint8Array): Promise<
     keyMaterial,
     256
   );
-  return `pbkdf2$${iterations}$${toB64(saltBytes.buffer.slice(saltBytes.byteOffset, saltBytes.byteOffset + saltBytes.byteLength))}$${toB64(bits)}`;
+  // Copy salt into a plain ArrayBuffer-backed Uint8Array for stable encoding
+  const saltCopy = new Uint8Array(saltBytes);
+  return `pbkdf2$${iterations}$${toB64(saltCopy)}$${toB64(bits)}`;
 }
 
 async function verifyPassword(password: string, stored: string): Promise<boolean> {
