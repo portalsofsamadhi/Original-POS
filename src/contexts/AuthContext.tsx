@@ -1,31 +1,37 @@
-
-import React, { useState, useEffect } from 'react';
-import { AuthContext, User } from './AuthContextContext';
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { AuthContext, type User } from "./AuthContextContext";
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUserState] = useState<User | null>(null);
 
   useEffect(() => {
-    const member = localStorage.getItem('memberProfile');
-    if (member) {
-      try {
-        const parsed = JSON.parse(member);
-        if (parsed && parsed.email) setUser({ email: parsed.email, name: parsed.name });
-      } catch {
-        // Ignore JSON parse errors
+    try {
+      const member = localStorage.getItem("memberProfile");
+      if (member) {
+        const parsed = JSON.parse(member) as User;
+        if (parsed?.email) {
+          setUserState({ email: parsed.email, name: parsed.name });
+        }
       }
+    } catch {
+      /* ignore corrupt session */
     }
   }, []);
 
-  const signOut = () => {
-    localStorage.removeItem('memberProfile');
-    setUser(null);
-  };
+  const setUser = useCallback((next: User | null) => {
+    setUserState(next);
+  }, []);
 
-  return (
-    <AuthContext.Provider value={{ user, setUser, signOut }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  const signOut = useCallback(() => {
+    try {
+      localStorage.removeItem("memberProfile");
+    } catch {
+      /* ignore */
+    }
+    setUserState(null);
+  }, []);
+
+  const value = useMemo(() => ({ user, setUser, signOut }), [user, setUser, signOut]);
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
-

@@ -1,10 +1,14 @@
-import bcrypt from "bcryptjs";
+/**
+ * Browser-local account store for profile sign-in / sign-up.
+ * Passwords are hashed with Web Crypto (PBKDF2) — no bcrypt dependency.
+ */
 
 const ACCOUNTS_KEY = "pos_auth_accounts";
 const SESSION_KEY = "memberProfile";
 
 export type AuthAccount = {
   email: string;
+  /** Format: pbkdf2$iterations$saltB64$hashB64  OR legacy bcrypt hash starting with $2 */
   passwordHash?: string;
   name?: string;
   phone?: string;
@@ -70,6 +74,78 @@ export function getPasswordStrength(password: string): number {
   return passwordScore(password);
 }
 
+function toB64(buf: ArrayBuffer): string {
+  const bytes = new Uint8Array(buf);
+  let s = "";
+  bytes.forEach((b) => {
+    s += String.fromCharCode(b);
+  });
+  return btoa(s);
+}
+
+function fromB64(b64: string): Uint8Array {
+  const s = atob(b64);
+  const bytes = new Uint8Array(s.length);
+  for (let i = 0; i < s.length; i++) bytes[i] = s.charCodeAt(i);
+  return bytes;
+}
+
+async function hashPasswordPbkdf2(password: string, salt?: Uint8Array): Promise<string> {
+  const saltBytes = salt ?? crypto.getRandomValues(new Uint8Array(16));
+  const keyMaterial = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(password),
+    "PBKDF2",
+    false,
+    ["deriveBits"]
+  );
+  const iterations = 120000;
+  const bits = await crypto.subtle.deriveBits(
+    {
+      name: "PBKDF2",
+      salt: saltBytes as BufferSource,
+      iterations,
+      hash: "SHA-256",
+    },
+    keyMaterial,
+    256
+  );
+  return `pbkdf2$${iterations}$${toB64(saltBytes.buffer.slice(saltBytes.byteOffset, saltBytes.byteOffset + saltBytes.byteLength))}$${toB64(bits)}`;
+}
+
+async function verifyPassword(password: string, stored: string): Promise<boolean> {
+  if (stored.startsWith("pbkdf2$")) {
+    const parts = stored.split("$");
+    if (parts.length !== 4) return false;
+    const iterations = Number(parts[1]);
+    const salt = fromB64(parts[2]);
+    const expected = parts[3];
+    const keyMaterial = await crypto.subtle.importKey(
+      "raw",
+      new TextEncoder().encode(password),
+      "PBKDF2",
+      false,
+      ["deriveBits"]
+    );
+    const bits = await crypto.subtle.deriveBits(
+      {
+        name: "PBKDF2",
+        salt: salt as BufferSource,
+        iterations,
+        hash: "SHA-256",
+      },
+      keyMaterial,
+      256
+    );
+    return toB64(bits) === expected;
+  }
+  // Legacy bcrypt hashes (if any accounts were created with bcryptjs) — cannot verify without bcrypt; force reset
+  if (stored.startsWith("$2")) {
+    return false;
+  }
+  return false;
+}
+
 export async function signUpWithPassword(opts: {
   email: string;
   password: string;
@@ -97,7 +173,7 @@ export async function signUpWithPassword(opts: {
     throw new Error("An account with this email already exists. Sign in instead.");
   }
 
-  const passwordHash = await bcrypt.hash(opts.password, 10);
+  const passwordHash = await hashPasswordPbkdf2(opts.password);
   const account: AuthAccount = {
     email,
     passwordHash,
@@ -135,7 +211,13 @@ export async function signInWithPassword(opts: {
     throw new Error("This account has no password. Create a new account or use Google.");
   }
 
-  const ok = await bcrypt.compare(opts.password, account.passwordHash);
+  if (account.passwordHash.startsWith("$2")) {
+    throw new Error(
+      "This account used an older password format. Please create a new account with the same email, or use Google sign-in."
+    );
+  }
+
+  const ok = await verifyPassword(opts.password, account.passwordHash);
   if (!ok) {
     throw new Error("Incorrect email or password.");
   }
@@ -175,9 +257,7 @@ export function signInWithGoogle(opts: {
   } else {
     account.name = opts.name || account.name;
     account.picture = opts.picture || account.picture;
-    if (account.provider === "password") {
-      // Keep password; allow Google as alternate sign-in for same email
-    } else {
+    if (account.provider !== "password") {
       account.provider = "google";
     }
   }

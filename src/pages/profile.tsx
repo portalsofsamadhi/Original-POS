@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Component, type ErrorInfo, type ReactNode, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { LogOut, Mail, User, Phone } from "lucide-react";
 import SEO from "../components/SEO";
@@ -18,13 +18,49 @@ import {
 import "../styles/luxury-theme.css";
 
 const googleEnabled = Boolean(
-  import.meta.env.VITE_GOOGLE_CLIENT_ID &&
+  (import.meta.env.VITE_GOOGLE_CLIENT_ID as string | undefined)?.trim() &&
     !String(import.meta.env.VITE_GOOGLE_CLIENT_ID).toLowerCase().includes("redacted")
 );
 
+class ProfileErrorBoundary extends Component<{ children: ReactNode }, { error: string | null }> {
+  state: { error: string | null } = { error: null };
+
+  static getDerivedStateFromError(error: Error) {
+    return { error: error.message || "Something went wrong on this page." };
+  }
+
+  componentDidCatch(error: Error, info: ErrorInfo) {
+    console.error("Profile page crash:", error, info);
+  }
+
+  render() {
+    if (this.state.error) {
+      return (
+        <div className="luxury-page min-h-[50vh] flex items-center justify-center px-4">
+          <div className="luxury-panel max-w-md text-center">
+            <h1 className="luxury-panel__title">Profile temporarily unavailable</h1>
+            <p className="luxury-panel__subtitle">{this.state.error}</p>
+            <button
+              type="button"
+              className="luxury-btn luxury-btn--gold"
+              onClick={() => {
+                this.setState({ error: null });
+                window.location.assign("/profile");
+              }}
+            >
+              Try again
+            </button>
+          </div>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 type AuthMode = "signin" | "signup";
 
-const ProfilePage: React.FC = () => {
+const ProfilePageInner: React.FC = () => {
   const { user, setUser, signOut } = useAuth() as AuthContextType;
   const [authMode, setAuthMode] = useState<AuthMode>("signin");
   const [authName, setAuthName] = useState("");
@@ -438,5 +474,11 @@ const ProfilePage: React.FC = () => {
     </>
   );
 };
+
+const ProfilePage: React.FC = () => (
+  <ProfileErrorBoundary>
+    <ProfilePageInner />
+  </ProfileErrorBoundary>
+);
 
 export default ProfilePage;
