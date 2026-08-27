@@ -13,8 +13,18 @@ function sanitizeEnvString(value) {
   return v || undefined;
 }
 
+function extractEmail(value) {
+  const v = sanitizeEnvString(value);
+  if (!v) return undefined;
+  const angled = v.match(/<([^<>@\s]+@[^<>@\s]+)>/);
+  if (angled) return angled[1].trim();
+  if (v.includes('@') && !v.includes(' ')) return v;
+  const loose = v.match(/[^\s<>]+@[^\s<>]+/);
+  return loose ? loose[0] : v;
+}
+
 function getTeamEmail() {
-  return sanitizeEnvString(process.env.TEAM_EMAIL) || 'info@portalsofsamadhi.com';
+  return extractEmail(process.env.TEAM_EMAIL) || 'info@portalsofsamadhi.com';
 }
 
 /**
@@ -43,19 +53,20 @@ function getFromAddress() {
 
 function getSmtpUser() {
   let user =
-    sanitizeEnvString(process.env.SMTP_USER) ||
-    sanitizeEnvString(process.env.EMAIL_USER) ||
-    'portalsofsamadhi@gmail.com';
+    extractEmail(process.env.SMTP_USER) ||
+    extractEmail(process.env.EMAIL_USER) ||
+    'info@portalsofsamadhi.com';
   if (!user.includes('@')) {
-    user = 'portalsofsamadhi@gmail.com';
+    user = 'info@portalsofsamadhi.com';
   }
   return user;
 }
 
-/** App passwords are often pasted with spaces — strip them. */
+/** App passwords are often pasted with spaces. Strip them. */
 function getSmtpPass() {
   const pass =
     sanitizeEnvString(process.env.SMTP_PASS) ||
+    sanitizeEnvString(process.env.SMTP_PASSWORD) ||
     sanitizeEnvString(process.env.EMAIL_APP_PASSWORD) ||
     sanitizeEnvString(process.env.EMAIL_PASSWORD);
   return pass ? pass.replace(/\s+/g, '') : undefined;
