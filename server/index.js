@@ -17,10 +17,10 @@ const {
   getSmtpPort,
   getSmtpUser,
   getTeamEmail,
-  resolveInboundTo,
   isSmtpConfigured,
   verifySmtpAuth,
 } = require('./smtpConfig.cjs');
+const { inspectMailRequest } = require('./mailGuard.cjs');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -114,33 +114,30 @@ app.get('/api/health', async (req, res) => {
 // Send email (contact form, info session requests, booking notifications)
 app.post('/api/send-email', async (req, res) => {
   try {
-    const { to, subject, html, replyTo } = req.body || {};
-    if (!to || !subject || !html) {
-      return res.status(400).json({ success: false, error: 'Missing required fields: to, subject, html' });
+    const gate = inspectMailRequest(req, allowedOrigins);
+    if (gate.silent) {
+      return res.status(200).json({ success: true });
+    }
+    if (!gate.ok) {
+      return res.status(gate.status || 403).json({ success: false, error: gate.error || 'Forbidden' });
     }
 
+    const { subject, html } = req.body || {};
     const transporter = getMailTransporter();
     if (!transporter) {
       return res.status(503).json({ success: false, error: 'Email service not configured (SMTP credentials missing)' });
     }
 
-    // Avoid same-mailbox SMTP → Sent-only: deliver via plus-address or NOTIFY_EMAIL
-    const deliverTo = resolveInboundTo(to);
-    // Prefer visitor email for Reply-To so you can answer the person who wrote in
-    const reply =
-      (typeof replyTo === 'string' && replyTo.includes('@') && replyTo) ||
-      getTeamEmail();
-
     const info = await transporter.sendMail({
       from: getFromAddress(),
-      to: deliverTo,
-      subject,
+      to: gate.deliverTo,
+      subject: String(subject).trim(),
       html,
-      replyTo: reply,
+      replyTo: gate.replyTo,
     });
 
-    console.log(`Email sent to ${deliverTo} (requested ${to}): ${info.messageId}`);
-    return res.json({ success: true, messageId: info.messageId, deliveredTo: deliverTo });
+    console.log(`Email sent to ${gate.deliverTo}: ${info.messageId}`);
+    return res.json({ success: true, messageId: info.messageId, deliveredTo: gate.deliverTo });
   } catch (error) {
     console.error('Send email error:', error);
     if (error.code === 'EAUTH' || error.responseCode === 535) {
@@ -279,7 +276,10 @@ app.get('/api/newsletter/check', async (req, res) => {
 
 app.post('/api/newsletter/subscribe', async (req, res) => {
   try {
-    const { email, phone } = req.body;
+    const { email, phone, website } = req.body;
+    if (String(website || "").trim()) {
+      return res.json({ success: true, message: "Successfully subscribed" });
+    }
     const subscribersPath = path.join(__dirname, '..', 'subscribers.json');
     
     let subscribers = [];

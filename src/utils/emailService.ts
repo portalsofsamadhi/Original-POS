@@ -14,6 +14,9 @@ interface EmailPayload {
   replyTo?: string;
   priority?: 'high' | 'normal' | 'low';
   templateName?: string;
+  /** Hidden honeypot. Must stay empty. */
+  website?: string;
+  formStarted?: number;
 }
 
 interface EmailResponse {
@@ -41,6 +44,8 @@ export const sendEmail = async (payload: EmailPayload): Promise<EmailResponse> =
         method: 'POST',
         body: JSON.stringify({
           ...payload,
+          website: payload.website || "",
+          formStarted: payload.formStarted,
           timestamp: new Date().toISOString(),
           source: 'portals-of-samadhi-website'
         }),

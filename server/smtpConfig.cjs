@@ -152,6 +152,7 @@ async function verifySmtpAuth(force = false) {
 
 module.exports = {
   sanitizeEnvString,
+  extractEmail,
   getTeamEmail,
   getNotifyEmail,
   resolveInboundTo,

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
@@ -23,11 +23,13 @@ const ContactSection = () => {
   const { pathname } = useLocation();
   const isRetreatPage = RETREAT_PATHS.some((p) => pathname.startsWith(p));
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formStarted = useRef(Date.now());
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
     bookInfoSession: false,
+    website: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -62,6 +64,8 @@ const ContactSection = () => {
       const result = await sendEmail({
         to: TEAM_EMAIL,
         replyTo: form.email,
+        website: form.website,
+        formStarted: formStarted.current,
         subject: `Website Contact: ${intent} from ${form.name}`,
         html: `
           <h2>New Contact Form Submission</h2>
@@ -86,7 +90,8 @@ const ContactSection = () => {
           : "Thank you. We'll be in touch soon.",
       });
 
-      setForm({ name: "", email: "", message: "", bookInfoSession: false });
+      setForm({ name: "", email: "", message: "", bookInfoSession: false, website: "" });
+      formStarted.current = Date.now();
     } catch (error) {
       console.error("Failed to send contact form:", error);
       toast({
@@ -173,6 +178,18 @@ const ContactSection = () => {
             viewport={{ once: true, margin: "-40px" }}
             variants={fadeUp}
           >
+            <div className="samadhi-hp" aria-hidden="true">
+              <label htmlFor="contact-website">Website</label>
+              <input
+                id="contact-website"
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                value={form.website}
+                onChange={(e) => setForm((f) => ({ ...f, website: e.target.value }))}
+              />
+            </div>
             <div className="samadhi-contact__field">
               <label htmlFor="contact-name">Name</label>
               <input

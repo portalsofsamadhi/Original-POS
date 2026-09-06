@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
@@ -40,6 +40,8 @@ const BookNowPage = () => {
   const [timeSlot, setTimeSlot] = useState<string>("");
   const [step, setStep] = useState<BookingStep>("calendar");
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
+  const formStarted = useRef(Date.now());
+  const [website, setWebsite] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -93,6 +95,8 @@ const BookNowPage = () => {
       const result = await sendEmail({
         to: TEAM_EMAIL,
         replyTo: formData.email,
+        website,
+        formStarted: formStarted.current,
         subject,
         html,
       });
@@ -353,6 +357,16 @@ const BookNowPage = () => {
                     Your Information
                   </h2>
                   <div className="space-y-4">
+                    <div className="samadhi-hp" aria-hidden="true">
+                      <Label htmlFor="booking-website">Website</Label>
+                      <Input
+                        id="booking-website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={website}
+                        onChange={(e) => setWebsite(e.target.value)}
+                      />
+                    </div>
                     <div>
                       <Label htmlFor="name" className="text-samadhi-cream/80">
                         Full Name *

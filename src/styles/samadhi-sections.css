@@ -1378,7 +1378,17 @@ a.samadhi-btn {
   display: inline-flex;
 }
 
+.samadhi-hp {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .samadhi-contact__form {
+  position: relative;
   padding: clamp(1.5rem, 3vw, 2rem);
   border-radius: 1rem;
   border: 1px solid rgba(195, 153, 143, 0.2);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
@@ -13,6 +13,7 @@ import { PAGE_SEO } from "../data/seoConfig";
 
 const BookingSuccessPage = () => {
   const navigate = useNavigate();
+  const formStarted = useRef(Date.now() - 8000);
   const [isProcessing, setIsProcessing] = useState<boolean>(true);
   const [isComplete, setIsComplete] = useState<boolean>(false);
   interface BookingDetails {
@@ -130,6 +131,8 @@ Payment: Completed`,
           // Send notification email to team
           await sendEmail({
             to: TEAM_EMAIL,
+            formStarted: formStarted.current,
+            website: "",
             subject: `New Booking - ${serviceName}`,
             html: `
               <h2>New Booking Received</h2>
