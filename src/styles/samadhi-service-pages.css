@@ -1,0 +1,573 @@
+/* Samadhi Productions, service, experiences & retreat page theming */
+
+.samadhi-service-page,
+.samadhi-retreat-page {
+  background: #0A0A0A;
+  color: #F5F0E8;
+}
+
+.samadhi-service-page .mbg-bg-white,
+.samadhi-service-page .mbg-section,
+.samadhi-service-page .mbg-bg-light,
+.samadhi-service-page .mbg-bg-green-light {
+  background: #0A0A0A !important;
+}
+
+.samadhi-service-page .mbg-heading-xl,
+.samadhi-service-page .mbg-heading-lg,
+.samadhi-service-page .mbg-heading-md,
+.samadhi-service-page .mbg-text-lg,
+.samadhi-service-page h1,
+.samadhi-service-page h2,
+.samadhi-service-page h3 {
+  color: #F5F0E8;
+}
+
+.samadhi-service-page .bg-white,
+.samadhi-service-page .mbg-card {
+  background: rgba(17, 17, 17, 0.88) !important;
+  border-color: rgba(195, 153, 143, 0.22) !important;
+  color: #F5F0E8;
+}
+
+.samadhi-service-page .border-green-300,
+.samadhi-service-page .border-green-500,
+.samadhi-service-page .border-green-600,
+.samadhi-service-page .border-green-700,
+.samadhi-service-page .dark\:border-green-600,
+.samadhi-service-page .dark\:border-green-700 {
+  border-color: rgba(195, 153, 143, 0.35) !important;
+}
+
+.samadhi-service-page .bg-green-50,
+.samadhi-service-page .bg-green-100,
+.samadhi-service-page .dark\:bg-green-800,
+.samadhi-service-page .dark\:bg-green-900 {
+  background: rgba(195, 153, 143, 0.1) !important;
+}
+
+.samadhi-service-page .bg-green-600,
+.samadhi-service-page .from-green-600,
+.samadhi-service-page .from-green-700,
+.samadhi-service-page .to-green-700,
+.samadhi-service-page .to-emerald-600,
+.samadhi-service-page .to-emerald-700,
+.samadhi-service-page .to-emerald-800 {
+  background-color: #C3998F !important;
+  --tw-gradient-from: #C3998F !important;
+  --tw-gradient-to: #E8B4A3 !important;
+}
+
+.samadhi-service-page .bg-gradient-to-r.from-green-600,
+.samadhi-service-page .bg-gradient-to-br.from-green-600,
+.samadhi-service-page .bg-gradient-to-br.from-green-700,
+.samadhi-service-page .bg-gradient-to-r.from-green-600.to-emerald-600,
+.samadhi-service-page .bg-gradient-to-br.from-green-700.to-emerald-700 {
+  background-image: linear-gradient(to right, #C3998F, #E8B4A3) !important;
+}
+
+.samadhi-service-page .hover\:bg-green-100:hover,
+.samadhi-service-page .hover\:bg-green-200:hover {
+  background-color: rgba(195, 153, 143, 0.18) !important;
+}
+
+.samadhi-service-page .text-green-100 {
+  color: rgba(245, 240, 232, 0.85) !important;
+}
+
+/* Experiences, premium service carousel */
+.samadhi-service-carousel {
+  width: 100%;
+  min-width: 0;
+}
+
+.samadhi-service-carousel__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.samadhi-service-carousel__head-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.samadhi-service-carousel__label {
+  margin: 0;
+  font-family: var(--samadhi-font-body, "Inter", sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(232, 180, 163, 0.78);
+}
+
+.samadhi-service-carousel__label--title-case {
+  font-family: var(--samadhi-font-display, "Cormorant Garamond", serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: #f5f0e8;
+}
+
+.samadhi-service-carousel__nav {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.samadhi-service-carousel__nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(195, 153, 143, 0.35);
+  background: rgba(17, 17, 17, 0.9);
+  color: #F5F0E8;
+  cursor: pointer;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.samadhi-service-carousel__nav-btn:hover {
+  border-color: rgba(232, 180, 163, 0.55);
+  background: rgba(195, 153, 143, 0.14);
+  transform: translateY(-1px);
+}
+
+.samadhi-service-carousel__rail {
+  display: flex;
+  gap: 0.85rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 2px;
+  /* Room for card hover lift + shadow (overflow-x clips vertically) */
+  padding-block: 10px 0.65rem;
+  margin-block: -10px -0.3rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(195, 153, 143, 0.35) transparent;
+}
+
+.samadhi-service-carousel__rail::-webkit-scrollbar {
+  height: 4px;
+}
+
+.samadhi-service-carousel__rail::-webkit-scrollbar-thumb {
+  background: rgba(195, 153, 143, 0.35);
+  border-radius: 999px;
+}
+
+.samadhi-service-card {
+  flex: 0 0 min(78vw, 240px);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  min-height: 168px;
+  padding: 1rem 1.05rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(195, 153, 143, 0.22);
+  background: rgba(17, 17, 17, 0.72);
+  color: #F5F0E8;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.samadhi-service-card:hover,
+.samadhi-service-card:focus-visible {
+  border-color: rgba(232, 180, 163, 0.48);
+  background: rgba(195, 153, 143, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  outline: none;
+}
+
+.samadhi-service-card--selected {
+  border-color: rgba(244, 201, 93, 0.45);
+  background: rgba(195, 153, 143, 0.16);
+}
+
+.samadhi-service-card__title {
+  margin: 0;
+  font-family: var(--samadhi-font-display, Georgia, serif);
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #F5F0E8;
+}
+
+.samadhi-service-card__summary {
+  margin: 0;
+  flex: 1;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: rgba(245, 240, 232, 0.62);
+}
+
+.samadhi-service-card__price {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #E8B4A3;
+}
+
+.samadhi-service-selection {
+  width: 100%;
+  max-width: 36rem;
+}
+
+.samadhi-service-selection__label {
+  display: block;
+  font-family: var(--samadhi-font-body, "Inter", sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(232, 180, 163, 0.78);
+  margin-bottom: 0.75rem;
+}
+
+.samadhi-service-selection__trigger {
+  min-height: 2.75rem;
+  font-size: 0.95rem;
+  border: 1px solid rgba(195, 153, 143, 0.35) !important;
+  border-radius: 0.65rem !important;
+  background: rgba(17, 17, 17, 0.9) !important;
+  color: #F5F0E8 !important;
+}
+
+.samadhi-service-selection__trigger:hover,
+.samadhi-service-selection__trigger:focus,
+.samadhi-service-selection__trigger[data-state="open"] {
+  border-color: rgba(232, 180, 163, 0.55) !important;
+  box-shadow: 0 0 0 3px rgba(195, 153, 143, 0.12) !important;
+}
+
+.samadhi-service-selection__content {
+  background: #111111 !important;
+  border: 1px solid rgba(195, 153, 143, 0.28) !important;
+  border-radius: 0.65rem !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55) !important;
+}
+
+.samadhi-service-selection__item {
+  color: #F5F0E8 !important;
+}
+
+.samadhi-service-selection__item:hover,
+.samadhi-service-selection__item[data-highlighted] {
+  background: rgba(195, 153, 143, 0.14) !important;
+  color: #F5F0E8 !important;
+}
+
+.samadhi-service-selection__item[data-state="checked"] {
+  background: rgba(195, 153, 143, 0.28) !important;
+  color: #F5F0E8 !important;
+}
+
+.samadhi-service-selection__item .text-gray-600 {
+  color: rgba(245, 240, 232, 0.55) !important;
+}
+
+/* Experiences, premium service booking dialog */
+.samadhi-booking-dialog {
+  background: #111111 !important;
+  border: 1px solid rgba(195, 153, 143, 0.28) !important;
+  color: #F5F0E8 !important;
+}
+
+.samadhi-booking-dialog .dialog-x-icon-mobile {
+  color: #F5F0E8;
+}
+
+.samadhi-booking-dialog__tabs {
+  background: rgba(10, 10, 10, 0.85) !important;
+  border: 1px solid rgba(195, 153, 143, 0.18);
+}
+
+.samadhi-booking-dialog__tabs [role="tab"] {
+  color: rgba(245, 240, 232, 0.55) !important;
+}
+
+.samadhi-booking-dialog__tabs [role="tab"][data-state="active"] {
+  background: rgba(195, 153, 143, 0.18) !important;
+  color: #F5F0E8 !important;
+}
+
+.samadhi-booking-dialog label {
+  color: rgba(245, 240, 232, 0.78);
+}
+
+.samadhi-booking-dialog input,
+.samadhi-booking-dialog textarea,
+.samadhi-booking-dialog [role="combobox"] {
+  background: rgba(10, 10, 10, 0.85) !important;
+  border-color: rgba(195, 153, 143, 0.28) !important;
+  color: #F5F0E8 !important;
+}
+
+.samadhi-booking-dialog input::placeholder,
+.samadhi-booking-dialog textarea::placeholder {
+  color: rgba(245, 240, 232, 0.38);
+}
+
+.samadhi-booking-dialog button[class*="outline"] {
+  border-color: rgba(195, 153, 143, 0.35) !important;
+  color: rgba(245, 240, 232, 0.82) !important;
+  background: transparent !important;
+}
+
+.samadhi-booking-dialog button[class*="outline"]:hover {
+  background: rgba(195, 153, 143, 0.1) !important;
+  color: #F5F0E8 !important;
+}
+
+.samadhi-booking-dialog .rounded-md.border {
+  border-color: rgba(195, 153, 143, 0.2) !important;
+  background: rgba(10, 10, 10, 0.55);
+}
+
+.samadhi-booking-dialog [data-radix-select-content],
+.samadhi-booking-dialog [role="listbox"] {
+  background: #111111 !important;
+  border-color: rgba(195, 153, 143, 0.28) !important;
+  color: #F5F0E8 !important;
+}
+
+/* Retreat tours page */
+.samadhi-retreat-page {
+  min-height: 100vh;
+}
+
+.samadhi-retreat-hero__image {
+  border-color: rgba(195, 153, 143, 0.45) !important;
+  box-shadow: 0 0 48px rgba(195, 153, 143, 0.2);
+}
+
+.samadhi-retreat-hero__link {
+  font-size: 0.95em;
+  color: #E8B4A3;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.samadhi-retreat-hero__link:hover {
+  color: #F4C95D;
+}
+
+.samadhi-retreat-hero__title {
+  font-family: var(--samadhi-font-display, "Playfair Display", Georgia, serif);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.12;
+  color: #F5F0E8;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.25rem;
+}
+
+.samadhi-retreat-hero__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  max-width: 38rem;
+  text-align: left;
+}
+
+.samadhi-retreat-hero__copy p {
+  margin: 0;
+  font-family: var(--samadhi-font-body, "Inter", sans-serif);
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(245, 240, 232, 0.82);
+  font-weight: 400;
+}
+
+.samadhi-retreat-btn {
+  background: linear-gradient(135deg, #C3998F 0%, #E8B4A3 100%) !important;
+  color: #0A0A0A !important;
+  border: 1px solid rgba(244, 201, 93, 0.4) !important;
+  font-weight: 600;
+  border-radius: 0.65rem !important;
+  box-shadow: 0 4px 24px rgba(195, 153, 143, 0.25);
+}
+
+.samadhi-retreat-btn:hover {
+  background: linear-gradient(135deg, #E8B4A3 0%, #F4C95D 100%) !important;
+  transform: scale(1.03);
+}
+
+.samadhi-retreat-btn--glass {
+  background: rgba(17, 17, 17, 0.52) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: #F5F0E8 !important;
+  border: 1px solid rgba(195, 153, 143, 0.42) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 4px 24px rgba(0, 0, 0, 0.35);
+  padding: 0.72rem 1.35rem !important;
+  font-size: 0.9rem !important;
+}
+
+.samadhi-retreat-btn--glass:hover {
+  background: rgba(195, 153, 143, 0.18) !important;
+  border-color: rgba(232, 180, 163, 0.62) !important;
+  color: #F5F0E8 !important;
+  transform: translateY(-2px);
+}
+
+.samadhi-retreat-modal {
+  background: rgba(10, 10, 10, 0.94);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(195, 153, 143, 0.28);
+  border-radius: 1.25rem;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65), 0 0 48px rgba(195, 153, 143, 0.1);
+  color: #F5F0E8;
+  max-width: 42rem;
+  width: calc(100% - 2rem);
+  padding: 2rem;
+  position: relative;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+.samadhi-retreat-modal--wide {
+  max-width: 52rem;
+}
+
+.samadhi-retreat-modal__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #E8B4A3;
+  margin-bottom: 1rem;
+}
+
+.samadhi-retreat-modal__body {
+  color: rgba(245, 240, 232, 0.82);
+  line-height: 1.7;
+}
+
+.samadhi-retreat-modal__body strong {
+  color: #F5F0E8;
+}
+
+.samadhi-retreat-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(195, 153, 143, 0.35);
+  background: rgba(17, 17, 17, 0.9);
+  color: #E8B4A3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.samadhi-retreat-modal__close:hover {
+  background: rgba(195, 153, 143, 0.2);
+  color: #F4C95D;
+}
+
+.samadhi-retreat-process__note {
+  color: #E8B4A3;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.samadhi-retreat-process__list {
+  list-style: decimal;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: rgba(245, 240, 232, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.samadhi-retreat-process__list strong {
+  color: #F5F0E8;
+}
+
+.samadhi-retreat-page .mbg-card {
+  background: rgba(17, 17, 17, 0.88) !important;
+  border: 1px solid rgba(195, 153, 143, 0.2) !important;
+}
+
+.samadhi-retreat-page .mbg-text-primary {
+  color: #F5F0E8 !important;
+}
+
+.samadhi-retreat-page .mbg-text-secondary {
+  color: rgba(245, 240, 232, 0.65) !important;
+}
+
+.samadhi-retreat-page .mbg-text-accent,
+.samadhi-retreat-page .mbg-input {
+  border-color: rgba(195, 153, 143, 0.25);
+}
+
+.samadhi-retreat-page .border-green-400 {
+  border-color: rgba(195, 153, 143, 0.4) !important;
+}
+
+.samadhi-retreat-page .bg-white.rounded-xl {
+  background: rgba(17, 17, 17, 0.88) !important;
+  border-color: rgba(195, 153, 143, 0.22) !important;
+}
+
+.samadhi-retreat-page .bg-white.text-green-900,
+.samadhi-retreat-page .bg-white.text-green-700 {
+  background: rgba(17, 17, 17, 0.96) !important;
+  color: #F5F0E8 !important;
+  border-color: rgba(195, 153, 143, 0.3) !important;
+}
+
+.samadhi-retreat-page .from-green-900,
+.samadhi-retreat-page .to-emerald-900 {
+  --tw-gradient-from: rgba(17, 17, 17, 0.95) !important;
+  --tw-gradient-to: rgba(10, 10, 10, 0.98) !important;
+}
+
+.samadhi-retreat-summary-bar {
+  background: linear-gradient(135deg, #C3998F 0%, #E8B4A3 100%) !important;
+  border-color: rgba(244, 201, 93, 0.35) !important;
+  color: #0A0A0A !important;
+}
+
+.samadhi-retreat-summary-btn {
+  background: #0A0A0A !important;
+  color: #F5F0E8 !important;
+  border: 1px solid rgba(195, 153, 143, 0.4) !important;
+}
+
+.samadhi-retreat-summary-btn:hover {
+  background: rgba(17, 17, 17, 0.95) !important;
+  color: #F4C95D !important;
+}
+
+.samadhi-retreat-summary-expanded {
+  background: rgba(10, 10, 10, 0.97) !important;
+  color: #F5F0E8 !important;
+  border-color: rgba(195, 153, 143, 0.28) !important;
+}

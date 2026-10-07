@@ -1,0 +1,87 @@
+/* Traveling ambient energy glow, homepage & cinematic sections */
+
+.samadhi-ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.samadhi-ambient__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.45;
+  will-change: transform;
+}
+
+.samadhi-ambient__blob--rose {
+  width: min(55vw, 520px);
+  height: min(55vw, 520px);
+  background: radial-gradient(
+    circle,
+    rgba(232, 180, 163, 0.55) 0%,
+    rgba(195, 153, 143, 0.2) 45%,
+    transparent 70%
+  );
+  animation: samadhi-blob-drift-a 28s ease-in-out infinite;
+}
+
+.samadhi-ambient__blob--gold {
+  width: min(42vw, 400px);
+  height: min(42vw, 400px);
+  background: radial-gradient(
+    circle,
+    rgba(244, 201, 93, 0.4) 0%,
+    rgba(255, 215, 0, 0.12) 50%,
+    transparent 72%
+  );
+  animation: samadhi-blob-drift-b 34s ease-in-out infinite;
+}
+
+.samadhi-ambient__blob--teal {
+  width: min(38vw, 360px);
+  height: min(38vw, 360px);
+  background: radial-gradient(
+    circle,
+    rgba(10, 60, 74, 0.35) 0%,
+    rgba(10, 60, 74, 0.1) 55%,
+    transparent 75%
+  );
+  opacity: 0.35;
+  animation: samadhi-blob-drift-c 40s ease-in-out infinite;
+}
+
+@keyframes samadhi-blob-drift-a {
+  0%, 100% { transform: translate(-10%, 8%); }
+  25% { transform: translate(62%, 18%); }
+  50% { transform: translate(48%, 72%); }
+  75% { transform: translate(8%, 52%); }
+}
+
+@keyframes samadhi-blob-drift-b {
+  0%, 100% { transform: translate(72%, 12%); }
+  33% { transform: translate(18%, 38%); }
+  66% { transform: translate(55%, 78%); }
+}
+
+@keyframes samadhi-blob-drift-c {
+  0%, 100% { transform: translate(40%, 65%); }
+  40% { transform: translate(78%, 28%); }
+  70% { transform: translate(12%, 22%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .samadhi-ambient__blob {
+    animation: none !important;
+    opacity: 0.25;
+  }
+}
+
+@media (max-width: 768px) {
+  .samadhi-ambient__blob {
+    filter: blur(70px);
+    opacity: 0.38;
+  }
+}

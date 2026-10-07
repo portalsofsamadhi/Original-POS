@@ -1,0 +1,24 @@
+# Netlify redirects file for SPA routing
+# This ensures all routes are handled by React Router
+
+# Redirect all routes to index.html for client-side routing
+/*    /index.html   200
+
+# API routes should pass through
+/api/*  /api/:splat  200
+
+# Specific file extensions should be served as-is
+/*.js   /:splat  200
+/*.css  /:splat  200
+/*.png  /:splat  200
+/*.jpg  /:splat  200
+/*.jpeg /:splat  200
+/*.webp /:splat  200
+/*.svg  /:splat  200
+/*.ico  /:splat  200
+/*.woff /:splat  200
+/*.woff2 /:splat  200
+/*.ttf  /:splat  200
+/*.json /:splat  200
+/*.xml  /:splat  200
+/*.txt  /:splat  200

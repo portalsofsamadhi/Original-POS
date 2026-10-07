@@ -1,0 +1,447 @@
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './styles/samadhi-theme.css';
+@import './styles/samadhi-legacy-overrides.css';
+@import './styles/samadhi-service-pages.css';
+@import './styles/preload-images.css';
+@import './styles/mobile-optimization.css';
+@import './styles/mobile-utilities.css';
+@import './styles/samadhi-mobile-pages.css';
+
+
+
+
+
+  @layer base {
+    :root {
+      --background: 0 0% 4%;
+      --foreground: 40 33% 94%;
+
+      --card: 0 0% 7%;
+      --card-foreground: 40 33% 94%;
+
+      --popover: 0 0% 7%;
+      --popover-foreground: 40 33% 94%;
+
+      --primary: 12 28% 66%;
+      --primary-foreground: 0 0% 4%;
+
+      --secondary: 0 0% 12%;
+      --secondary-foreground: 40 33% 94%;
+
+      --muted: 0 0% 12%;
+      --muted-foreground: 40 20% 65%;
+
+      --accent: 18 48% 78%;
+      --accent-foreground: 0 0% 4%;
+
+      --destructive: 0 62.8% 50%;
+      --destructive-foreground: 40 33% 94%;
+
+      --border: 192 30% 18%;
+      --input: 0 0% 15%;
+      --ring: 12 28% 66%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 0 0% 4%;
+      --foreground: 40 33% 94%;
+
+      --card: 0 0% 7%;
+      --card-foreground: 40 33% 94%;
+
+      --popover: 0 0% 7%;
+      --popover-foreground: 40 33% 94%;
+
+      --primary: 12 28% 66%;
+      --primary-foreground: 0 0% 4%;
+
+      --secondary: 0 0% 12%;
+      --secondary-foreground: 40 33% 94%;
+
+      --muted: 0 0% 12%;
+      --muted-foreground: 40 20% 65%;
+
+      --accent: 18 48% 78%;
+      --accent-foreground: 0 0% 4%;
+
+      --destructive: 0 62.8% 50%;
+      --destructive-foreground: 40 33% 94%;
+
+      --border: 192 30% 18%;
+      --input: 0 0% 15%;
+      --ring: 12 28% 66%;
+    }
+  }
+
+/* Commented out due to @apply directive issues
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+*/
+
+/* Using standard CSS approach instead */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+/* Video background styles - simplified for clean appearance */
+.video-background {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  filter: grayscale(20%) brightness(0.55) contrast(1.1) sepia(10%);
+}
+
+.video-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/* Ensure video covers entire viewport and maintains aspect ratio */
+@media (min-aspect-ratio: 16/9) {
+  .video-background {
+    width: 100vw;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video-background {
+    width: auto;
+    height: 100vh;
+  }
+}
+
+/* Force full viewport coverage */
+.fullscreen-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Scroll reveal animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-on-scroll.fade-in {
+  opacity: 0;
+  transform: translateY(0);
+}
+
+.reveal-on-scroll.fade-in.active {
+  opacity: 1;
+}
+
+.reveal-on-scroll.slide-left {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.reveal-on-scroll.slide-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-on-scroll.slide-right {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.reveal-on-scroll.slide-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Delay classes for staggered animations */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Highlight effect for sections when scrolled to */
+.highlight-section {
+  animation: section-highlight 1.5s ease-out;
+}
+
+@keyframes section-highlight {
+  0% {
+    box-shadow: 0 0 0 rgba(195, 153, 143, 0);
+  }
+  20% {
+    box-shadow: 0 0 20px rgba(195, 153, 143, 0.15);
+  }
+  60% {
+    box-shadow: 0 0 30px rgba(232, 180, 163, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(195, 153, 143, 0);
+  }
+}
+
+/* Timeline animations */
+.slide-right {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-right.active,
+.slide-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-dot {
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+
+.timeline-item.active .timeline-dot {
+  transform: scale(1);
+}
+
+.timeline-line {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1s ease;
+}
+
+.timeline-container.active .timeline-line {
+  transform: scaleY(1);
+}
+
+/* Hover effects */
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.2);
+}
+
+/* Mobile Timeline Styles */
+@media (max-width: 768px) {
+  /* Timeline container */
+  .timeline-container {
+    padding-left: 2rem;
+  }
+
+  /* Timeline line */
+  .timeline-line {
+    left: 0;
+    transform: none;
+  }
+
+  /* Timeline items */
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 1rem;
+  }
+
+  .timeline-item .w-5\/12 {
+    width: 100%;
+    padding: 0;
+    text-align: left;
+  }
+
+  /* Timeline dots */
+  .timeline-dot {
+    left: 0;
+    transform: translateX(-50%);
+  }
+}
+
+/* Line clamp utilities for text truncation */
+@layer utilities {
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+  
+  .line-clamp-4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+  }
+}
+
+/* Markdown Content Styling for Blog Posts */
+.markdown-content {
+  color: #F5F0E8;
+  line-height: 1.625;
+}
+
+.markdown-content h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #F5F0E8;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.markdown-content h1:first-child {
+  margin-top: 0; /* first:mt-0 */
+}
+
+.markdown-content h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #E8B4A3;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+.markdown-content h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #F5F0E8;
+  margin-bottom: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.markdown-content h4 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: rgba(245, 240, 232, 0.85);
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.markdown-content p {
+  margin-bottom: 1rem;
+  color: rgba(245, 240, 232, 0.8);
+  line-height: 1.625;
+}
+
+.markdown-content strong {
+  font-weight: 600;
+  color: #F5F0E8;
+}
+
+.markdown-content em {
+  font-style: italic; /* italic */
+}
+
+.markdown-content ul, .markdown-content ol {
+  margin-bottom: 1rem; /* mb-4 */
+  padding-left: 1.5rem; /* pl-6 */
+}
+
+.markdown-content li {
+  margin-bottom: 0.5rem;
+  color: rgba(245, 240, 232, 0.8);
+}
+
+.markdown-content blockquote {
+  border-left-width: 4px;
+  border-left-color: #C3998F;
+  padding-left: 1rem;
+  font-style: italic;
+  color: rgba(245, 240, 232, 0.65);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-content code {
+  background-color: #1F1F1F;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: #E8B4A3;
+}
+
+.markdown-content pre {
+  background-color: #1F1F1F;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(195, 153, 143, 0.2);
+}
+
+.markdown-content pre code {
+  background-color: transparent; /* bg-transparent */
+  padding: 0; /* p-0 */
+}
+
+.markdown-content hr {
+  border-color: rgba(195, 153, 143, 0.25);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.markdown-content a {
+  color: #E8B4A3;
+  text-decoration: underline;
+}
+
+.markdown-content a:hover {
+  color: #FFD700;
+}

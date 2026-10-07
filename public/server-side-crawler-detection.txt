@@ -1,0 +1,129 @@
+# Server-Side Social Media Crawler Detection Configuration
+# Add this to your web server configuration (Apache .htaccess or Nginx config)
+
+## APACHE (.htaccess) Configuration:
+## Add this to your .htaccess file in the public directory
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Detect social media crawlers and serve appropriate content
+    RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Applebot|SkypeUriPreview|Slackbot|TelegramBot|DiscordBot|Googlebot|bingbot) [NC]
+    RewriteCond %{REQUEST_URI} ^/feqad-services/?$
+    RewriteRule ^(.*)$ /feqad-services.html [L]
+    
+    RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Applebot|SkypeUriPreview|Slackbot|TelegramBot|DiscordBot|Googlebot|bingbot) [NC]
+    RewriteCond %{REQUEST_URI} ^/mesqal-services/?$
+    RewriteRule ^(.*)$ /mesqal-services.html [L]
+    
+    RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Applebot|SkypeUriPreview|Slackbot|TelegramBot|DiscordBot|Googlebot|bingbot) [NC]
+    RewriteCond %{REQUEST_URI} ^/lifestyle-shift/?$
+    RewriteRule ^(.*)$ /lifestyle-shift.html [L]
+    
+    RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Applebot|SkypeUriPreview|Slackbot|TelegramBot|DiscordBot|Googlebot|bingbot) [NC]
+    RewriteCond %{REQUEST_URI} ^/retreat-tours-workshops/?$
+    RewriteRule ^(.*)$ /retreat-tours-workshops.html [L]
+    
+    RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Applebot|SkypeUriPreview|Slackbot|TelegramBot|DiscordBot|Googlebot|bingbot) [NC]
+    RewriteCond %{REQUEST_URI} ^/blog/?$
+    RewriteRule ^(.*)$ /blog.html [L]
+</IfModule>
+
+## NGINX Configuration:
+## Add this to your nginx server block
+
+location ~* ^/(feqad-services|mesqal-services|lifestyle-shift|retreat-tours-workshops|blog)/?$ {
+    if ($http_user_agent ~* "(facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Applebot|SkypeUriPreview|Slackbot|TelegramBot|DiscordBot|Googlebot|bingbot)") {
+        rewrite ^/([^/]+)/?$ /$1.html last;
+    }
+    try_files $uri $uri/ /index.html;
+}
+
+## PHP Detection Script (if using PHP hosting):
+## Create a file called crawler-detect.php and include it at the top of your pages
+
+<?php
+function isSocialMediaCrawler() {
+    $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+    $crawlers = [
+        'facebookexternalhit',
+        'Twitterbot',
+        'LinkedInBot', 
+        'WhatsApp',
+        'Applebot',
+        'SkypeUriPreview',
+        'Slackbot',
+        'TelegramBot',
+        'DiscordBot',
+        'Googlebot',
+        'bingbot'
+    ];
+    
+    foreach ($crawlers as $crawler) {
+        if (stristr($userAgent, $crawler)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function serveSocialMediaContent($page) {
+    if (isSocialMediaCrawler()) {
+        $htmlFile = __DIR__ . '/' . $page . '.html';
+        if (file_exists($htmlFile)) {
+            readfile($htmlFile);
+            exit;
+        }
+    }
+}
+
+// Usage: serveSocialMediaContent('feqad-services');
+?>
+
+## Node.js/Express Server Detection:
+## Add this middleware to your Express server
+
+const detectSocialCrawler = (req, res, next) => {
+    const userAgent = req.get('User-Agent') || '';
+    const socialCrawlers = [
+        'facebookexternalhit', 'Twitterbot', 'LinkedInBot', 'WhatsApp', 
+        'Applebot', 'SkypeUriPreview', 'Slackbot', 'TelegramBot', 
+        'DiscordBot', 'Googlebot', 'bingbot'
+    ];
+    
+    const isSocialCrawler = socialCrawlers.some(crawler => 
+        userAgent.toLowerCase().includes(crawler.toLowerCase())
+    );
+    
+    if (isSocialCrawler) {
+        const path = req.path.replace(/\/$/, ''); // remove trailing slash
+        const staticFile = path + '.html';
+        
+        // Check if static HTML file exists
+        const fs = require('fs');
+        const filePath = __dirname + '/public' + staticFile;
+        
+        if (fs.existsSync(filePath)) {
+            return res.sendFile(filePath);
+        }
+    }
+    
+    next();
+};
+
+// Use the middleware
+app.use(detectSocialCrawler);
+
+## Testing Instructions:
+1. Use Facebook Sharing Debugger: https://developers.facebook.com/tools/debug/
+2. Use Twitter Card Validator: https://cards-dev.twitter.com/validator
+3. Use LinkedIn Post Inspector: https://www.linkedin.com/post-inspector/
+4. Test with curl to simulate crawlers:
+   curl -H "User-Agent: facebookexternalhit/1.1" https://portalsofsamadhi.com/feqad-services
+
+## Important Notes:
+- The JavaScript solution in index.html runs first and should work for most cases
+- Server-side detection is more reliable but requires server configuration
+- Both solutions can work together - server-side takes precedence
+- Make sure your static HTML files are properly served by your web server
+- Test thoroughly with actual social media debugging tools

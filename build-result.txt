@@ -1,0 +1,4 @@
+
+> pos-website@0.0.0 build
+> tsc && vite build && npm run generate:sitemap && npm run postbuild
+

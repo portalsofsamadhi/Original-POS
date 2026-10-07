@@ -1,0 +1,242 @@
+/* Samadhi Productions, Dark Cinematic Luxury Theme */
+
+:root {
+  /* Core brand palette */
+  --samadhi-bg-deep: #0A0A0A;
+  --samadhi-bg-surface: #111111;
+  --samadhi-bg-charcoal: #1F1F1F;
+  --samadhi-bg-elevated: #1a1a1a;
+
+  --samadhi-rose-gold: #C3998F;
+  --samadhi-rose-gold-light: #E8B4A3;
+  --samadhi-gold: #FFD700;
+  --samadhi-gold-soft: #F4C95D;
+
+  --samadhi-text-cream: #F5F0E8;
+  --samadhi-text-soft: rgba(245, 240, 232, 0.85);
+  --samadhi-text-muted: rgba(245, 240, 232, 0.6);
+
+  --samadhi-teal: #0A3C4A;
+  --samadhi-teal-glow: rgba(10, 60, 74, 0.4);
+
+  /* Typography */
+  --samadhi-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --samadhi-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Gradients & effects */
+  --samadhi-gradient-rose: linear-gradient(135deg, #C3998F 0%, #E8B4A3 50%, #F4C95D 100%);
+  --samadhi-gradient-metallic: linear-gradient(
+    135deg,
+    #C3998F 0%,
+    #E8B4A3 25%,
+    #FFD700 50%,
+    #E8B4A3 75%,
+    #C3998F 100%
+  );
+  --samadhi-gradient-cinematic: linear-gradient(
+    180deg,
+    #0A0A0A 0%,
+    #111111 40%,
+    rgba(10, 60, 74, 0.2) 100%
+  );
+  --samadhi-shadow-rose: 0 4px 24px rgba(195, 153, 143, 0.2);
+  --samadhi-shadow-gold: 0 8px 32px rgba(255, 215, 0, 0.12);
+  --samadhi-border-subtle: rgba(195, 153, 143, 0.2);
+  --samadhi-border-glow: rgba(232, 180, 163, 0.35);
+
+  color-scheme: dark;
+}
+
+html {
+  background-color: var(--samadhi-bg-deep);
+  scroll-snap-type: none !important;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+section,
+.homepage-section {
+  scroll-snap-align: none !important;
+  scroll-snap-stop: normal !important;
+  overflow: visible;
+}
+
+body {
+  background-color: var(--samadhi-bg-deep);
+  color: var(--samadhi-text-cream);
+  font-family: var(--samadhi-font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: visible;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100%;
+}
+
+/* Cinematic ambient atmosphere */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 15% -10%, rgba(195, 153, 143, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 85% 110%, rgba(10, 60, 74, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(255, 215, 0, 0.03) 0%, transparent 70%);
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+}
+
+/* Typography utilities */
+.samadhi-display {
+  font-family: var(--samadhi-font-display);
+  color: var(--samadhi-text-cream);
+  letter-spacing: 0.02em;
+}
+
+.samadhi-body {
+  font-family: var(--samadhi-font-body);
+  color: var(--samadhi-text-soft);
+}
+
+/* Metallic rose-gold text shimmer */
+.text-metallic-rose {
+  background: var(--samadhi-gradient-metallic);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+}
+
+.text-shimmer-reveal {
+  background: linear-gradient(
+    90deg,
+    var(--samadhi-text-cream) 0%,
+    var(--samadhi-rose-gold-light) 40%,
+    var(--samadhi-gold-soft) 60%,
+    var(--samadhi-text-cream) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: samadhi-shimmer 6s ease-in-out infinite;
+}
+
+@keyframes samadhi-shimmer {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+/* Cinematic section surfaces */
+.samadhi-surface {
+  background: var(--samadhi-bg-surface);
+  border: 1px solid var(--samadhi-border-subtle);
+}
+
+.samadhi-surface-elevated {
+  background: linear-gradient(145deg, var(--samadhi-bg-charcoal) 0%, var(--samadhi-bg-surface) 100%);
+  border: 1px solid var(--samadhi-border-subtle);
+  box-shadow: var(--samadhi-shadow-rose);
+}
+
+/* Rose-gold CTA glow */
+.samadhi-glow-rose {
+  box-shadow: 0 0 20px rgba(195, 153, 143, 0.25), 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.samadhi-glow-gold {
+  box-shadow: 0 0 24px rgba(255, 215, 0, 0.15), 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Scrollbar, cinematic */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--samadhi-bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--samadhi-rose-gold) 0%, var(--samadhi-teal) 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--samadhi-rose-gold-light) 0%, var(--samadhi-gold-soft) 100%);
+}
+
+::selection {
+  background: rgba(195, 153, 143, 0.35);
+  color: var(--samadhi-text-cream);
+}
+
+/* Section highlight animation, rose gold */
+@keyframes section-highlight {
+  0% { box-shadow: 0 0 0 rgba(195, 153, 143, 0); }
+  20% { box-shadow: 0 0 20px rgba(195, 153, 143, 0.15); }
+  60% { box-shadow: 0 0 30px rgba(232, 180, 163, 0.25); }
+  100% { box-shadow: 0 0 0 rgba(195, 153, 143, 0); }
+}
+
+.highlight-section {
+  animation: section-highlight 1.5s ease-out;
+}
+
+/* Global dark overrides for common light utility classes */
+.bg-white {
+  background-color: var(--samadhi-bg-surface) !important;
+}
+
+.bg-gray-50,
+.bg-gray-100 {
+  background-color: var(--samadhi-bg-charcoal) !important;
+}
+
+.text-gray-600,
+.text-gray-700 {
+  color: var(--samadhi-text-muted) !important;
+}
+
+.text-gray-900 {
+  color: var(--samadhi-text-cream) !important;
+}
+
+.text-green-400,
+.text-green-600,
+.text-green-700 {
+  color: var(--samadhi-rose-gold-light) !important;
+}
+
+.border-gray-200,
+.border-gray-300 {
+  border-color: var(--samadhi-border-subtle) !important;
+}
+
+.hover\:bg-gray-50:hover,
+.hover\:bg-gray-100:hover {
+  background-color: var(--samadhi-bg-charcoal) !important;
+}
+
+.hover\:text-gray-900:hover {
+  color: var(--samadhi-text-cream) !important;
+}
+
+/* Video background, cinematic grade */
+.video-background {
+  filter: grayscale(20%) brightness(0.55) contrast(1.1) sepia(10%);
+}

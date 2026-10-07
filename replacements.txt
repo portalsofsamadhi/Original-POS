@@ -1,0 +1,12 @@
+# replacements.txt for git-filter-repo
+# Format: OLD_STRING ==> NEW_STRING
+# This file will replace exact occurrences of the left-hand strings across all file contents in history.
+
+REDACTED_STRIPE_PUBLIC_KEY ==> REDACTED_STRIPE_PUBLIC_KEY
+AfOYAqfaMTZPzeJgmp6bqOSltURd9xbzX_5AXXW6Qqa_rokgbsL53qBy0sz-Kt9KcwKTmEcUACufNIwZ ==> REDACTED_PAYPAL_CLIENT_ID
+diff rwiv ectx jzvw ==> REDACTED_SMTP_PASS
+rrlfh wypq kdls hyzd ==> REDACTED_EMAIL_APP_PASSWORD
+9f3a2b8c7d6e5f4a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4 ==> REDACTED_JWT_SECRET
+
+# Add any other exact strings you want to replace below, one per line.
+# Note: git-filter-repo does literal replacements; do not include regex markers here.

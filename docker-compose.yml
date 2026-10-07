@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  pos-website:
+    build: .
+    ports:
+      - "4173:4173"  # Main website
+      - "3001:3001"  # Newsletter API
+    environment:
+      - NODE_ENV=production
+      - VITE_PAYPAL_CLIENT_ID=${VITE_PAYPAL_CLIENT_ID}
+      - VITE_STRIPE_PUBLIC_KEY=${VITE_STRIPE_PUBLIC_KEY}
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_APP_PASSWORD=${EMAIL_APP_PASSWORD}
+    volumes:
+      - ./newsletter-subscribers.json:/app/newsletter-subscribers.json
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/api/newsletter/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - pos-website
+    restart: unless-stopped

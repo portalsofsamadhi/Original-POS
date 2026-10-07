@@ -1,0 +1,847 @@
+/* Feq'ad Services Page - mindbodygreen.com Inspired Design */
+/* Modern, clean, wellness-focused aesthetic */
+
+:root {
+  /* MindBodyGreen-inspired Color Palette */
+  --feqad-primary: #C3998F;
+  --feqad-secondary: #E8B4A3;
+  --feqad-accent: #F4C95D;
+  --feqad-accent-hover: #FFD700;
+  --feqad-sage-light: rgba(10, 60, 74, 0.3);
+  --feqad-cream: #111111;
+  --feqad-earth: #0A3C4A;
+  
+  /* Neutral Palette */
+  --feqad-white: #111111;
+  --feqad-light: #1F1F1F;
+  --feqad-gray-100: #1a1a1a;
+  --feqad-gray-200: rgba(195, 153, 143, 0.2);
+  --feqad-gray-300: rgba(195, 153, 143, 0.3);
+  --feqad-gray-600: rgba(245, 240, 232, 0.6);
+  --feqad-gray-800: #F5F0E8;
+  --feqad-charcoal: #FAFAF8;
+  
+  /* Typography */
+  --feqad-font-primary: 'Inter', 'Helvetica Neue', sans-serif;
+  --feqad-font-heading: 'Playfair Display', 'Georgia', serif;
+  --feqad-font-sans: 'Inter', 'Helvetica Neue', sans-serif;
+  
+  /* Modern Spacing System */
+  --feqad-space-1: 0.25rem;   /* 4px */
+  --feqad-space-2: 0.5rem;    /* 8px */
+  --feqad-space-3: 0.75rem;   /* 12px */
+  --feqad-space-4: 1rem;      /* 16px */
+  --feqad-space-5: 1.25rem;   /* 20px */
+  --feqad-space-6: 1.5rem;    /* 24px */
+  --feqad-space-8: 2rem;      /* 32px */
+  --feqad-space-10: 2.5rem;   /* 40px */
+  --feqad-space-12: 3rem;     /* 48px */
+  --feqad-space-16: 4rem;     /* 64px */
+  --feqad-space-20: 5rem;     /* 80px */
+  
+  /* Subtle Shadows */
+  --feqad-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --feqad-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.07);
+  --feqad-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.09);
+  
+  /* Border Radius */
+  --feqad-radius-sm: 4px;
+  --feqad-radius-md: 8px;
+  --feqad-radius-lg: 12px;
+  --feqad-radius-xl: 16px;
+  --feqad-radius-2xl: 24px;
+
+  /* Border widths */
+  --feqad-border-thin: 1px;
+  --feqad-border-thick: 2px;
+}
+
+/* Base styles */
+body.feqad-mbg {
+  background-color: var(--feqad-white);
+  color: var(--feqad-gray-800);
+  font-family: var(--feqad-font-sans);
+  line-height: 1.6;
+}
+
+/* Hero Section - Minimalist with full-bleed image */
+.feqad-hero {
+  background-color: var(--feqad-sage-light);
+  padding: var(--feqad-space-16) 0;
+  margin-bottom: var(--feqad-space-16);
+  position: relative;
+  overflow: hidden;
+}
+
+.feqad-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 50%, rgba(255,255,255,0.7) 100%);
+  pointer-events: none;
+}
+
+.feqad-hero-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.feqad-hero-text {
+  flex: 1.2;
+  padding-right: var(--feqad-space-10);
+}
+
+.feqad-hero-image {
+  flex: 0.8;
+  position: relative;
+  border-radius: var(--feqad-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--feqad-shadow-lg);
+}
+
+.feqad-hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.feqad-hero-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Clean Typography System */
+.feqad-heading-xl {
+  font-family: var(--feqad-font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 300;
+  color: var(--feqad-charcoal);
+  margin-bottom: var(--feqad-space-4);
+  letter-spacing: -0.02em;
+}
+
+.feqad-heading-lg {
+  font-family: var(--feqad-font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--feqad-primary);
+  margin-bottom: var(--feqad-space-6);
+  letter-spacing: -0.01em;
+}
+
+.feqad-section-heading {
+  font-family: var(--feqad-font-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--feqad-charcoal);
+  margin-bottom: var(--feqad-space-4);
+  letter-spacing: -0.01em;
+}
+
+.feqad-text-lg {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--feqad-gray-600);
+  margin-bottom: var(--feqad-space-6);
+}
+
+.feqad-text-base {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--feqad-gray-600);
+}
+
+.feqad-text-sm {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--feqad-gray-600);
+}
+
+.feqad-text-accent {
+  color: var(--feqad-primary);
+}
+
+.feqad-text-secondary {
+  color: var(--feqad-earth);
+}
+
+/* Keyword Title - small caps category labels */
+.feqad-keyword-title {
+  font-family: var(--feqad-font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--feqad-primary);
+  margin-bottom: var(--feqad-space-2);
+}
+
+/* Card Designs - Clean and minimal */
+.feqad-card {
+  background: var(--feqad-white);
+  border-radius: var(--feqad-radius-md);
+  border: var(--feqad-border-thin) solid var(--feqad-gray-200);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.feqad-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--feqad-shadow-md);
+}
+
+.feqad-card-header {
+  padding: var(--feqad-space-6);
+  border-bottom: var(--feqad-border-thin) solid var(--feqad-gray-200);
+  text-align: center;
+}
+
+.feqad-card-content {
+  padding: var(--feqad-space-6);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.feqad-card-title {
+  font-family: var(--feqad-font-heading);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--feqad-charcoal);
+  margin-bottom: var(--feqad-space-4);
+}
+
+/* Icon styling */
+.feqad-icon-wrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: var(--feqad-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--feqad-space-4);
+}
+
+/* Button Styling - Clean, bordered design */
+.feqad-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--feqad-space-3) var(--feqad-space-6);
+  font-family: var(--feqad-font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--feqad-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: none;
+}
+
+.feqad-btn-primary {
+  background-color: var(--feqad-accent);
+  color: var(--feqad-white);
+}
+
+.feqad-btn-primary:hover {
+  background-color: var(--feqad-accent-hover);
+  transform: translateY(-2px);
+}
+
+.feqad-btn-large {
+  padding: var(--feqad-space-4) var(--feqad-space-8);
+  font-size: 1rem;
+}
+
+.feqad-btn-outline {
+  background-color: transparent;
+  border: var(--feqad-border-thin) solid var(--feqad-primary);
+  color: var(--feqad-primary);
+}
+
+.feqad-btn-outline:hover {
+  background-color: var(--feqad-primary);
+  color: var(--feqad-white);
+  transform: translateY(-2px);
+}
+
+/* Badges for features */
+.feqad-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--feqad-space-4);
+  margin-top: var(--feqad-space-6);
+}
+
+.feqad-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--feqad-gray-600);
+}
+
+.feqad-badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--feqad-primary);
+  border-radius: 50%;
+  margin-right: var(--feqad-space-2);
+}
+
+/* Grid Layouts */
+.feqad-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--feqad-space-6);
+  margin-bottom: var(--feqad-space-16);
+}
+
+.feqad-packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--feqad-space-8);
+  margin-bottom: var(--feqad-space-16);
+}
+
+.feqad-extra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: var(--feqad-space-6);
+  margin: 0 auto;
+}
+
+/* Section Styling */
+.feqad-bg-light {
+  background-color: var(--feqad-white);
+}
+
+.feqad-bg-white {
+  background-color: var(--feqad-white);
+}
+
+.feqad-section {
+  padding: var(--feqad-space-16) 0;
+}
+
+.feqad-section-alt {
+  background-color: var(--feqad-cream);
+  padding: var(--feqad-space-16) 0;
+}
+
+.feqad-compact-section {
+  padding: var(--feqad-space-10) 0;
+}
+
+/* Container */
+.feqad-container {
+  max-width: 1240px;
+  width: 92%;
+  margin: 0 auto;
+}
+
+/* Package Cards */
+.feqad-package-card {
+  background: var(--feqad-white);
+  border-radius: var(--feqad-radius-md);
+  border: var(--feqad-border-thin) solid var(--feqad-gray-200);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.feqad-package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--feqad-shadow-md);
+}
+
+.feqad-package-badge {
+  display: inline-block;
+  padding: var(--feqad-space-1) var(--feqad-space-3);
+  background-color: var(--feqad-primary);
+  color: var(--feqad-white);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-radius: var(--feqad-radius-sm);
+  text-transform: uppercase;
+}
+
+.feqad-package-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: var(--feqad-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--feqad-space-4);
+}
+
+.feqad-package-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--feqad-space-4) 0;
+}
+
+.feqad-package-list li {
+  position: relative;
+  padding-left: var(--feqad-space-4);
+  margin-bottom: var(--feqad-space-2);
+  font-size: 0.9375rem;
+  color: var(--feqad-gray-600);
+}
+
+.feqad-package-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--feqad-primary);
+  font-weight: 700;
+}
+
+.feqad-package-price {
+  font-family: var(--feqad-font-heading);
+  font-size: 1.125rem;
+  color: var(--feqad-gray-800);
+}
+
+.feqad-package-savings {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--feqad-primary);
+}
+
+/* Process Steps */
+.feqad-step-card {
+  background: var(--feqad-white);
+  border-radius: var(--feqad-radius-md);
+  border: var(--feqad-border-thin) solid var(--feqad-gray-200);
+  padding: var(--feqad-space-8);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feqad-step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--feqad-shadow-md);
+}
+
+.feqad-step-number {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--feqad-primary);
+  color: var(--feqad-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--feqad-space-4);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Extra Offerings */
+.feqad-extra-card {
+  background: var(--feqad-white);
+  border-radius: var(--feqad-radius-md);
+  border: var(--feqad-border-thin) solid var(--feqad-gray-200);
+  padding: var(--feqad-space-6);
+  transition: all 0.3s ease;
+}
+
+.feqad-extra-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--feqad-shadow-md);
+}
+
+.feqad-extra-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--feqad-radius-sm);
+  background-color: var(--feqad-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Credentials Section */
+.feqad-credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--feqad-space-6);
+  margin: 0 auto;
+}
+
+.feqad-credential-card {
+  border-radius: var(--feqad-radius-md);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: var(--feqad-border-thin) solid var(--feqad-gray-200);
+  padding: var(--feqad-space-2);
+}
+
+.feqad-credential-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--feqad-shadow-md);
+}
+
+.feqad-credential-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--feqad-radius-sm);
+}
+
+/* Links */
+.feqad-link {
+  color: var(--feqad-primary);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.feqad-link:hover {
+  color: var(--feqad-secondary);
+}
+
+.feqad-link:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--feqad-primary);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.feqad-link:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Price Display */
+.feqad-price {
+  font-family: var(--feqad-font-heading);
+  font-size: 1.125rem;
+  color: var(--feqad-gray-800);
+  display: block;
+  margin-bottom: var(--feqad-space-4);
+}
+
+/* Animation Classes */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Spacing Utilities */
+.feqad-m-0 { margin: 0; }
+.feqad-mb-0 { margin-bottom: 0; }
+.feqad-mb-2 { margin-bottom: var(--feqad-space-2); }
+.feqad-mb-3 { margin-bottom: var(--feqad-space-3); }
+.feqad-mb-4 { margin-bottom: var(--feqad-space-4); }
+.feqad-mb-6 { margin-bottom: var(--feqad-space-6); }
+.feqad-mb-8 { margin-bottom: var(--feqad-space-8); }
+.feqad-mb-12 { margin-bottom: var(--feqad-space-12); }
+.feqad-mb-16 { margin-bottom: var(--feqad-space-16); }
+.feqad-mb-20 { margin-bottom: var(--feqad-space-20); }
+
+.feqad-mt-2 { margin-top: var(--feqad-space-2); }
+.feqad-mt-4 { margin-top: var(--feqad-space-4); }
+.feqad-mt-6 { margin-top: var(--feqad-space-6); }
+
+.feqad-mx-auto { margin-left: auto; margin-right: auto; }
+
+/* Layout Utilities */
+.feqad-flex { display: flex; }
+.feqad-items-center { align-items: center; }
+.feqad-items-start { align-items: flex-start; }
+.feqad-justify-between { justify-content: space-between; }
+.feqad-gap-md { gap: var(--feqad-space-4); }
+.feqad-space-x-4 > * + * { margin-left: var(--feqad-space-4); }
+
+.feqad-text-center { text-align: center; }
+.feqad-w-full { width: 100%; }
+.feqad-max-w-3xl { max-width: 48rem; }
+
+/* Enhanced Mobile Responsive adjustments */
+@media (max-width: 768px) {
+  /* Container mobile optimization */
+  .feqad-container {
+    width: 100% !important;
+    padding: 0 1rem !important;
+    max-width: 100% !important;
+  }
+
+  /* Hero section mobile layout */
+  .feqad-hero-content {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 2rem !important;
+    padding: 0 1rem !important;
+  }
+  
+  .feqad-hero-text {
+    padding-right: 0 !important;
+    margin-bottom: 1.5rem !important;
+    order: 2 !important; /* Text after image on mobile */
+  }
+
+  .feqad-hero-image {
+    order: 1 !important; /* Image first on mobile */
+    max-width: 300px !important;
+    width: 85% !important;
+    margin: 0 auto !important;
+  }
+
+  .feqad-hero-text h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .feqad-hero-text p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Grid layouts mobile optimization */
+  .feqad-services-grid,
+  .feqad-packages-grid,
+  .feqad-extra-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 0 1rem !important;
+  }
+  
+  /* Typography mobile adjustments */
+  .feqad-heading-xl {
+    font-size: 2.2rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+
+  .feqad-heading-lg {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+  }
+
+  .feqad-section-heading {
+    font-size: 1.6rem !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .feqad-text-lg {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+  }
+
+  .feqad-text-base {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+
+  /* Card mobile optimization */
+  .feqad-card,
+  .feqad-package-card,
+  .feqad-extra-card {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    padding: 1.5rem !important;
+  }
+
+  .feqad-card-title {
+    font-size: 1.3rem !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+  }
+
+  /* Button mobile optimization */
+  .feqad-btn {
+    width: 100% !important;
+    padding: 0.75rem 1.25rem !important;
+    font-size: 0.9rem !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  /* Section spacing mobile */
+  .feqad-section {
+    padding: 3rem 0 !important;
+  }
+
+  .feqad-section-alt {
+    padding: 3rem 0 !important;
+  }
+
+  .feqad-compact-section {
+    padding: 2rem 0 !important;
+  }
+
+  /* Badges and hero elements mobile */
+  .feqad-hero-badges {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 0.75rem !important;
+  }
+
+  .feqad-badge {
+    font-size: 0.75rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+
+  /* Credentials section mobile */
+  .feqad-credentials-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    padding: 0 1rem !important;
+  }
+
+  /* Step cards mobile */
+  .feqad-step-card {
+    padding: 1.5rem !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .feqad-step-number {
+    margin: 0 auto 1rem !important;
+  }
+
+  /* Package icons mobile */
+  .feqad-package-icon {
+    margin: 0 auto 1rem !important;
+  }
+
+  /* Extra service icons mobile */
+  .feqad-extra-icon {
+    margin: 0 auto 1rem !important;
+  }
+
+  /* Form elements mobile */
+  .feqad-input,
+  .feqad-textarea,
+  .feqad-select {
+    width: 100% !important;
+    padding: 0.75rem !important;
+    font-size: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Navigation and utility classes mobile */
+  .feqad-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+
+  .feqad-justify-between {
+    justify-content: center !important;
+  }
+
+  .feqad-items-start {
+    align-items: center !important;
+  }
+
+  /* Spacing utilities mobile */
+  .feqad-mb-8 {
+    margin-bottom: 2rem !important;
+  }
+
+  .feqad-mb-12 {
+    margin-bottom: 2.5rem !important;
+  }
+
+  .feqad-mb-16 {
+    margin-bottom: 3rem !important;
+  }
+
+  .feqad-mb-20 {
+    margin-bottom: 3.5rem !important;
+  }
+
+  /* Remove hover effects on mobile for better performance */
+  .feqad-card:hover,
+  .feqad-package-card:hover,
+  .feqad-extra-card:hover,
+  .feqad-step-card:hover {
+    transform: none !important;
+  }
+
+  /* Testimonials mobile if present */
+  .testimonial-container {
+    padding: 0 1rem !important;
+  }
+
+  .testimonial-card {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    padding: 1.5rem !important;
+  }
+}
+
+/* Extra small devices (320px and smaller) */
+@media (max-width: 375px) {
+  .feqad-container {
+    padding: 0 0.75rem !important;
+  }
+
+  .feqad-heading-xl {
+    font-size: 1.9rem !important;
+  }
+
+  .feqad-heading-lg {
+    font-size: 1.6rem !important;
+  }
+
+  .feqad-section-heading {
+    font-size: 1.4rem !important;
+  }
+
+  .feqad-credentials-grid {
+    grid-template-columns: 1fr !important; /* Single column on very small screens */
+  }
+
+  .feqad-btn {
+    padding: 0.65rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .feqad-section {
+    padding: 2.5rem 0 !important;
+  }
+}

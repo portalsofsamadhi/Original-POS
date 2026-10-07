@@ -1,0 +1,167 @@
+/**
+ * Remaps legacy MBG green Tailwind utilities to Samadhi rose-gold cinematic palette.
+ * Applies site-wide so older service and booking pages inherit the new theme.
+ */
+
+.text-green-600,
+.text-green-700,
+.text-green-800,
+.dark\:text-green-300,
+.dark\:text-green-400 {
+  color: #E8B4A3 !important;
+}
+
+.text-green-500 {
+  color: #C3998F !important;
+}
+
+.hover\:text-green-700:hover,
+.hover\:text-green-600:hover {
+  color: #F4C95D !important;
+}
+
+.bg-green-600,
+.bg-green-500,
+.bg-green-500.rounded-full {
+  background-color: #C3998F !important;
+}
+
+.bg-green-50,
+.dark\:bg-green-950 {
+  background-color: rgba(195, 153, 143, 0.1) !important;
+}
+
+.border-green-200,
+.border-green-300,
+.border-green-400,
+.border-green-500,
+.border-green-600,
+.border-green-700,
+.dark\:border-green-600,
+.dark\:border-green-700,
+.dark\:border-green-800,
+.hover\:border-green-400:hover,
+.hover\:border-green-500:hover,
+.hover\:border-green-600:hover {
+  border-color: rgba(195, 153, 143, 0.35) !important;
+}
+
+.bg-green-100,
+.bg-green-800,
+.dark\:bg-green-800,
+.dark\:bg-green-900,
+.hover\:bg-green-200:hover {
+  background-color: rgba(195, 153, 143, 0.14) !important;
+}
+
+.hover\:from-green-700:hover,
+.hover\:to-green-800:hover,
+.hover\:from-green-600:hover,
+.hover\:to-emerald-600:hover,
+.group-hover\:from-green-500,
+.group-hover\:to-emerald-500 {
+  --tw-gradient-from: #E8B4A3 !important;
+  --tw-gradient-to: #F4C95D !important;
+}
+
+.text-green-100,
+.text-green-200,
+.text-green-300,
+.dark\:text-green-100,
+.dark\:text-green-200 {
+  color: rgba(245, 240, 232, 0.85) !important;
+}
+
+.focus-visible\:ring-green-400:focus-visible {
+  --tw-ring-color: rgba(195, 153, 143, 0.45) !important;
+}
+
+.ring-green-500,
+.focus\:ring-green-500:focus {
+  --tw-ring-color: rgba(195, 153, 143, 0.45) !important;
+}
+
+.from-green-600,
+.to-green-700,
+.from-green-600.to-emerald-600 {
+  --tw-gradient-from: #C3998F !important;
+  --tw-gradient-to: #E8B4A3 !important;
+}
+
+.bg-gradient-to-r.from-green-600.to-emerald-600 {
+  background-image: linear-gradient(to right, #C3998F, #E8B4A3) !important;
+}
+
+.hover\:text-green-700:hover {
+  color: #F4C95D !important;
+}
+
+.mbg-card {
+  border-color: rgba(195, 153, 143, 0.2) !important;
+  background: rgba(17, 17, 17, 0.75) !important;
+}
+
+/* Legacy gray surfaces on dark-first pages */
+.bg-gray-50 {
+  background-color: #0A0A0A !important;
+}
+
+.text-gray-900 {
+  color: #F5F0E8 !important;
+}
+
+.text-gray-800,
+.text-gray-700,
+.text-gray-600 {
+  color: rgba(245, 240, 232, 0.65) !important;
+}
+
+.text-gray-500,
+.text-gray-400 {
+  color: rgba(245, 240, 232, 0.45) !important;
+}
+
+.bg-gray-200 {
+  background-color: rgba(195, 153, 143, 0.15) !important;
+}
+
+.bg-gray-100 {
+  background-color: rgba(17, 17, 17, 0.8) !important;
+}
+
+.border-gray-200,
+.border-gray-300 {
+  border-color: rgba(195, 153, 143, 0.2) !important;
+}
+
+/* MBG keyword dots and hardcoded greens in about sections */
+.about-subsection .bg-green-600,
+.samadhi-experiences-body .bg-green-600 {
+  background-color: #C3998F !important;
+}
+
+.about-subsection blockquote cite,
+.samadhi-experiences-body blockquote cite {
+  color: #E8B4A3 !important;
+  font-style: normal;
+}
+
+.about-subsection blockquote p,
+.samadhi-experiences-body blockquote p {
+  color: rgba(245, 240, 232, 0.55) !important;
+}
+
+/* Dialog close icon (legacy mobile) */
+.dialog-x-icon-mobile {
+  color: #E8B4A3 !important;
+}
+
+/* Fullscreen image modals, keep close button visible and clickable */
+.dialog-close-btn {
+  left: auto !important;
+  right: 1rem !important;
+  top: 1rem !important;
+  transform: none !important;
+  z-index: 10001 !important;
+  pointer-events: auto !important;
+}

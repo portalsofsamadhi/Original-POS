@@ -1,0 +1,68 @@
+# Repo: portalsofsamadhi/Original-POS (branch main)
+# Live site: https://www.portalsofsamadhi.com
+# Single Node service: Express API + Vite dist (SPA)
+services:
+  - type: web
+    name: original-pos
+    env: node
+    plan: starter
+    # BUILD only — do not put this in Start Command
+    buildCommand: npm install --include=dev && npm run build
+    # START only — must open a port (Express listens on process.env.PORT)
+    startCommand: node server/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Used by scripts/build-prod.mjs during Build; safe at runtime too
+      - key: NODE_OPTIONS
+        value: --max-old-space-size=4096
+      - key: BUILD_HEAP_MB
+        value: "4096"
+      - key: PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
+        value: "true"
+      - key: PUPPETEER_SKIP_DOWNLOAD
+        value: "true"
+      - key: TEAM_EMAIL
+        value: info@portalsofsamadhi.com
+      # Optional: different inbox for form notifications (avoids Sent-only when TO == SMTP_USER)
+      # - key: NOTIFY_EMAIL
+      #   value: you@another-inbox.com
+      - key: SMTP_HOST
+        value: smtp.zoho.eu
+      - key: SMTP_PORT
+        value: "465"
+      - key: SMTP_USER
+        value: info@portalsofsamadhi.com
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        value: "Portals of Samadhi <info@portalsofsamadhi.com>"
+      - key: VITE_APP_URL
+        value: https://www.portalsofsamadhi.com
+      - key: VITE_API_URL
+        value: ""
+      - key: VITE_NEWSLETTER_API_URL
+        value: ""
+      - key: GOOGLE_REDIRECT_URI
+        value: https://www.portalsofsamadhi.com/profile
+      - key: FRONTEND_URL
+        value: https://www.portalsofsamadhi.com
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: VITE_GOOGLE_CLIENT_ID
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: ADMIN_BEARER_TOKEN
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: VITE_STRIPE_PUBLIC_KEY
+        sync: false
+      - key: VITE_PAYPAL_CLIENT_ID
+        sync: false

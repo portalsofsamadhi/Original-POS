@@ -1,0 +1,12 @@
+{
+  "name": "newsletter-server",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "newsletter-server.js",
+  "dependencies": {
+    "express": "^5.1.0",
+    "cors": "^2.8.5",
+    "nodemailer": "^6.10.1",
+    "dotenv": "^16.6.1"
+  }
+}

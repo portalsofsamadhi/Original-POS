@@ -1,0 +1,73 @@
+# Page snapshot
+
+```yaml
+- navigation:
+  - link "Home":
+    - /url: /
+  - link "A Path to Wholeness":
+    - /url: /lifestyle-shift
+  - link "Retreat Tours":
+    - /url: /retreat-tours-workshops
+  - link "Healing Services":
+    - /url: /feqad-services
+  - link "Admin Services":
+    - /url: /mesqal-services
+  - link "Book a Service":
+    - /url: /#services
+  - link "Blog":
+    - /url: /#blog
+  - button "Profile":
+    - img
+- main:
+  - heading "Lifestyle coaching & Personal assistance." [level=1]
+  - heading "Your world balanced." [level=2]
+  - text: "From the wellness underground: indigenous holistic healing meets strategic admin support. While AI automates, We bring vision, curation, and heart—programs and project support for real life. Remotely we provide A Path to Wholeness, a synergy of our expertise. In person we offer Retreat Tours across Jamaica."
+  - button "A Path To Wholeness":
+    - text: A Path To Wholeness
+    - img
+  - button "Retreat Tours":
+    - text: Retreat Tours
+    - img
+  - text: Indigenous Healing Administrative Wellness Proven Results Retreat Tours Strawberry Hills - Blue Mountains, Jamaica
+- contentinfo:
+  - heading "Portals Of Samadhi" [level=3]
+  - paragraph: A sacred space for spiritual and administrative services offered by Feq'ad Wolde and Mesq'al Kebra.
+  - button "Facebook":
+    - img
+    - text: Facebook
+  - button "Instagram":
+    - img
+    - text: Instagram
+  - button "Email":
+    - img
+    - text: Email
+  - heading "Quick Links" [level=3]
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: /
+    - listitem:
+      - link "Services":
+        - /url: "#services"
+    - listitem:
+      - link "About Us":
+        - /url: "#about-us"
+    - listitem:
+      - link "Book Now":
+        - /url: "#services"
+  - heading "Contact Us" [level=3]
+  - img
+  - text: Oakland, California - Airy Castle, Jamaica
+  - img
+  - text: (510) 291-9399
+  - img
+  - text: info@portalsofsamadhi.com
+  - paragraph: We Do Not Sell Your Information
+  - paragraph: This website was built by and is maintained by the Portals Of Samadhi team.
+  - button "Privacy Policy"
+  - paragraph: © 2025 Portals Of Samadhi. All rights reserved.
+- button "Enable screen reader":
+  - img
+- region "Notifications (F8)":
+  - list
+```
