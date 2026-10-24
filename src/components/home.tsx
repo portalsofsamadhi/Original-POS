@@ -1,9 +1,7 @@
 import SEO from "./SEO";
 import { PAGE_SEO } from "../data/seoConfig";
 import LuxuryHeroSection from "./home/LuxuryHeroSection";
-import FeaturedServicesSection from "./home/FeaturedServicesSection";
-import ConversionHowItWorks from "./layout/ConversionHowItWorks";
-import ProductionPortalLink from "./home/ProductionPortalLink";
+import HomeMotion from "./home/HomeMotion";
 import "../styles/luxury-theme.css";
 
 const Home = () => {
@@ -22,10 +20,8 @@ const Home = () => {
       />
 
       <div className="luxury-site min-h-screen">
+        <HomeMotion />
         <LuxuryHeroSection />
-        <FeaturedServicesSection />
-        <ConversionHowItWorks />
-        <ProductionPortalLink />
       </div>
     </>
   );

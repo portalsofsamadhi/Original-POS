@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="border-t border-[var(--luxury-gold-muted)] text-[var(--luxury-cream)] py-12 px-4 md:px-8 lg:px-12" style={{ background: 'var(--luxury-black)' }}>
       <div className="max-w-7xl mx-auto mb-10">
         <div className="luxury-footer-cta">
-          <h2 className="luxury-footer-cta__title">Ready when you are</h2>
+          <h2 className="luxury-footer-cta__title">Call us</h2>
           <p className="luxury-footer-cta__text">
             Still not sure but really interested?
           </p>
@@ -41,11 +41,6 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <p className="text-[var(--luxury-cream-muted)] text-sm leading-relaxed max-w-sm">
-            Come walk Jamaica’s out-of-the-way farms and forests, explore the land on a tour,
-            or book a healing session. You won’t feel like a tourist. You’ll feel like a
-            guest.
-          </p>
           <div className="flex space-x-3 mt-1">
             <Button variant="ghost" size="icon" asChild className="rounded-full hover:bg-[var(--luxury-charcoal)] text-[var(--luxury-gold-light)]">
               <a href="https://youtube.com/@dometicket" target="_blank" rel="noopener noreferrer">

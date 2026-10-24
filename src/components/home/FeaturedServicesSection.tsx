@@ -2,13 +2,10 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Plane, Users } from "lucide-react";
 import "../../styles/luxury-theme.css";
 
-/**
- * Homepage dual feature: Explore Tours + Airport Transfers (primary).
- */
 const FeaturedServicesSection = () => (
   <section
     className="luxury-section luxury-featured-services"
-    aria-label="Tours and Airport Transfers"
+    aria-label="Available services"
     id="featured-services"
     style={{
       background:
@@ -17,32 +14,21 @@ const FeaturedServicesSection = () => (
     }}
   >
     <div className="luxury-section__header luxury-featured-services__header">
-      <p className="luxury-hero__eyebrow">Start Planning</p>
       <h2 className="luxury-section__title">
-        Tours &amp; <em>Airport Transfers</em>
+        What Will You <em>Come For?</em>
       </h2>
-      <p className="luxury-section__lead">
-        Two ways to begin: days out with our family hosts, or a private airport transfer with a
-        warm welcome waiting when you land.
-      </p>
     </div>
 
-    <div className="luxury-featured-services__grid">
+    <div className="luxury-featured-services__grid" data-motion="turn">
       <article className="luxury-featured-card">
         <div className="luxury-featured-card__icon" aria-hidden>
           <Users size={22} strokeWidth={1.5} />
         </div>
-        <p className="luxury-featured-card__eyebrow">Countryside · Farms · Forests</p>
+        <p className="luxury-featured-card__eyebrow">Countryside</p>
         <h3 className="luxury-featured-card__title">Explore Tours</h3>
         <p className="luxury-featured-card__text">
-          Hills, valleys, and working farms our families actively tend. Pull up a chair and
-          we&apos;ll build your days together.
+          Farms and Forests, the famous sights, or the three cities you want to see.
         </p>
-        <ul className="luxury-featured-card__list">
-          <li>Nature, culture &amp; healing options</li>
-          <li>Simple retreats &amp; custom journeys</li>
-          <li>Unique Jamaican experiences</li>
-        </ul>
         <Link to="/experiences" className="luxury-btn luxury-btn--gold">
           Explore Tours
           <ArrowRight size={14} />
@@ -67,6 +53,23 @@ const FeaturedServicesSection = () => (
         <Link to="/airport-transfers" className="luxury-btn luxury-btn--gold">
           Book an Airport Transfer
           <ArrowRight size={14} />
+        </Link>
+      </article>
+
+      <article className="luxury-featured-card luxury-featured-card--soon">
+        <p className="luxury-featured-card__eyebrow">Coming Soon</p>
+        <h3 className="luxury-featured-card__title">Farm stays</h3>
+        <p className="luxury-featured-card__text">
+          Off-the-beaten-path farm stays are opening soon. Until a bed is ready, begin with a tour
+          or a conversation.
+        </p>
+        <Link
+          to="/accommodations"
+          className="luxury-btn luxury-btn--outline luxury-status"
+          aria-label="Accommodations, coming soon"
+        >
+          <span className="luxury-status__book">Book</span>
+          <span className="luxury-status__soon">Coming Soon</span>
         </Link>
       </article>
     </div>

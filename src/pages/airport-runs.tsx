@@ -44,10 +44,10 @@ const AirportRunsPage: React.FC = () => {
       <SEO
         title="Private Airport Transfers in Jamaica | Portals of Samadhi"
         description="Private airport transfers from Sangster (MBJ) and Norman Manley (KIN) with a friendly local host waiting when you land. One-way from $95."
-        image={PAGE_SEO["/airport-runs"].image}
-        imageAlt={PAGE_SEO["/airport-runs"].imageAlt}
+        image={PAGE_SEO["/airport-transfers"].image}
+        imageAlt={PAGE_SEO["/airport-transfers"].imageAlt}
         url="/airport-transfers"
-        keywords={PAGE_SEO["/airport-runs"].keywords}
+        keywords={PAGE_SEO["/airport-transfers"].keywords}
       />
 
       <div className="luxury-page">

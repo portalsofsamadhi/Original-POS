@@ -3,7 +3,20 @@ import { Users, Calendar, Heart, Plane } from "lucide-react";
 import ComingSoonButton from "../layout/ComingSoonButton";
 import "../../styles/luxury-theme.css";
 
-const offerings = [
+type Offering = {
+  icon: typeof Users;
+  eyebrow: string;
+  title: string;
+  text: string;
+  href: string;
+  cta: string;
+  featured?: boolean;
+  comingSoon?: boolean;
+  secondaryHref?: string;
+  secondaryCta?: string;
+};
+
+const offerings: Offering[] = [
   {
     icon: Users,
     eyebrow: "Come for a few days",

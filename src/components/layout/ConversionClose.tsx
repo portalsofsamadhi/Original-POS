@@ -19,11 +19,11 @@ const COPY: Record<
     secondary: { to: "/experiences", label: "Browse tours" },
   },
   tours: {
-    eyebrow: "Tours & land",
-    title: "Secure your days on the land",
-    text: "Start with a package or request a custom journey. We confirm availability and hold space for your group.",
-    primary: { to: "#packages", label: "View packages" },
-    secondary: { to: "/book-now", label: "Talk with us first" },
+    eyebrow: "Your day",
+    title: "Tell us which excursion",
+    text: "Choose Farms and Forests, the famous sights, or your three cities. Pick a time. We confirm the plan and the price by email.",
+    primary: { to: "#packages", label: "See the three" },
+    secondary: { to: "/book-now", label: "Pick a time" },
   },
   events: {
     eyebrow: "Gatherings",

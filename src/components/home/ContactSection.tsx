@@ -121,12 +121,8 @@ const ContactSection = () => {
         >
           <p className="samadhi-section__eyebrow">Say Hello</p>
           <h2 className="samadhi-section__title">
-            <>We&apos;re Ready When <span className="samadhi-section__title-accent">You Are</span></>
+            <>Send a <span className="samadhi-section__title-accent">message</span></>
           </h2>
-          <p className="samadhi-section__desc">
-            Tell us where you&apos;re headed. Share your dates, your questions, or just say hello.
-            We&apos;ll reply personally and help you figure out the next step.
-          </p>
         </motion.div>
 
         <div className="samadhi-contact__grid">
@@ -138,9 +134,7 @@ const ContactSection = () => {
             variants={fadeUp}
           >
             <p className="samadhi-contact__lead">
-              Think of this as pulling up a chair at our table. Whether you&apos;re planning a
-              tour, an airport transfer, or just want to ask a question — we read every message
-              ourselves and reply like family, not a support desk.
+              We read every message ourselves.
             </p>
 
             <ul className="samadhi-contact__details">

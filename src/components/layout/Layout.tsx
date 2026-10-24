@@ -32,17 +32,18 @@ const LayoutInner = ({ children }: LayoutProps) => {
   const { isOpen, close } = useProfilePopup();
   const { pathname } = useLocation();
   const isMobile = useIsMobile();
-  const showContact = !CONTACT_HIDDEN_PATHS.some((p) => pathname.startsWith(p));
+  const isComingSoonHome = pathname === '/';
+  const showContact = !isComingSoonHome && !CONTACT_HIDDEN_PATHS.some((p) => pathname.startsWith(p));
   useScrollAnimations();
   return (
     <div className="flex flex-col min-h-screen bg-samadhi-black text-samadhi-cream overflow-x-hidden">
       <Navbar />
       <main className="flex-grow w-full min-w-0">{children}</main>
       {showContact && <ContactSection />}
-      <Footer />
-      <ScrollToTop />
+      {!isComingSoonHome && <Footer />}
+      {!isComingSoonHome && <ScrollToTop />}
       <AccessibilityReader />
-      <SamadhiProductionsOverlay />
+      {!isComingSoonHome && <SamadhiProductionsOverlay />}
       {!isMobile && <ProfilePopup isOpen={isOpen} onClose={close} />}
     </div>
   );

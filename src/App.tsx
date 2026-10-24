@@ -20,6 +20,8 @@ import BookNowPage from "./pages/book-now";
 import AboutPage from "./pages/about";
 import ExperiencesPage from "./pages/experiences";
 import AirportRunsPage from "./pages/airport-runs";
+import AccommodationsPage from "./pages/accommodations";
+import { TransportationPage, ToursTravelPage } from "./pages/service-placeholder";
 import CustomRetreatPage from "./pages/custom-retreat";
 import JourneyStoryPage from "./pages/JourneyStoryPage";
 import JourneyPhotoPage from "./pages/JourneyPhotoPage";
@@ -79,6 +81,9 @@ function App() {
               <Route path="/production" element={<ExternalRedirect url="https://www.samadhiproductions.com/production" from="/production" />} />
               <Route path="/preview/:shortId" element={<ExternalRedirect url="https://www.samadhiproductions.com" from="/preview" />} />
               <Route path="/experiences" element={<ExperiencesPage />} />
+              <Route path="/transportation" element={<TransportationPage />} />
+              <Route path="/accommodations" element={<AccommodationsPage />} />
+              <Route path="/tours-travel" element={<ToursTravelPage />} />
               <Route path="/airport-transfers" element={<AirportRunsPage />} />
               <Route path="/airport-runs" element={<LegacyRedirect to="/airport-transfers" from="/airport-runs" />} />
               <Route path="/custom-retreat" element={<CustomRetreatPage />} />

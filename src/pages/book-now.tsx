@@ -14,6 +14,7 @@ import { toast } from "../components/ui/use-toast";
 import SEO from "../components/SEO";
 import PageHeader from "../components/layout/PageHeader";
 import { PAGE_SEO } from "../data/seoConfig";
+import { excursionById } from "../data/excursions";
 import { ArrowLeft, Check } from "lucide-react";
 import "../styles/luxury-theme.css";
 
@@ -32,6 +33,7 @@ const BookNowPage = () => {
   const serviceDuration = searchParams.get("serviceDuration") || "30 minutes";
   const servicePrice = parseInt(searchParams.get("servicePrice") || "0", 10);
   const practitionerName = searchParams.get("practitionerName") || "Portals of Samadhi";
+  const excursion = excursionById(searchParams.get("excursion"));
 
   const isInfoSessionFlow = !searchParams.has("serviceName");
   const isPaidService = searchParams.has("serviceName") && servicePrice > 0;
@@ -46,7 +48,7 @@ const BookNowPage = () => {
     name: "",
     email: "",
     phone: "",
-    notes: "",
+    notes: excursion ? `Excursion: ${excursion.title}` : "",
   });
 
   const formatDate = (dateValue: Date | undefined) => {
@@ -72,12 +74,15 @@ const BookNowPage = () => {
     setIsProcessing(true);
 
     try {
-      const subject = `Info Session Request - ${formData.name}`;
+      const subject = excursion
+        ? `Excursion plan: ${excursion.title} - ${formData.name}`
+        : `Info Session Request - ${formData.name}`;
       const html = `
         <h2>New Info Session Request</h2>
         <h3>Session Details:</h3>
         <ul>
           <li><strong>Session:</strong> Info Session</li>
+          ${excursion ? `<li><strong>Excursion:</strong> ${excursion.title}</li>` : ""}
           <li><strong>Team:</strong> ${practitionerName}</li>
           <li><strong>Date:</strong> ${formatDate(date)}</li>
           <li><strong>Time:</strong> ${timeSlot}</li>
@@ -186,9 +191,15 @@ const BookNowPage = () => {
     }
   };
 
-  const pageTitle = isInfoSessionFlow ? "Begin Your Journey" : `Book ${serviceName}`;
+  const pageTitle = isInfoSessionFlow
+    ? excursion
+      ? `Plan ${excursion.title}`
+      : "Begin Your Journey"
+    : `Book ${serviceName}`;
   const pageDescription = isInfoSessionFlow
-    ? "Schedule a complimentary session to share your vision for a family tour, sacred event, healing work, or venue inquiry in Jamaica."
+    ? excursion
+      ? `Pick a day and time for ${excursion.title}. This conversation is free. We confirm the plan and the price by email within a business day.`
+      : "Tell us the tour, the farm stay, or the flight. Pick a day and time. This conversation is free, and we confirm by email within a business day."
     : `Reserve your ${serviceName} session with ${practitionerName}.`;
 
   return (
@@ -226,7 +237,9 @@ const BookNowPage = () => {
             </button>
             <p className="text-sm text-samadhi-cream/55 leading-relaxed mb-2">
               {isInfoSessionFlow
-                ? "Complimentary discovery call. Pick a day and time, share your details, and we confirm by email."
+                ? excursion
+                  ? `Pick a day and time for ${excursion.title}. We confirm the plan and the price by email within a business day.`
+                  : "Pick a day and time, then tell us where you want to go. We confirm by email within a business day."
                 : "You’re booking a paid session. Complete schedule and details, then continue to payment."}
             </p>
           </div>
@@ -278,25 +291,31 @@ const BookNowPage = () => {
                   {isInfoSessionFlow ? (
                     <div className="p-4 rounded-lg border border-[#C3998F]/25 bg-[#0A0A0A] mb-5">
                       <h2 className="text-lg font-semibold text-samadhi-cream mb-2">
-                        Discovery Session
+                        {excursion ? excursion.title : "Discovery Session"}
                       </h2>
                       <p className="text-samadhi-cream/70 text-sm leading-relaxed">
-                        A relaxed conversation about your family tour, sacred gathering,
-                        healing session, or venue needs in Jamaica. No obligation - just
-                        clarity and a path that fits your intention.
+                        {excursion
+                          ? excursion.summary
+                          : "A relaxed conversation about your family tour, sacred gathering, healing session, or venue needs in Jamaica. No obligation - just clarity and a path that fits your intention."}
                       </p>
                       <ul className="text-samadhi-cream/55 text-sm space-y-1 mt-3">
                         <li>Complimentary 30-minute session</li>
-                        <li>Tours, events, venues, or energy healing</li>
-                        <li>Thoughtful next steps within 48 hours if there is a fit</li>
+                        {excursion ? (
+                          <li>{excursion.bring}</li>
+                        ) : (
+                          <li>Tours, events, venues, or energy healing</li>
+                        )}
+                        <li>We confirm by email within a business day</li>
                       </ul>
-                      <p className="text-samadhi-cream/50 text-sm mt-3">
-                        New here?{" "}
-                        <Link to="/experiences" className="text-[#E8B4A3] hover:underline">
-                          Explore family tours
-                        </Link>{" "}
-                        before you book.
-                      </p>
+                      {!excursion && (
+                        <p className="text-samadhi-cream/50 text-sm mt-3">
+                          New here?{" "}
+                          <Link to="/experiences" className="text-[#E8B4A3] hover:underline">
+                            See the excursions
+                          </Link>{" "}
+                          before you book.
+                        </p>
+                      )}
                     </div>
                   ) : (
                     <div className="p-4 rounded-lg border border-samadhi-cream/15 bg-[#0A0A0A] mb-5">

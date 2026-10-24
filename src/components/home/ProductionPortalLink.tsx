@@ -1,33 +1,36 @@
 import { Link } from "react-router-dom";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import "../../styles/luxury-theme.css";
 
-const ProductionPortalLink = () => (
-  <section className="luxury-section" aria-label="Begin with us" id="begin">
-    <div className="luxury-cta-panel">
-      <p className="luxury-production-banner__label">Ready When You Are</p>
-      <h2 className="luxury-production-banner__title">
-        Come as You Are. Leave Changed.
-      </h2>
-      <p className="luxury-production-banner__text">
-        Whether you want days on the land or a quiet place to begin healing - we’re here to
-        welcome you. Small groups. Real roots. Reach out and tell us what you’re hoping for.
-      </p>
-      <div className="luxury-path-close">
-        <Link to="/experiences" className="luxury-path-close__item">
-          <span className="luxury-path-close__label">Travel with us</span>
-          <span className="luxury-path-close__title">Tours</span>
-          <span className="luxury-path-close__cta">Explore →</span>
-        </Link>
-        <Link to="/airport-transfers" className="luxury-path-close__item">
-          <span className="luxury-path-close__label">Land well</span>
-          <span className="luxury-path-close__title">Airport Transfers</span>
-          <span className="luxury-path-close__cta">Book →</span>
-        </Link>
+export const ExperienceSection = () => (
+  <section className="luxury-section luxury-promise" aria-label="The experience">
+    <div className="luxury-experience" data-motion="wipe">
+      <img src="/poslogo.webp" alt="Portals of Samadhi original logo" width={1024} height={1024} />
+      <div>
+        <h2 className="luxury-production-banner__title">Come as You Are. Leave Changed.</h2>
+        <p className="luxury-production-banner__text">
+          A portal to the best of both worlds awaits. We take you deep into the heart of Jamaican
+          farming culture, and right to the doorstep of the island&apos;s best-loved sights.
+        </p>
+        <p className="luxury-production-banner__text">
+          We offer tours, farm stays, and multi-day experiences, sweet getaway
+          packages that ease you into the natural setting, nice and easy.
+        </p>
       </div>
-      <div className="luxury-hero__actions luxury-hero__actions--secondary" style={{ marginTop: "1.25rem" }}>
-        <Link to="/book-now" className="luxury-btn luxury-btn--outline luxury-btn--sm">
+    </div>
+  </section>
+);
+
+const ProductionPortalLink = () => (
+  <section className="luxury-section luxury-close" aria-label="Book a session" id="begin">
+    <div className="luxury-cta-panel">
+      <span className="motion-draw" data-motion="draw" aria-hidden="true" />
+      <h2 className="luxury-production-banner__title">Ready When You Are</h2>
+      <p className="luxury-production-banner__text">Pick a time.</p>
+      <div className="luxury-hero__actions">
+        <Link to="/book-now" className="luxury-btn luxury-btn--gold">
           Book a session
+          <ArrowRight size={14} />
         </Link>
       </div>
     </div>

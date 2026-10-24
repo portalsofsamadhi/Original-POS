@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, User } from 'lucide-react';
 import { Button } from '../ui/button';
@@ -56,6 +56,60 @@ const Navbar = () => {
   ];
 
   const closeMobile = () => setIsOpen(false);
+  const isHome = location.pathname === '/';
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (!isHome) {
+      root.style.removeProperty('--nav-curtain');
+      root.style.removeProperty('--nav-fade');
+      root.classList.remove('nav-lite');
+      return;
+    }
+
+    let frame = 0;
+    const tick = () => {
+      const bar = document.querySelector<HTMLElement>('.luxury-nav__bar');
+      const promise = document.querySelector<HTMLElement>('.luxury-promise');
+      const navHeight = bar?.getBoundingClientRect().height || 64;
+      if (!promise) {
+        root.style.setProperty('--nav-curtain', `${navHeight}px`);
+        root.style.setProperty('--nav-fade', '1');
+        return;
+      }
+      const rect = promise.getBoundingClientRect();
+      const pastPromise = rect.bottom <= navHeight + 4;
+      root.classList.toggle('nav-lite', pastPromise);
+      if (pastPromise) {
+        root.style.setProperty('--nav-curtain', `${navHeight}px`);
+        root.style.setProperty('--nav-fade', '1');
+        return;
+      }
+      const promiseTop = rect.top;
+      const travel = Math.max(1, promiseTop + window.scrollY - navHeight);
+      const progress = Math.min(1, Math.max(0, window.scrollY / travel));
+      const grown = navHeight + progress * (window.innerHeight - navHeight);
+      const height = Math.min(grown, Math.max(navHeight, promiseTop));
+      root.style.setProperty('--nav-curtain', `${height}px`);
+      root.style.setProperty('--nav-fade', (1 - progress).toFixed(3));
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(tick);
+    };
+
+    tick();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      root.style.removeProperty('--nav-curtain');
+      root.style.removeProperty('--nav-fade');
+      root.classList.remove('nav-lite');
+    };
+  }, [isHome]);
 
   const renderProfileButton = (mobile = false) => (
     <button
@@ -81,11 +135,26 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-[var(--luxury-gold-muted)]" style={{ background: 'rgba(10,10,10,0.95)', backdropFilter: 'blur(12px)' }}>
+    <>
+    {isHome && <div className="luxury-nav__curtain" aria-hidden="true" />}
+    <nav
+      className={cn(
+        'luxury-nav sticky top-0 z-50 border-b border-[var(--luxury-gold-muted)]',
+        isHome && 'luxury-nav--home'
+      )}
+      style={isHome ? undefined : { background: 'rgba(10,10,10,0.95)', backdropFilter: 'blur(12px)' }}
+      onClickCapture={(event) => {
+        const control = (event.target as HTMLElement).closest('a, button');
+        if (!control || control.hasAttribute('data-nav-live')) return;
+        event.preventDefault();
+        event.stopPropagation();
+      }}
+    >
+      <div className={cn('luxury-nav__content', isHome && 'luxury-nav__bar')}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="luxury-nav__row flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" aria-label="Portals of Samadhi Home" className="flex items-center gap-2.5 group">
+            <Link to="/" data-nav-live="true" aria-label="Portals of Samadhi Home" className="flex items-center gap-2.5 group">
               <img
                 src="/poslogo.webp"
                 alt="Portals of Samadhi logo"
@@ -102,7 +171,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="hidden lg:flex flex-1 justify-center items-center">
+          <div className="luxury-nav__links hidden lg:flex items-center">
             <div className="flex items-center space-x-1">
               {primaryLinks.map((link) => (
                 <Link
@@ -122,7 +191,7 @@ const Navbar = () => {
             <Link
               to="/about"
               className="luxury-btn luxury-btn--gold"
-              style={{ padding: '0.5rem 1rem', fontSize: '0.7rem' }}
+              style={{ padding: '0.45rem 1rem' }}
             >
               Meet Us
             </Link>
@@ -142,6 +211,7 @@ const Navbar = () => {
             {renderProfileButton()}
             <Button
               variant="ghost"
+              data-nav-live="true"
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-[var(--luxury-cream-muted)] hover:text-[var(--luxury-cream)]"
             >
@@ -151,8 +221,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      </div>
 
-      <div className={cn('lg:hidden border-t border-[var(--luxury-gold-muted)]', isOpen ? 'block' : 'hidden')} style={{ background: 'var(--luxury-charcoal)' }}>
+      <div className={cn('luxury-nav__menu lg:hidden border-t border-[var(--luxury-gold-muted)]', isOpen ? 'block' : 'hidden')} style={{ background: 'var(--luxury-charcoal)' }}>
         <div className="pt-2 pb-4 px-4 max-h-[80vh] overflow-y-auto space-y-1">
           {primaryLinks.map((link) => (
             <Link
@@ -190,6 +261,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 
