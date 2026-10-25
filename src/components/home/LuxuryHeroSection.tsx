@@ -88,11 +88,9 @@ const LuxuryHeroSection = () => {
           <button type="button" className="luxury-soon__close" onClick={() => setNoticeOpen(false)} aria-label="Close">
             <X size={18} />
           </button>
-          <p id="coming-soon-title" className="luxury-soon__title">The portal to our new experiences&apos;ll soon open!</p>
+          <p id="coming-soon-title" className="luxury-soon__title">The portal to our new experiences is opening soon.</p>
           <p className="luxury-soon__text">
-            Check back later this year, early next, to see all the amazing opportunities we&apos;ve got slated for you. Can&apos;t wait?
-            <br />
-            Slip into portal early:{" "}
+            Check back early 2027 to see what&apos;s coming. Can&apos;t wait? Slip through the portal early and email us:{" "}
             <a href="mailto:info@portalsofsamadhi.com">info@portalsofsamadhi.com</a>
           </p>
         </div>
